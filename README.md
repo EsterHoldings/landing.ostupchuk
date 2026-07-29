@@ -1,75 +1,41 @@
-# Nuxt Minimal Starter
+# Ostupchuk landing
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Стартовый проект лендинга на Nuxt 4 и TypeScript.
 
-## Setup
+## Требования
 
-Make sure to install dependencies:
+- Node.js 22+
+- Yarn 1.22+
+
+## Установка
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Разработка
 
-Start the development server on `http://localhost:3000`:
+Локальный сервер будет доступен на `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Проверки
 
 ```bash
-# npm
-npm run build
+yarn typecheck
+yarn format:check
+```
 
-# pnpm
-pnpm build
+## Production-сборка
 
-# yarn
+```bash
 yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Предпросмотр production-сборки:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
 yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
