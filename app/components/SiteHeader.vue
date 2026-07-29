@@ -18,6 +18,7 @@
   const { locale, setLocale, t } = useI18n();
   const isMenuOpen = ref(false);
   const isLanguageOpen = ref(false);
+  const isHeaderFixed = ref(false);
   const languagePicker = ref<HTMLElement>();
 
   const languages: LanguageOption[] = [
@@ -80,129 +81,172 @@
     }
   };
 
+  const updateHeaderPosition = () => {
+    isHeaderFixed.value = window.scrollY > 24;
+  };
+
   onMounted(() => {
+    updateHeaderPosition();
     document.addEventListener("click", handleDocumentClick);
     document.addEventListener("keydown", handleEscape);
+    window.addEventListener("scroll", updateHeaderPosition, { passive: true });
   });
 
   onBeforeUnmount(() => {
     document.removeEventListener("click", handleDocumentClick);
     document.removeEventListener("keydown", handleEscape);
+    window.removeEventListener("scroll", updateHeaderPosition);
   });
 </script>
 
 <template>
-  <header class="header">
-    <AppLogo />
+  <div class="header-shell">
+    <header
+      class="header"
+      :class="{ 'header--fixed': isHeaderFixed }">
+      <div class="header__inner">
+        <AppLogo />
 
-    <nav
-      class="header__nav"
-      :aria-label="t('header.mainNavigation')">
-      <a
-        v-for="item in navItems"
-        :key="item.href"
-        :href="item.href">
-        {{ item.label }}
-      </a>
-    </nav>
+        <nav
+          class="header__nav"
+          :aria-label="t('header.mainNavigation')">
+          <a
+            v-for="item in navItems"
+            :key="item.href"
+            :href="item.href">
+            {{ item.label }}
+          </a>
+        </nav>
 
-    <div class="header__actions">
-      <div
-        ref="languagePicker"
-        class="header__language-picker">
-        <button
-          class="header__language"
-          type="button"
-          :aria-label="t('header.currentLanguage', { language: selectedLanguage.label })"
-          :aria-expanded="isLanguageOpen"
-          aria-controls="language-menu"
-          @click="isLanguageOpen = !isLanguageOpen">
-          <span>{{ selectedLanguage.short ?? selectedLanguage.code.toUpperCase() }}</span>
-          <ChevronDown
-            :class="{ 'header__language-chevron--open': isLanguageOpen }"
-            :size="15"
-            :stroke-width="2.2" />
-        </button>
-
-        <Transition name="language">
+        <div class="header__actions">
           <div
-            v-if="isLanguageOpen"
-            id="language-menu"
-            class="header__language-dropdown">
-            <p>{{ t("header.chooseLanguage") }}</p>
-            <ul>
-              <li
-                v-for="language in languages"
-                :key="language.code">
-                <button
-                  type="button"
-                  :class="{ 'is-active': language.code === locale }"
-                  :aria-current="language.code === locale ? 'true' : undefined"
-                  @click="switchLanguage(language.code)">
-                  <span aria-hidden="true">{{ language.flag }}</span>
-                  <span>{{ language.label }}</span>
-                  <small>{{ language.short ?? language.code.toUpperCase() }}</small>
-                </button>
-              </li>
-            </ul>
+            ref="languagePicker"
+            class="header__language-picker">
+            <button
+              class="header__language"
+              type="button"
+              :aria-label="t('header.currentLanguage', { language: selectedLanguage.label })"
+              :aria-expanded="isLanguageOpen"
+              aria-controls="language-menu"
+              @click="isLanguageOpen = !isLanguageOpen">
+              <span>{{ selectedLanguage.short ?? selectedLanguage.code.toUpperCase() }}</span>
+              <ChevronDown
+                :class="{ 'header__language-chevron--open': isLanguageOpen }"
+                :size="15"
+                :stroke-width="2.2" />
+            </button>
+
+            <Transition name="language">
+              <div
+                v-if="isLanguageOpen"
+                id="language-menu"
+                class="header__language-dropdown">
+                <p>{{ t("header.chooseLanguage") }}</p>
+                <ul>
+                  <li
+                    v-for="language in languages"
+                    :key="language.code">
+                    <button
+                      type="button"
+                      :class="{ 'is-active': language.code === locale }"
+                      :aria-current="language.code === locale ? 'true' : undefined"
+                      @click="switchLanguage(language.code)">
+                      <span aria-hidden="true">{{ language.flag }}</span>
+                      <span>{{ language.label }}</span>
+                      <small>{{ language.short ?? language.code.toUpperCase() }}</small>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </Transition>
+          </div>
+          <button
+            class="button button--light header__consultation"
+            type="button"
+            @click="openConsultation">
+            {{ t("common.consultation") }}
+          </button>
+          <button
+            class="header__menu"
+            type="button"
+            :aria-expanded="isMenuOpen"
+            aria-controls="mobile-menu"
+            :aria-label="t('header.openMenu')"
+            @click="toggleMenu">
+            <X
+              v-if="isMenuOpen"
+              :size="22" />
+            <Menu
+              v-else
+              :size="22" />
+          </button>
+        </div>
+
+        <Transition name="menu">
+          <div
+            v-if="isMenuOpen"
+            id="mobile-menu"
+            class="header__mobile">
+            <a
+              v-for="item in navItems"
+              :key="item.href"
+              :href="item.href"
+              @click="closeMenu">
+              {{ item.label }}
+            </a>
+            <button
+              class="button button--primary"
+              type="button"
+              @click="openConsultation">
+              {{ t("common.consultation") }}
+            </button>
           </div>
         </Transition>
       </div>
-      <button
-        class="button button--light header__consultation"
-        type="button"
-        @click="openConsultation">
-        {{ t("common.consultation") }}
-      </button>
-      <button
-        class="header__menu"
-        type="button"
-        :aria-expanded="isMenuOpen"
-        aria-controls="mobile-menu"
-        :aria-label="t('header.openMenu')"
-        @click="toggleMenu">
-        <X
-          v-if="isMenuOpen"
-          :size="22" />
-        <Menu
-          v-else
-          :size="22" />
-      </button>
-    </div>
-
-    <Transition name="menu">
-      <div
-        v-if="isMenuOpen"
-        id="mobile-menu"
-        class="header__mobile">
-        <a
-          v-for="item in navItems"
-          :key="item.href"
-          :href="item.href"
-          @click="closeMenu">
-          {{ item.label }}
-        </a>
-        <button
-          class="button button--primary"
-          type="button"
-          @click="openConsultation">
-          {{ t("common.consultation") }}
-        </button>
-      </div>
-    </Transition>
-  </header>
+    </header>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+  .header-shell {
+    min-height: 81px;
+  }
+
   .header {
     position: relative;
     z-index: 20;
+    width: 100%;
+    transition:
+      background 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .header__inner {
+    position: relative;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: clamp(18px, 2.2vw, 32px);
     min-height: 81px;
     border-bottom: 1px solid rgb(54 76 103 / 14%);
+    transition: min-height 180ms ease;
+  }
+
+  .header--fixed {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(208 222 231 / 94%);
+    box-shadow: 0 12px 34px rgb(21 38 59 / 12%);
+    backdrop-filter: blur(16px);
+  }
+
+  .header--fixed .header__inner {
+    width: min(calc(100% - clamp(48px, 5.6vw, 80px)), 1440px);
+    min-height: 68px;
+    margin-inline: auto;
   }
 
   .header__nav {
@@ -403,7 +447,7 @@
       display: none;
     }
 
-    .header {
+    .header__inner {
       grid-template-columns: auto 1fr;
     }
 
