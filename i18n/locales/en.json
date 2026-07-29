@@ -1,0 +1,394 @@
+{
+  "common": {
+    "consultation": "Request a consultation",
+    "personName": "Serhiy Ostapchuk",
+    "previous": "Previous reviews",
+    "next": "The following reviews",
+    "close": "close"
+  },
+  "appLogo": {
+    "homeAria": "OST UP CHUK — on the main"
+  },
+  "header": {
+    "nav": {
+      "about": "About the Academy",
+      "programs": "Directions",
+      "results": "The results",
+      "faq": "FAQ"
+    },
+    "mainNavigation": "Main navigation",
+    "currentLanguage": "Current language: {language}",
+    "chooseLanguage": "Choose a language",
+    "openMenu": "Open the menu"
+  },
+  "seo": {
+    "title": "Capital Intelligence Academy — Serhii Ostapchuk",
+    "description": "System education in trading, investing and capital management under the leadership of Serhiy Ostapchuk.",
+    "ogDescription": "A practical training system for independent financial decision-making."
+  },
+  "hero": {
+    "intro": "More than two decades of practical experience have become the basis of an educational ecosystem that combines knowledge, mentoring and professional development in the field of financial markets.",
+    "metrics": [
+      {
+        "value": "International",
+        "label": "community of students and investors"
+      },
+      {
+        "value": "$100M+",
+        "label": "confirmed trade volume"
+      },
+      {
+        "value": "21+",
+        "label": "year in the financial markets"
+      }
+    ],
+    "title": "A systematic approach to trading, investing and capital management.",
+    "aboutButton": "About the Academy"
+  },
+  "expertise": {
+    "facts": [
+      {
+        "value": "21+",
+        "label": "a year of practice"
+      },
+      {
+        "value": "20+",
+        "label": "countries"
+      },
+      {
+        "value": "Author's",
+        "label": "methodology"
+      }
+    ],
+    "title": "Expertise shaped by the market",
+    "paragraphs": [
+      "The true value of knowledge is determined by its ability to remain relevant in a constantly changing world.",
+      "For more than 21 years, Serhii Ostapchuk has been working in the financial markets, going through various economic cycles, crises and periods of growth.",
+      "This experience became the foundation of the Academy and made it possible to create a training system based on understanding market processes, risk management and making informed decisions."
+    ]
+  },
+  "founder": {
+    "role": "Trader, investor and entrepreneur with over 21 years of experience in financial markets.",
+    "paragraphs": [
+      "Over the years of practice, an own approach to market analysis and capital management was formed, based on a combination of fundamental analysis, technical analysis and the psychology of decision-making.",
+      "The result of this work was the Capital Intelligence Academy — an educational ecosystem that combined many years of practical experience, modern development programs and an international community of people interested in financial growth and independence."
+    ]
+  },
+  "programs": {
+    "title": "Choose a direction that meets your goals:",
+    "items": [
+      {
+        "title": "Trading Education",
+        "description": "Learn to understand the market, analyze the situation and make trading decisions.",
+        "benefits": [
+          "Fundamental and technical analysis",
+          "Risk management",
+          "Practice under the guidance of mentors",
+          "Formation of own system of work on the market"
+        ]
+      },
+      {
+        "title": "Investment Education",
+        "description": "Develop your investment mindset and wealth management skills.",
+        "benefits": [
+          "Formation of an investment strategy",
+          "Assessment of risks and opportunities",
+          "Capital diversification",
+          "A long-term approach to investing"
+        ]
+      },
+      {
+        "title": "Private Mentorship",
+        "description": "Personal work with a mentor and individual support.",
+        "benefits": [
+          "Feedback and support",
+          "Error analysis",
+          "Individual consultations",
+          "Accelerated skill development"
+        ]
+      },
+      {
+        "title": "Market Intelligence",
+        "description": "Expert analytics for making better financial decisions.",
+        "benefits": [
+          "Overview of markets",
+          "Analysis of key events",
+          "Practical ideas and scenarios",
+          "Expert comments"
+        ]
+      }
+    ]
+  },
+  "audience": {
+    "title": "For whom the academy was created:",
+    "items": [
+      "For those who want to understand financial markets from scratch",
+      "For investors seeking a better understanding of capital management",
+      "For entrepreneurs who want to develop financial thinking",
+      "For those who are looking for a systematic approach instead of chaotic solutions"
+    ]
+  },
+  "journey": {
+    "imageAlt": "Serhiy Ostapchuk",
+    "captionRole": "Founder and leading practitioner",
+    "captionMeta": "Active trader since 2001",
+    "titleLines": ["A consistent path to", "independent acceptance", "financial decisions"],
+    "steps": [
+      "Personal consultation and definition of goals",
+      "Selection of an educational route",
+      "Mastering the methodology of the Academy",
+      "Practice under the guidance of mentors",
+      "Formation of own decision-making system"
+    ]
+  },
+  "results": {
+    "title": "People's experience is the best assessment of system quality",
+    "intro": [
+      "Tens of thousands of participants from different countries of the world have passed through the Academy's programs over the years.",
+      "For some, studying became the first step to a new profession. For others, it is an opportunity to systematize knowledge and form their own approach to working with capital."
+    ],
+    "testimonials": [
+      {
+        "quote": "Before studying, I perceived financial markets as something too complicated. At the Academy, I was taught to see the logic of processes and make decisions without emotions.",
+        "name": "Mykhailo",
+        "role": "business owner",
+        "initials": "M"
+      },
+      {
+        "quote": "Previously, any investment decisions were accompanied by doubts. Now I have structure, I understand the risks and I know how to act in different scenarios.",
+        "name": "Elena",
+        "role": "businesswoman",
+        "initials": "O"
+      },
+      {
+        "quote": "A lot of information has accumulated over the years of working with data, but it was the Academy that helped turn it into an understandable system.",
+        "name": "Olga",
+        "role": "the head of the company",
+        "initials": "O"
+      },
+      {
+        "quote": "The most valuable thing is constant support. You are not alone with the market and you can always check the logic of your decision.",
+        "name": "Andrew",
+        "role": "investor",
+        "initials": "A"
+      },
+      {
+        "quote": "Practice helped to get rid of chaotic actions. Now each deal has a clear scenario, risk and a clear goal.",
+        "name": "Iryna",
+        "role": "graduate of the program",
+        "initials": "I"
+      }
+    ],
+    "videoTitle": "Video reviews",
+    "videoItems": [
+      {
+        "image": "/images/video-1.jpg",
+        "title": "From system to result",
+        "meta": "Video feedback of a graduate"
+      },
+      {
+        "image": "/images/video-2.jpg",
+        "title": "Learning through the eyes of participants",
+        "meta": "A conversation with the team"
+      },
+      {
+        "image": "/images/video-3.jpg",
+        "title": "Decision without unnecessary emotions",
+        "meta": "Personal experience"
+      },
+      {
+        "image": "/images/video-4.jpg",
+        "title": "How the approach to the market has changed",
+        "meta": "The student's story"
+      },
+      {
+        "image": "/images/video-5.jpg",
+        "title": "Practice and support",
+        "meta": "Feedback on mentoring"
+      },
+      {
+        "image": "/images/video-6.jpg",
+        "title": "First system results",
+        "meta": "The interview"
+      }
+    ],
+    "practicalTitle": "Practical results",
+    "practicalItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "A student's business plan",
+        "meta": "Practical work"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Analysis of the market situation",
+        "meta": "Training session"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Capital management strategy",
+        "meta": "Case program"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Analytics of closed positions",
+        "meta": "Practice results"
+      }
+    ],
+    "interviewsTitle": "Interviews of training program participants",
+    "interviewItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "Building your own system",
+        "meta": "Interview with the participant"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "From knowledge to practice",
+        "meta": "Interview with a graduate"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Work with risks",
+        "meta": "A conversation with a student"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Private tutoring experience",
+        "meta": "Participant history"
+      }
+    ]
+  },
+  "media": {
+    "scrollBack": "Scroll {title} back",
+    "scrollForward": "Scroll {title} forward"
+  },
+  "development": {
+    "formula": "∑(knowledge + practice) = system",
+    "imageAlt": "Serhii Ostapchuk near the blackboard",
+    "eyebrow": "After training",
+    "title": "Development does not end when the program is completed",
+    "intro": "Academy participants get access to a professional environment that includes:",
+    "items": [
+      "closed community",
+      "regular market analysis",
+      "live broadcasts and debates",
+      "additional educational materials",
+      "support of mentors",
+      "sharing experiences with like-minded people"
+    ]
+  },
+  "materials": {
+    "eyebrow": "Open materials",
+    "title": "An opportunity to get acquainted with the approach of the Academy",
+    "intro": "Practical recommendations for beginners and active participants of financial markets.",
+    "items": [
+      {
+        "title": "Marathons",
+        "text": "Practical intensives"
+      },
+      {
+        "title": "YouTube",
+        "text": "Videos and discussions"
+      },
+      {
+        "title": "Telegram",
+        "text": "Market analytics"
+      },
+      {
+        "title": "Publications",
+        "text": "Research team"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions and answers",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "Is the training suitable for beginners?",
+        "answer": "Yes. The programs are structured to consistently take the participant from a basic understanding of the financial markets to independent decision-making."
+      },
+      {
+        "question": "Is it possible to study if you already have experience in financial markets?",
+        "answer": "Yes. After the consultation, the team will determine your current level and offer a route without repeating the topics already learned."
+      },
+      {
+        "question": "What is the difference between the Academy and other educational projects?",
+        "answer": "The programs are based on practical experience, author's methodology, individual support and systematic work with risks."
+      },
+      {
+        "question": "Will I be able to make my own decisions after completing the program?",
+        "answer": "Independence is one of the main goals of education. Participants learn to analyze the situation, form scenarios and argue for each decision."
+      },
+      {
+        "question": "Is it necessary to have a lot of capital to start studying?",
+        "answer": "No. Training focuses on knowledge, discipline and risk management. The amount of practical capital is determined individually."
+      },
+      {
+        "question": "How long does training take?",
+        "answer": "The duration depends on the chosen direction and individual pace. An exact plan is formed after the initial consultation."
+      },
+      {
+        "question": "What is included in mentoring?",
+        "answer": "Verification of practical tasks, analysis of errors, answers to questions, analysis of market situations and recommendations for further development."
+      },
+      {
+        "question": "Is there a practical part of the training?",
+        "answer": "Yes. Practice is integrated into all programs and progresses gradually, from training exercises to working with real market scenarios."
+      },
+      {
+        "question": "What is Market Intelligence?",
+        "answer": "This is the direction of expert analytics: reviews of markets, key events, risks and possible scenarios for making informed decisions."
+      },
+      {
+        "question": "What is the difference between Trading Education and Investment Education?",
+        "answer": "Trading Education focuses on working with short- and medium-term market scenarios, Investment Education on long-term capital management."
+      },
+      {
+        "question": "Does the Academy provide guarantees of profitability?",
+        "answer": "Financial markets do not allow guarantees of results. The Academy provides a system of knowledge, practice and risk control tools."
+      },
+      {
+        "question": "What result can be considered successful after completing the program?",
+        "answer": "Ability to independently analyze the market, make reasoned decisions, control risks and adhere to one's own system."
+      },
+      {
+        "question": "Is it possible to combine studies with work or business?",
+        "answer": "Yes. The format is designed for busy people: the materials are available online, and the practical schedule is agreed with the mentor."
+      },
+      {
+        "question": "Do I still have access to the community after I finish the program?",
+        "answer": "Yes, depending on the selected program, participants retain access to materials, analytics and professional community."
+      }
+    ]
+  },
+  "finalCta": {
+    "note": "A personal consultation will help determine goals, assess the current level of training and form the optimal educational route within Capital Intelligence Academy.",
+    "title": "Financial decisions require a systematic approach"
+  },
+  "footer": {
+    "tagline": "Systematic education for making financial decisions.",
+    "academy": "Academy",
+    "about": "About us",
+    "directions": "Directions",
+    "results": "The results",
+    "programs": "Programs",
+    "contacts": "Contacts",
+    "copyright": "© {year} OST UP CHUK. All rights reserved.",
+    "privacy": "Privacy Policy"
+  },
+  "modal": {
+    "closeAria": "close",
+    "eyebrow": "Personal consultation",
+    "title": "Let's discuss your financial goals",
+    "intro": "Leave your contacts - the Academy team will help determine the optimal training format.",
+    "name": "your name",
+    "phone": "Telephone",
+    "submit": "Send an application",
+    "consent": "By submitting the form, you agree to the privacy policy.",
+    "thanks": "Thank you",
+    "accepted": "The application has been accepted",
+    "followup": "We will contact you to arrange a convenient consultation time."
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "common": {
+    "consultation": "Fordern Sie eine Beratung an",
+    "personName": "Serhij Ostaptschuk",
+    "previous": "Frühere Bewertungen",
+    "next": "Die folgenden Bewertungen",
+    "close": "schließen"
+  },
+  "appLogo": {
+    "homeAria": "OST UP CHUK – hauptsächlich"
+  },
+  "header": {
+    "nav": {
+      "about": "Über die Akademie",
+      "programs": "Wegbeschreibung",
+      "results": "Die Ergebnisse",
+      "faq": "FAQ"
+    },
+    "mainNavigation": "Hauptnavigation",
+    "currentLanguage": "Aktuelle Sprache: {language}",
+    "chooseLanguage": "Wählen Sie eine Sprache",
+    "openMenu": "Öffnen Sie das Menü"
+  },
+  "seo": {
+    "title": "Capital Intelligence Academy – Serhii Ostapchuk",
+    "description": "Systemausbildung in Handel, Investitionen und Kapitalmanagement unter der Leitung von Serhiy Ostapchuk.",
+    "ogDescription": "Ein praktisches Trainingssystem für unabhängige Finanzentscheidungen."
+  },
+  "hero": {
+    "intro": "Mehr als zwei Jahrzehnte praktischer Erfahrung sind zur Grundlage eines Bildungsökosystems geworden, das Wissen, Mentoring und berufliche Entwicklung im Bereich der Finanzmärkte vereint.",
+    "metrics": [
+      {
+        "value": "International",
+        "label": "Gemeinschaft von Studenten und Investoren"
+      },
+      {
+        "value": "$100M+",
+        "label": "bestätigtes Handelsvolumen"
+      },
+      {
+        "value": "21+",
+        "label": "Jahr an den Finanzmärkten"
+      }
+    ],
+    "title": "Ein systematischer Ansatz für Handel, Investitionen und Kapitalmanagement.",
+    "aboutButton": "Über die Akademie"
+  },
+  "expertise": {
+    "facts": [
+      {
+        "value": "21+",
+        "label": "ein Jahr Praxis"
+      },
+      {
+        "value": "20+",
+        "label": "Länder"
+      },
+      {
+        "value": "Autor",
+        "label": "Methodik"
+      }
+    ],
+    "title": "Vom Markt geprägte Expertise",
+    "paragraphs": [
+      "Der wahre Wert von Wissen wird durch seine Fähigkeit bestimmt, in einer sich ständig verändernden Welt relevant zu bleiben.",
+      "Seit mehr als 21 Jahren ist Serhii Ostapchuk auf den Finanzmärkten tätig und hat dabei verschiedene Konjunkturzyklen, Krisen und Wachstumsphasen durchlaufen.",
+      "Diese Erfahrung wurde zur Grundlage der Akademie und ermöglichte die Schaffung eines Schulungssystems, das auf dem Verständnis von Marktprozessen, dem Risikomanagement und dem Treffen fundierter Entscheidungen basiert."
+    ]
+  },
+  "founder": {
+    "role": "Händler, Investor und Unternehmer mit über 21 Jahren Erfahrung auf den Finanzmärkten.",
+    "paragraphs": [
+      "Im Laufe der jahrelangen Praxis entwickelte sich ein eigener Ansatz zur Marktanalyse und zum Kapitalmanagement, der auf einer Kombination aus Fundamentalanalyse, technischer Analyse und der Psychologie der Entscheidungsfindung basiert.",
+      "Das Ergebnis dieser Arbeit war die Capital Intelligence Academy – ein Bildungsökosystem, das langjährige praktische Erfahrung, moderne Entwicklungsprogramme und eine internationale Gemeinschaft von Menschen vereint, die an finanziellem Wachstum und Unabhängigkeit interessiert sind."
+    ]
+  },
+  "programs": {
+    "title": "Wählen Sie eine Richtung, die Ihren Zielen entspricht:",
+    "items": [
+      {
+        "title": "Trading Education",
+        "description": "Lernen Sie, den Markt zu verstehen, die Situation zu analysieren und Handelsentscheidungen zu treffen.",
+        "benefits": [
+          "Fundamentale und technische Analyse",
+          "Risikomanagement",
+          "Üben Sie unter der Anleitung von Mentoren",
+          "Bildung eines eigenen Arbeitssystems auf dem Markt"
+        ]
+      },
+      {
+        "title": "Investment Education",
+        "description": "Entwickeln Sie Ihre Anlagementalität und Ihre Vermögensverwaltungsfähigkeiten.",
+        "benefits": [
+          "Bildung einer Anlagestrategie",
+          "Einschätzung von Risiken und Chancen",
+          "Kapitaldiversifizierung",
+          "Ein langfristiger Anlageansatz"
+        ]
+      },
+      {
+        "title": "Private Mentorship",
+        "description": "Persönliche Arbeit mit einem Mentor und individueller Betreuung.",
+        "benefits": [
+          "Feedback und Unterstützung",
+          "Fehleranalyse",
+          "Individuelle Beratungen",
+          "Beschleunigte Kompetenzentwicklung"
+        ]
+      },
+      {
+        "title": "Market Intelligence",
+        "description": "Expertenanalysen für bessere Finanzentscheidungen.",
+        "benefits": [
+          "Überblick über die Märkte",
+          "Analyse wichtiger Ereignisse",
+          "Praktische Ideen und Szenarien",
+          "Expertenkommentare"
+        ]
+      }
+    ]
+  },
+  "audience": {
+    "title": "Für wen wurde die Akademie gegründet:",
+    "items": [
+      "Für diejenigen, die Finanzmärkte von Grund auf verstehen wollen",
+      "Für Anleger, die ein besseres Verständnis des Kapitalmanagements suchen",
+      "Für Unternehmer, die finanzielles Denken entwickeln möchten",
+      "Für alle, die Systematik statt chaotischer Lösungen suchen"
+    ]
+  },
+  "journey": {
+    "imageAlt": "Serhij Ostaptschuk",
+    "captionRole": "Gründer und führender Praktiker",
+    "captionMeta": "Aktiver Händler seit 2001",
+    "titleLines": ["Ein konsequenter Weg zu", "unabhängige Akzeptanz", "finanzielle Entscheidungen"],
+    "steps": [
+      "Persönliche Beratung und Zieldefinition",
+      "Auswahl eines Bildungsweges",
+      "Beherrschung der Methodik der Akademie",
+      "Üben Sie unter der Anleitung von Mentoren",
+      "Bildung eines eigenen Entscheidungssystems"
+    ]
+  },
+  "results": {
+    "title": "Die Erfahrung der Menschen ist die beste Beurteilung der Systemqualität",
+    "intro": [
+      "Zehntausende Teilnehmer aus verschiedenen Ländern der Welt haben im Laufe der Jahre die Programme der Akademie durchlaufen.",
+      "Für manche war das Studium der erste Schritt in einen neuen Beruf. Für andere ist es eine Gelegenheit, Wissen zu systematisieren und einen eigenen Ansatz für die Arbeit mit Kapital zu entwickeln."
+    ],
+    "testimonials": [
+      {
+        "quote": "Vor meinem Studium empfand ich die Finanzmärkte als etwas zu Kompliziertes. An der Akademie wurde mir beigebracht, die Logik von Prozessen zu erkennen und Entscheidungen ohne Emotionen zu treffen.",
+        "name": "Mykhailo",
+        "role": "Geschäftsinhaber",
+        "initials": "M"
+      },
+      {
+        "quote": "Bisher waren alle Investitionsentscheidungen mit Zweifeln verbunden. Jetzt habe ich Struktur, verstehe die Risiken und weiß, wie ich in verschiedenen Szenarien handeln muss.",
+        "name": "Elena",
+        "role": "Geschäftsfrau",
+        "initials": "O"
+      },
+      {
+        "quote": "Im Laufe der Jahre der Arbeit mit Daten haben sich viele Informationen angesammelt, aber es war die Akademie, die dazu beigetragen hat, daraus ein verständliches System zu machen.",
+        "name": "Olga",
+        "role": "der Leiter des Unternehmens",
+        "initials": "O"
+      },
+      {
+        "quote": "Das Wertvollste ist die ständige Unterstützung. Sie sind mit dem Markt nicht allein und können jederzeit die Logik Ihrer Entscheidung überprüfen.",
+        "name": "Andreas",
+        "role": "Investor",
+        "initials": "A"
+      },
+      {
+        "quote": "Übung hat geholfen, chaotische Handlungen loszuwerden. Jetzt hat jeder Deal ein klares Szenario, ein klares Risiko und ein klares Ziel.",
+        "name": "Iryna",
+        "role": "Absolvent des Programms",
+        "initials": "Ich"
+      }
+    ],
+    "videoTitle": "Videorezensionen",
+    "videoItems": [
+      {
+        "image": "/images/video-1.jpg",
+        "title": "Vom System zum Ergebnis",
+        "meta": "Video-Feedback eines Absolventen"
+      },
+      {
+        "image": "/images/video-2.jpg",
+        "title": "Lernen aus der Sicht der Teilnehmer",
+        "meta": "Ein Gespräch mit dem Team"
+      },
+      {
+        "image": "/images/video-3.jpg",
+        "title": "Entscheidung ohne unnötige Emotionen",
+        "meta": "Persönliche Erfahrung"
+      },
+      {
+        "image": "/images/video-4.jpg",
+        "title": "Wie sich die Herangehensweise an den Markt verändert hat",
+        "meta": "Die Geschichte des Studenten"
+      },
+      {
+        "image": "/images/video-5.jpg",
+        "title": "Üben und unterstützen",
+        "meta": "Feedback zum Mentoring"
+      },
+      {
+        "image": "/images/video-6.jpg",
+        "title": "Erste Systemergebnisse",
+        "meta": "Das Interview"
+      }
+    ],
+    "practicalTitle": "Praktische Ergebnisse",
+    "practicalItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "Der Businessplan eines Studenten",
+        "meta": "Praktische Arbeit"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Analyse der Marktsituation",
+        "meta": "Trainingseinheit"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Kapitalmanagementstrategie",
+        "meta": "Fallprogramm"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Analyse geschlossener Positionen",
+        "meta": "Übungsergebnisse"
+      }
+    ],
+    "interviewsTitle": "Interviews mit Schulungsprogrammteilnehmern",
+    "interviewItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "Bauen Sie Ihr eigenes System",
+        "meta": "Interview mit dem Teilnehmer"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Vom Wissen zur Praxis",
+        "meta": "Interview mit einem Absolventen"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Arbeiten Sie mit Risiken",
+        "meta": "Ein Gespräch mit einem Studenten"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Private Nachhilfeerfahrung",
+        "meta": "Teilnehmerhistorie"
+      }
+    ]
+  },
+  "media": {
+    "scrollBack": "Scrollen Sie {title} zurück",
+    "scrollForward": "Scrollen Sie {title} vorwärts"
+  },
+  "development": {
+    "formula": "∑(Wissen + Praxis) = System",
+    "imageAlt": "Serhii Ostapchuk in der Nähe der Tafel",
+    "eyebrow": "Nach dem Training",
+    "title": "Die Entwicklung endet nicht, wenn das Programm abgeschlossen ist",
+    "intro": "Akademieteilnehmer erhalten Zugang zu einem professionellen Umfeld, das Folgendes umfasst:",
+    "items": [
+      "geschlossene Gemeinschaft",
+      "regelmäßige Marktanalyse",
+      "Live-Übertragungen und Debatten",
+      "zusätzliche Lehrmaterialien",
+      "Unterstützung von Mentoren",
+      "Erfahrungen mit Gleichgesinnten teilen"
+    ]
+  },
+  "materials": {
+    "eyebrow": "Offene Materialien",
+    "title": "Eine Gelegenheit, sich mit dem Ansatz der Akademie vertraut zu machen",
+    "intro": "Praktische Empfehlungen für Einsteiger und aktive Teilnehmer der Finanzmärkte.",
+    "items": [
+      {
+        "title": "Marathons",
+        "text": "Praktische Intensivkurse"
+      },
+      {
+        "title": "YouTube",
+        "text": "Videos und Diskussionen"
+      },
+      {
+        "title": "Telegram",
+        "text": "Marktanalyse"
+      },
+      {
+        "title": "Veröffentlichungen",
+        "text": "Forschungsteam"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Fragen und Antworten",
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Ist das Training für Einsteiger geeignet?",
+        "answer": "Ja. Die Programme sind so strukturiert, dass sie den Teilnehmer konsequent von einem grundlegenden Verständnis der Finanzmärkte bis hin zur unabhängigen Entscheidungsfindung führen."
+      },
+      {
+        "question": "Ist ein Studium möglich, wenn man bereits Erfahrung auf den Finanzmärkten hat?",
+        "answer": "Ja. Nach der Beratung ermittelt das Team Ihr aktuelles Niveau und bietet eine Route ohne Wiederholung der bereits erlernten Themen an."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen der Akademie und anderen Bildungsprojekten?",
+        "answer": "Die Programme basieren auf praktischer Erfahrung, Autorenmethodik, individueller Betreuung und systematischer Arbeit mit Risiken."
+      },
+      {
+        "question": "Kann ich nach Abschluss des Programms meine eigenen Entscheidungen treffen?",
+        "answer": "Unabhängigkeit ist eines der Hauptziele der Bildung. Die Teilnehmer lernen, die Situation zu analysieren, Szenarien zu entwerfen und jede Entscheidung zu begründen."
+      },
+      {
+        "question": "Ist für den Studienbeginn viel Kapital nötig?",
+        "answer": "Nein. Der Schwerpunkt der Schulung liegt auf Wissen, Disziplin und Risikomanagement. Die Höhe des praktischen Kapitals wird individuell festgelegt."
+      },
+      {
+        "question": "Wie lange dauert die Ausbildung?",
+        "answer": "Die Dauer hängt von der gewählten Richtung und dem individuellen Tempo ab. Nach dem ersten Beratungsgespräch wird ein genauer Plan erstellt."
+      },
+      {
+        "question": "Was ist im Mentoring enthalten?",
+        "answer": "Überprüfung praktischer Aufgaben, Fehleranalyse, Beantwortung von Fragen, Analyse von Marktsituationen und Empfehlungen zur Weiterentwicklung."
+      },
+      {
+        "question": "Gibt es einen praktischen Teil der Ausbildung?",
+        "answer": "Ja. Die Praxis ist in alle Programme integriert und schreitet schrittweise voran, von Trainingsübungen bis hin zur Arbeit mit realen Marktszenarien."
+      },
+      {
+        "question": "Was ist Market Intelligence?",
+        "answer": "Dies ist die Richtung der Expertenanalyse: Überprüfungen von Märkten, Schlüsselereignissen, Risiken und möglichen Szenarien für fundierte Entscheidungen."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen Trading-Ausbildung und Investment-Ausbildung?",
+        "answer": "Trading Education konzentriert sich auf die Arbeit mit kurz- und mittelfristigen Marktszenarien, Investment Education auf langfristiges Kapitalmanagement."
+      },
+      {
+        "question": "Bietet die Akademie Rentabilitätsgarantien?",
+        "answer": "Die Finanzmärkte erlauben keine Ergebnisgarantien. Die Akademie bietet ein System von Wissens-, Praxis- und Risikokontrollinstrumenten."
+      },
+      {
+        "question": "Welches Ergebnis kann nach Abschluss des Programms als erfolgreich angesehen werden?",
+        "answer": "Fähigkeit, den Markt selbstständig zu analysieren, begründete Entscheidungen zu treffen, Risiken zu kontrollieren und sich an das eigene System zu halten."
+      },
+      {
+        "question": "Ist eine Vereinbarkeit des Studiums mit Beruf oder Wirtschaft möglich?",
+        "answer": "Ja. Das Format richtet sich an vielbeschäftigte Menschen: Die Materialien sind online verfügbar, der praktische Ablauf wird mit dem Mentor abgestimmt."
+      },
+      {
+        "question": "Habe ich nach Abschluss des Programms noch Zugriff auf die Community?",
+        "answer": "Ja, je nach ausgewähltem Programm behalten die Teilnehmer Zugriff auf Materialien, Analysen und die Fachgemeinschaft."
+      }
+    ]
+  },
+  "finalCta": {
+    "note": "Eine persönliche Beratung hilft dabei, Ziele festzulegen, den aktuellen Ausbildungsstand einzuschätzen und den optimalen Bildungsweg innerhalb der Capital Intelligence Academy zu gestalten.",
+    "title": "Finanzielle Entscheidungen erfordern eine systematische Vorgehensweise"
+  },
+  "footer": {
+    "tagline": "Systematische Ausbildung zum Treffen finanzieller Entscheidungen.",
+    "academy": "Akademie",
+    "about": "Über uns",
+    "directions": "Wegbeschreibung",
+    "results": "Die Ergebnisse",
+    "programs": "Programme",
+    "contacts": "Kontakte",
+    "copyright": "© {year} OST UP CHUK. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie"
+  },
+  "modal": {
+    "closeAria": "schließen",
+    "eyebrow": "Persönliche Beratung",
+    "title": "Lassen Sie uns Ihre finanziellen Ziele besprechen",
+    "intro": "Hinterlassen Sie Ihre Kontakte – das Academy-Team hilft Ihnen bei der Ermittlung des optimalen Trainingsformats.",
+    "name": "Dein Name",
+    "phone": "Telefon",
+    "submit": "Senden Sie eine Bewerbung",
+    "consent": "Mit dem Absenden des Formulars stimmen Sie der Datenschutzerklärung zu.",
+    "thanks": "Vielen Dank",
+    "accepted": "Der Antrag wurde angenommen",
+    "followup": "Wir werden uns mit Ihnen in Verbindung setzen, um einen passenden Beratungstermin zu vereinbaren."
+  }
+}

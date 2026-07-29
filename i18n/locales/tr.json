@@ -1,0 +1,394 @@
+{
+  "common": {
+    "consultation": "Danışmanlık talep edin",
+    "personName": "Serhiy Ostapçuk",
+    "previous": "Önceki incelemeler",
+    "next": "Aşağıdaki incelemeler",
+    "close": "kapat"
+  },
+  "appLogo": {
+    "homeAria": "OST UP CHUK — ana sayfada"
+  },
+  "header": {
+    "nav": {
+      "about": "Akademi Hakkında",
+      "programs": "Yol Tarifi",
+      "results": "Sonuçlar",
+      "faq": "FAQ"
+    },
+    "mainNavigation": "Ana gezinme",
+    "currentLanguage": "Mevcut dil: {language}",
+    "chooseLanguage": "Bir dil seçin",
+    "openMenu": "Menüyü aç"
+  },
+  "seo": {
+    "title": "Sermaye İstihbarat Akademisi - Serhii Ostapchuk",
+    "description": "Serhiy Ostapchuk'un önderliğinde ticaret, yatırım ve sermaye yönetimi konusunda sistem eğitimi.",
+    "ogDescription": "Bağımsız finansal karar verme için pratik bir eğitim sistemi."
+  },
+  "hero": {
+    "intro": "Yirmi yılı aşkın pratik deneyim, finansal piyasalar alanında bilgi, mentorluk ve mesleki gelişimi birleştiren bir eğitim ekosisteminin temeli haline gelmiştir.",
+    "metrics": [
+      {
+        "value": "Uluslararası",
+        "label": "öğrenci ve yatırımcı topluluğu"
+      },
+      {
+        "value": "$100M+",
+        "label": "teyit edilen ticaret hacmi"
+      },
+      {
+        "value": "21+",
+        "label": "Finansal piyasalarda yıl"
+      }
+    ],
+    "title": "Ticaret, yatırım ve sermaye yönetimine sistematik bir yaklaşım.",
+    "aboutButton": "Akademi Hakkında"
+  },
+  "expertise": {
+    "facts": [
+      {
+        "value": "21+",
+        "label": "bir yıllık pratik"
+      },
+      {
+        "value": "20+",
+        "label": "ülkeler"
+      },
+      {
+        "value": "Yazarın",
+        "label": "metodoloji"
+      }
+    ],
+    "title": "Piyasanın şekillendirdiği uzmanlık",
+    "paragraphs": [
+      "Bilginin gerçek değeri, sürekli değişen dünyada güncel kalabilme yeteneğiyle belirlenir.",
+      "Serhii Ostapchuk, 21 yıldan fazla bir süredir finansal piyasalarda çalışıyor ve çeşitli ekonomik döngülerden, krizlerden ve büyüme dönemlerinden geçiyor.",
+      "Bu deneyim Akademi'nin temelini oluşturdu ve piyasa süreçlerini anlamaya, risk yönetimine ve bilinçli kararlar almaya dayalı bir eğitim sisteminin oluşturulmasını mümkün kıldı."
+    ]
+  },
+  "founder": {
+    "role": "Finansal piyasalarda 21 yılı aşkın deneyime sahip tüccar, yatırımcı ve girişimci.",
+    "paragraphs": [
+      "Yıllar süren uygulama sonucunda, temel analiz, teknik analiz ve karar verme psikolojisinin birleşimine dayanan piyasa analizi ve sermaye yönetimine yönelik kendi yaklaşımı oluşturuldu.",
+      "Bu çalışmanın sonucu, uzun yıllara dayanan pratik deneyimi, modern geliştirme programlarını ve finansal büyüme ve bağımsızlığa ilgi duyan insanlardan oluşan uluslararası bir topluluğu birleştiren bir eğitim ekosistemi olan Sermaye İstihbarat Akademisi oldu."
+    ]
+  },
+  "programs": {
+    "title": "Hedeflerinize uygun bir yön seçin:",
+    "items": [
+      {
+        "title": "Trading Education",
+        "description": "Piyasayı anlamayı, durumu analiz etmeyi ve ticari kararlar almayı öğrenin.",
+        "benefits": [
+          "Temel ve teknik analiz",
+          "Risk yönetimi",
+          "Mentorların rehberliğinde pratik yapın",
+          "Piyasada kendi çalışma sisteminin oluşturulması"
+        ]
+      },
+      {
+        "title": "Investment Education",
+        "description": "Yatırım zihniyetinizi ve varlık yönetimi becerilerinizi geliştirin.",
+        "benefits": [
+          "Yatırım stratejisinin oluşturulması",
+          "Risk ve fırsatların değerlendirilmesi",
+          "Sermaye çeşitlendirmesi",
+          "Yatırıma uzun vadeli bir yaklaşım"
+        ]
+      },
+      {
+        "title": "Private Mentorship",
+        "description": "Bir mentor ve bireysel destek ile kişisel çalışma.",
+        "benefits": [
+          "Geri bildirim ve destek",
+          "Hata analizi",
+          "Bireysel danışmanlık",
+          "Hızlandırılmış beceri gelişimi"
+        ]
+      },
+      {
+        "title": "Market Intelligence",
+        "description": "Daha iyi finansal kararlar almak için uzman analizler.",
+        "benefits": [
+          "Piyasalara genel bakış",
+          "Önemli olayların analizi",
+          "Pratik fikirler ve senaryolar",
+          "Uzman yorumları"
+        ]
+      }
+    ]
+  },
+  "audience": {
+    "title": "Akademi kimin için oluşturuldu:",
+    "items": [
+      "Finansal piyasaları sıfırdan anlamak isteyenler için",
+      "Sermaye yönetimini daha iyi anlamak isteyen yatırımcılar için",
+      "Finansal düşünceyi geliştirmek isteyen girişimciler için",
+      "Kaotik çözümler yerine sistematik yaklaşım arayanlar için"
+    ]
+  },
+  "journey": {
+    "imageAlt": "Serhiy Ostapçuk",
+    "captionRole": "Kurucu ve önde gelen uygulayıcı",
+    "captionMeta": "2001'den beri aktif tüccar",
+    "titleLines": ["Tutarlı bir yol", "bağımsız kabul", "mali kararlar"],
+    "steps": [
+      "Kişisel danışmanlık ve hedeflerin tanımı",
+      "Bir eğitim rotasının seçimi",
+      "Akademinin metodolojisine hakim olmak",
+      "Mentorların rehberliğinde pratik yapın",
+      "Kendi karar verme sisteminin oluşturulması"
+    ]
+  },
+  "results": {
+    "title": "İnsanların deneyimi sistem kalitesinin en iyi değerlendirmesidir",
+    "intro": [
+      "Yıllar boyunca dünyanın farklı ülkelerinden on binlerce katılımcı Akademi programlarından geçti.",
+      "Bazıları için okumak yeni bir mesleğe atılan ilk adım oldu. Diğerleri için bu, bilgiyi sistematik hale getirme ve sermayeyle çalışmaya yönelik kendi yaklaşımlarını oluşturma fırsatıdır."
+    ],
+    "testimonials": [
+      {
+        "quote": "Çalışmadan önce finansal piyasaları çok karmaşık bir şey olarak algılıyordum. Akademide bana süreçlerin mantığını görmem ve duygular olmadan karar vermem öğretildi.",
+        "name": "Mikhailo",
+        "role": "iş sahibi",
+        "initials": "M"
+      },
+      {
+        "quote": "Daha önce herhangi bir yatırım kararına şüpheler eşlik ediyordu. Artık bir yapıya sahibim, riskleri anlıyorum ve farklı senaryolarda nasıl hareket edeceğimi biliyorum.",
+        "name": "Elena",
+        "role": "iş kadını",
+        "initials": "O"
+      },
+      {
+        "quote": "Yıllar boyunca verilerle çalışarak pek çok bilgi birikti, ancak bunun anlaşılır bir sisteme dönüştürülmesine yardımcı olan Akademi'ydi.",
+        "name": "olga",
+        "role": "şirketin başkanı",
+        "initials": "O"
+      },
+      {
+        "quote": "En değerli şey sürekli destektir. Piyasada yalnız değilsiniz ve kararınızın mantığını her zaman kontrol edebilirsiniz.",
+        "name": "Andrew",
+        "role": "yatırımcı",
+        "initials": "bir"
+      },
+      {
+        "quote": "Uygulama kaotik eylemlerden kurtulmaya yardımcı oldu. Artık her anlaşmanın net bir senaryosu, riski ve net bir hedefi var.",
+        "name": "Iryna",
+        "role": "programdan mezun",
+        "initials": "ben"
+      }
+    ],
+    "videoTitle": "Video incelemeleri",
+    "videoItems": [
+      {
+        "image": "/images/video-1.jpg",
+        "title": "Sistemden sonuca",
+        "meta": "Bir mezunun video geri bildirimi"
+      },
+      {
+        "image": "/images/video-2.jpg",
+        "title": "Katılımcıların gözünden öğrenme",
+        "meta": "Ekiple bir konuşma"
+      },
+      {
+        "image": "/images/video-3.jpg",
+        "title": "Gereksiz duygular olmadan karar",
+        "meta": "Kişisel deneyim"
+      },
+      {
+        "image": "/images/video-4.jpg",
+        "title": "Pazara yaklaşım nasıl değişti?",
+        "meta": "Öğrencinin hikayesi"
+      },
+      {
+        "image": "/images/video-5.jpg",
+        "title": "Uygulama ve destek",
+        "meta": "Mentorluk hakkında geri bildirim"
+      },
+      {
+        "image": "/images/video-6.jpg",
+        "title": "İlk sistem sonuçları",
+        "meta": "Röportaj"
+      }
+    ],
+    "practicalTitle": "Pratik sonuçlar",
+    "practicalItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "Bir öğrencinin iş planı",
+        "meta": "Pratik çalışma"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Piyasa durumunun analizi",
+        "meta": "Eğitim oturumu"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Sermaye yönetimi stratejisi",
+        "meta": "Vaka programı"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Kapalı pozisyonların analizi",
+        "meta": "Uygulama sonuçları"
+      }
+    ],
+    "interviewsTitle": "Eğitim programı katılımcılarının röportajları",
+    "interviewItems": [
+      {
+        "image": "/images/result-1.png",
+        "title": "Kendi sisteminizi oluşturma",
+        "meta": "Katılımcıyla röportaj"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Bilgiden uygulamaya",
+        "meta": "Bir mezunla röportaj"
+      },
+      {
+        "image": "/images/result-3.png",
+        "title": "Risklerle çalışın",
+        "meta": "Bir öğrenciyle sohbet"
+      },
+      {
+        "image": "/images/result-1.png",
+        "title": "Özel ders deneyimi",
+        "meta": "Katılımcı geçmişi"
+      }
+    ]
+  },
+  "media": {
+    "scrollBack": "{title} geri kaydır",
+    "scrollForward": "{title} ileri doğru kaydır"
+  },
+  "development": {
+    "formula": "∑(bilgi + pratik) = sistem",
+    "imageAlt": "Serhii Ostapchuk karatahtanın yanında",
+    "eyebrow": "Eğitimden sonra",
+    "title": "Program tamamlandığında geliştirme bitmiyor",
+    "intro": "Akademi katılımcıları aşağıdakileri içeren profesyonel bir ortama erişebilir:",
+    "items": [
+      "kapalı topluluk",
+      "düzenli pazar analizi",
+      "canlı yayınlar ve tartışmalar",
+      "ek eğitim materyalleri",
+      "mentorların desteği",
+      "Benzer düşünen insanlarla deneyimlerini paylaşmak"
+    ]
+  },
+  "materials": {
+    "eyebrow": "Açık materyaller",
+    "title": "Akademinin yaklaşımını tanıma fırsatı",
+    "intro": "Finansal piyasalara yeni başlayanlar ve aktif katılımcılar için pratik öneriler.",
+    "items": [
+      {
+        "title": "Maratonlar",
+        "text": "Pratik yoğunlar"
+      },
+      {
+        "title": "YouTube",
+        "text": "Videolar ve tartışmalar"
+      },
+      {
+        "title": "Telegram",
+        "text": "Pazar analitiği"
+      },
+      {
+        "title": "Yayınlar",
+        "text": "Araştırma ekibi"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Sorular ve cevaplar",
+    "title": "Sık sorulan sorular",
+    "items": [
+      {
+        "question": "Eğitim yeni başlayanlar için uygun mu?",
+        "answer": "Evet. Programlar, katılımcıyı finansal piyasalara ilişkin temel bir anlayıştan bağımsız karar almaya tutarlı bir şekilde taşıyacak şekilde yapılandırılmıştır."
+      },
+      {
+        "question": "Finansal piyasalarda zaten deneyiminiz varsa eğitim almanız mümkün mü?",
+        "answer": "Evet. Konsültasyon sonrasında ekip mevcut seviyenizi belirleyecek ve öğrenilen konuları tekrar etmeden bir rota sunacaktır."
+      },
+      {
+        "question": "Akademinin diğer eğitim projelerinden farkı nedir?",
+        "answer": "Programlar pratik deneyime, yazarın metodolojisine, bireysel desteğe ve risklerle sistematik çalışmaya dayanmaktadır."
+      },
+      {
+        "question": "Programı tamamladıktan sonra kendi kararlarımı verebilecek miyim?",
+        "answer": "Bağımsızlık eğitimin temel hedeflerinden biridir. Katılımcılar durumu analiz etmeyi, senaryolar oluşturmayı ve her karar için tartışmayı öğrenirler."
+      },
+      {
+        "question": "Eğitime başlamak için çok fazla sermayeye sahip olmak gerekli mi?",
+        "answer": "Hayır. Eğitim bilgi, disiplin ve risk yönetimine odaklanır. Pratik sermaye miktarı bireysel olarak belirlenir."
+      },
+      {
+        "question": "Eğitim ne kadar sürüyor?",
+        "answer": "Süre seçilen yöne ve bireysel tempoya bağlıdır. İlk görüşme sonrasında kesin bir plan oluşturulur."
+      },
+      {
+        "question": "Mentorluk kapsamına neler dahildir?",
+        "answer": "Pratik görevlerin doğrulanması, hataların analizi, soruların yanıtları, pazar durumlarının analizi ve daha fazla gelişme için öneriler."
+      },
+      {
+        "question": "Eğitimin uygulamalı kısmı var mı?",
+        "answer": "Evet. Uygulama tüm programlara entegre edilir ve eğitim tatbikatlarından gerçek piyasa senaryolarıyla çalışmaya kadar kademeli olarak ilerler."
+      },
+      {
+        "question": "Piyasa İstihbaratı Nedir?",
+        "answer": "Bu, uzman analitiğinin yönüdür: bilinçli kararlar almak için piyasaların, önemli olayların, risklerin ve olası senaryoların gözden geçirilmesi."
+      },
+      {
+        "question": "Ticaret Eğitimi ile Yatırım Eğitimi arasındaki fark nedir?",
+        "answer": "Ticaret Eğitimi, kısa ve orta vadeli piyasa senaryolarıyla çalışmaya, Yatırım Eğitimi ise uzun vadeli sermaye yönetimine odaklanır."
+      },
+      {
+        "question": "Akademi karlılık garantisi veriyor mu?",
+        "answer": "Finansal piyasalar sonuçların garanti edilmesine izin vermez. Akademi, bilgi, uygulama ve risk kontrol araçlarından oluşan bir sistem sağlar."
+      },
+      {
+        "question": "Programı tamamladıktan sonra hangi sonuç başarılı sayılabilir?",
+        "answer": "Piyasayı bağımsız olarak analiz etme, mantıklı kararlar alma, riskleri kontrol etme ve kendi sistemine bağlı kalma becerisi."
+      },
+      {
+        "question": "Çalışmaları iş veya işle birleştirmek mümkün mü?",
+        "answer": "Evet. Format meşgul insanlar için tasarlanmıştır: materyaller çevrimiçi olarak mevcuttur ve pratik programa mentorla karar verilir."
+      },
+      {
+        "question": "Programı tamamladıktan sonra topluluğa hâlâ erişimim olacak mı?",
+        "answer": "Evet, seçilen programa bağlı olarak katılımcılar materyallere, analizlere ve profesyonel topluluğa erişim hakkına sahiptir."
+      }
+    ]
+  },
+  "finalCta": {
+    "note": "Kişisel danışmanlık, hedeflerin belirlenmesine, mevcut eğitim seviyesinin değerlendirilmesine ve Capital Intelligence Academy'de en uygun eğitim yolunun oluşturulmasına yardımcı olacaktır.",
+    "title": "Finansal kararlar sistematik bir yaklaşım gerektirir"
+  },
+  "footer": {
+    "tagline": "Finansal kararlar almak için sistematik eğitim.",
+    "academy": "Akademi",
+    "about": "Hakkımızda",
+    "directions": "Yol Tarifi",
+    "results": "Sonuçlar",
+    "programs": "Programlar",
+    "contacts": "Kişiler",
+    "copyright": "© {year} OST UP CHUK. Her hakkı saklıdır.",
+    "privacy": "Gizlilik Politikası"
+  },
+  "modal": {
+    "closeAria": "kapat",
+    "eyebrow": "Kişisel danışmanlık",
+    "title": "Finansal hedeflerinizi tartışalım",
+    "intro": "Kişilerinizi bırakın; Akademi ekibi en uygun eğitim formatının belirlenmesine yardımcı olacaktır.",
+    "name": "adınız",
+    "phone": "Telefon",
+    "submit": "Başvuru gönder",
+    "consent": "Formu göndererek gizlilik politikasını kabul etmiş olursunuz.",
+    "thanks": "teşekkür ederim",
+    "accepted": "Başvuru kabul edildi",
+    "followup": "Uygun bir danışma zamanı ayarlamak için sizinle iletişime geçeceğiz."
+  }
+}
