@@ -2,8 +2,6 @@
   import type { Component } from "vue";
   import { useI18n } from "vue-i18n";
   import {
-    ArrowLeft,
-    ArrowRight,
     ArrowUpRight,
     BarChart3,
     CircleDollarSign,
@@ -31,6 +29,7 @@
     name: string;
     role: string;
     initials: string;
+    image?: string;
   }
 
   interface Metric {
@@ -373,13 +372,31 @@
                 type="button"
                 :aria-label="t('common.previous')"
                 @click="shiftTestimonials(-1)">
-                <ArrowLeft :size="18" />
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M11.4697 23.4697C11.1768 23.7626 11.1768 24.2374 11.4697 24.5303L16.2426 29.3033C16.5355 29.5962 17.0104 29.5962 17.3033 29.3033C17.5962 29.0104 17.5962 28.5355 17.3033 28.2426L13.0607 24L17.3033 19.7574C17.5962 19.4645 17.5962 18.9896 17.3033 18.6967C17.0104 18.4038 16.5355 18.4038 16.2426 18.6967L11.4697 23.4697ZM36 24V23.25H12V24V24.75H36V24Z"
+                    fill="currentColor" />
+                </svg>
               </button>
               <button
                 type="button"
                 :aria-label="t('common.next')"
                 @click="shiftTestimonials(1)">
-                <ArrowRight :size="18" />
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M36.5303 24.5303C36.8232 24.2374 36.8232 23.7626 36.5303 23.4697L31.7574 18.6967C31.4645 18.4038 30.9896 18.4038 30.6967 18.6967C30.4038 18.9896 30.4038 19.4645 30.6967 19.7574L34.9393 24L30.6967 28.2426C30.4038 28.5355 30.4038 29.0104 30.6967 29.3033C30.9896 29.5962 31.4645 29.5962 31.7574 29.3033L36.5303 24.5303ZM12 24V24.75H36V24V23.25H12V24Z"
+                    fill="currentColor" />
+                </svg>
               </button>
             </div>
           </div>
@@ -392,10 +409,27 @@
               v-for="testimonial in visibleTestimonials"
               :key="testimonial.name"
               class="testimonial">
-              <span class="testimonial__quote">“</span>
+              <svg
+                class="testimonial__quote"
+                width="124"
+                height="103"
+                viewBox="0 0 124 103"
+                fill="none"
+                aria-hidden="true">
+                <path
+                  d="M59.1232 0V28.645C59.1232 37.1775 57.6021 46.0487 54.56 55.2584C51.6501 64.3327 47.5499 73.0684 42.2592 81.4655C36.9685 89.7271 30.8843 96.9053 24.0064 103L0 87.5602C5.42293 79.163 9.78773 70.2919 13.0944 60.9467C16.5333 51.4661 18.2528 40.8343 18.2528 29.0513V0H59.1232ZM124 0V28.645C124 37.1775 122.479 46.0487 119.437 55.2584C116.527 64.3327 112.427 73.0684 107.136 81.4655C101.845 89.7271 95.7611 96.9053 88.8832 103L64.8768 87.5602C70.2997 79.163 74.6645 70.2919 77.9712 60.9467C81.4101 51.4661 83.1296 40.8343 83.1296 29.0513V0H124Z"
+                  fill="currentColor" />
+              </svg>
               <p>{{ testimonial.quote }}</p>
               <div class="testimonial__person">
-                <span>{{ testimonial.initials }}</span>
+                <img
+                  v-if="testimonial.image"
+                  :src="testimonial.image"
+                  :alt="testimonial.name"
+                  width="45"
+                  height="45"
+                  loading="lazy" />
+                <span v-else>{{ testimonial.initials }}</span>
                 <div>
                   <strong>{{ testimonial.name }}</strong>
                   <small>{{ testimonial.role }}</small>

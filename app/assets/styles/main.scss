@@ -737,84 +737,103 @@ a:focus-visible {
   pointer-events: none;
 }
 
+.results.section {
+  padding: 80px 0;
+}
+
 .results__heading {
   display: grid;
-  grid-template-columns: minmax(300px, 0.7fr) minmax(0, 1.15fr) auto;
-  align-items: end;
-  gap: clamp(30px, 6vw, 90px);
-  margin-bottom: 48px;
+  grid-template-columns: 370px minmax(0, 730px) auto;
+  min-height: 165px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 35px;
 }
 
 .results__heading h2 {
-  max-width: 430px;
+  max-width: 370px;
+  min-height: 165px;
   margin: 0;
-  color: var(--ink);
-  font: 500 clamp(28px, 3.5vw, 50px) / 0.95 var(--font-display);
-  letter-spacing: -0.04em;
+  color: #364e74;
+  font: 400 48px / 1 var(--font-display);
+  letter-spacing: 0;
 }
 
 .results__heading > div:nth-child(2) p {
-  margin: 0 0 12px;
-  color: #3f4b5a;
-  font-size: 11px;
-  line-height: 1.65;
+  margin: 0;
+  color: #000000;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.results__heading > div:nth-child(2) {
+  margin-top: 57px;
 }
 
 .results__controls {
   display: flex;
-  gap: 8px;
+  gap: 16px;
+  margin-top: 112px;
 }
 
 .results__controls button {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   place-items: center;
-  border: 1px solid var(--navy);
-  background: var(--navy);
+  border: 0;
+  background: #364e74;
   color: #ffffff;
   cursor: pointer;
 }
 
+.results__controls svg {
+  display: block;
+}
+
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 420px));
+  gap: 40px;
 }
 
 .testimonial {
   position: relative;
   display: flex;
-  min-height: clamp(200px, 21.5vw, 310px);
+  height: 344px;
   overflow: hidden;
   flex-direction: column;
-  padding: clamp(20px, 2.2vw, 32px);
+  padding: 88px 20px 20px;
   background: #ffffff;
 }
 
 .testimonial::after {
   position: absolute;
-  top: -60px;
-  right: -30px;
-  color: rgb(57 79 112 / 4%);
-  content: "CI";
-  font: 600 180px/1 var(--font-display);
+  right: 20px;
+  bottom: 20px;
+  width: 1px;
+  height: 48px;
+  background: #364e74;
+  content: "";
 }
 
 .testimonial__quote {
-  position: relative;
-  z-index: 2;
-  color: var(--navy);
-  font: 500 72px/0.5 var(--font-display);
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(54 78 116 / 10%);
 }
 
 .testimonial > p {
   position: relative;
   z-index: 2;
   flex: 1;
-  margin: 22px 0 34px;
-  color: #465266;
-  font: 400 clamp(13px, 1.2vw, 17px) / 1.45 var(--font-display);
+  margin: 0 0 18px;
+  color: #7a7a7a;
+  font: italic 500 14px / 1 var(--font-body);
+  white-space: pre-line;
 }
 
 .testimonial__person {
@@ -823,31 +842,39 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-height: 45px;
+  padding-right: 36px;
 }
 
-.testimonial__person > span {
+.testimonial__person > span,
+.testimonial__person > img {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
   place-items: center;
-  border-radius: 50%;
-  background: var(--sky);
-  color: var(--navy);
-  font: 600 18px/1 var(--font-display);
+  background: #f5f5f5;
+  color: #7a7a7a;
+  font: 400 16px/1 var(--font-body);
+  object-fit: cover;
 }
 
 .testimonial__person > div {
   display: grid;
-  gap: 3px;
+  gap: 2px;
 }
 
 .testimonial__person strong {
-  font-size: 10px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
 }
 
 .testimonial__person small {
-  color: var(--muted);
-  font-size: 8px;
+  color: #000000;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .testimonials-enter-active,
@@ -1200,6 +1227,42 @@ a:focus-visible {
   .journey__content h2,
   .journey__content ol {
     width: 100%;
+  }
+
+  .results__heading {
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr) auto;
+    min-height: 0;
+    align-items: end;
+    gap: 28px;
+  }
+
+  .results__heading h2 {
+    min-height: 0;
+    font-size: 42px;
+  }
+
+  .results__heading > div:nth-child(2),
+  .results__controls {
+    margin-top: 0;
+  }
+
+  .results__heading > div:nth-child(2) p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .testimonial {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .testimonial > p {
+    font-size: 12px;
   }
 }
 
