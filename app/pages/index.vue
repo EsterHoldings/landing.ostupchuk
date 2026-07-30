@@ -32,6 +32,10 @@
     image?: string;
   }
 
+  interface CarouselTestimonial extends Testimonial {
+    carouselKey: string;
+  }
+
   interface Metric {
     value: string;
     label: string;
@@ -56,6 +60,8 @@
   const { locale, rt, t, tm } = useI18n();
   const isConsultationOpen = ref(false);
   const testimonialIndex = ref(0);
+  const testimonialDirection = ref<"next" | "previous" | null>(null);
+  const testimonialSwipeStart = ref<number | null>(null);
 
   const resolveMessages = (value: unknown): unknown => {
     if (Array.isArray(value)) {
@@ -107,20 +113,73 @@
     materialCopies.value.map((item, index) => ({ icon: materialIcons[index]!, ...item }))
   );
 
-  const visibleTestimonials = computed(() =>
-    Array.from(
-      { length: 3 },
-      (_, offset) => testimonials.value[(testimonialIndex.value + offset) % testimonials.value.length]!
-    )
-  );
+  const carouselTestimonials = computed<CarouselTestimonial[]>(() => {
+    const items = testimonials.value;
 
-  const shiftTestimonials = (direction: number) => {
+    if (!items.length) {
+      return [];
+    }
+
+    return Array.from({ length: 5 }, (_, position) => {
+      const offset = position - 1;
+      const itemIndex = (testimonialIndex.value + offset + items.length) % items.length;
+
+      return {
+        ...items[itemIndex]!,
+        carouselKey: `${locale.value}-${testimonialIndex.value}-${position}`,
+      };
+    });
+  });
+
+  const shiftTestimonials = (direction: -1 | 1) => {
+    if (testimonialDirection.value || testimonials.value.length < 2) {
+      return;
+    }
+
+    testimonialDirection.value = direction > 0 ? "next" : "previous";
+  };
+
+  const finishTestimonialShift = (event: TransitionEvent) => {
+    if (event.target !== event.currentTarget || event.propertyName !== "transform" || !testimonialDirection.value) {
+      return;
+    }
+
+    const direction = testimonialDirection.value === "next" ? 1 : -1;
     testimonialIndex.value =
       (testimonialIndex.value + direction + testimonials.value.length) % testimonials.value.length;
+    testimonialDirection.value = null;
+  };
+
+  const startTestimonialSwipe = (event: PointerEvent) => {
+    if (!event.isPrimary || testimonialDirection.value) {
+      return;
+    }
+
+    testimonialSwipeStart.value = event.clientX;
+    (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+  };
+
+  const finishTestimonialSwipe = (event: PointerEvent) => {
+    if (testimonialSwipeStart.value === null) {
+      return;
+    }
+
+    const distance = event.clientX - testimonialSwipeStart.value;
+    testimonialSwipeStart.value = null;
+
+    if (Math.abs(distance) >= 50) {
+      shiftTestimonials(distance < 0 ? 1 : -1);
+    }
+  };
+
+  const cancelTestimonialSwipe = () => {
+    testimonialSwipeStart.value = null;
   };
 
   watch(locale, () => {
     testimonialIndex.value = 0;
+    testimonialDirection.value = null;
+    testimonialSwipeStart.value = null;
   });
 
   const personNameParts = computed(() => {
@@ -371,6 +430,7 @@
               <button
                 type="button"
                 :aria-label="t('common.previous')"
+                :disabled="testimonialDirection !== null"
                 @click="shiftTestimonials(-1)">
                 <svg
                   width="48"
@@ -386,6 +446,7 @@
               <button
                 type="button"
                 :aria-label="t('common.next')"
+                :disabled="testimonialDirection !== null"
                 @click="shiftTestimonials(1)">
                 <svg
                   width="48"
@@ -401,42 +462,54 @@
             </div>
           </div>
 
-          <TransitionGroup
-            name="testimonials"
-            tag="div"
-            class="testimonials">
-            <article
-              v-for="testimonial in visibleTestimonials"
-              :key="testimonial.name"
-              class="testimonial">
-              <svg
-                class="testimonial__quote"
-                width="124"
-                height="103"
-                viewBox="0 0 124 103"
-                fill="none"
-                aria-hidden="true">
-                <path
-                  d="M59.1232 0V28.645C59.1232 37.1775 57.6021 46.0487 54.56 55.2584C51.6501 64.3327 47.5499 73.0684 42.2592 81.4655C36.9685 89.7271 30.8843 96.9053 24.0064 103L0 87.5602C5.42293 79.163 9.78773 70.2919 13.0944 60.9467C16.5333 51.4661 18.2528 40.8343 18.2528 29.0513V0H59.1232ZM124 0V28.645C124 37.1775 122.479 46.0487 119.437 55.2584C116.527 64.3327 112.427 73.0684 107.136 81.4655C101.845 89.7271 95.7611 96.9053 88.8832 103L64.8768 87.5602C70.2997 79.163 74.6645 70.2919 77.9712 60.9467C81.4101 51.4661 83.1296 40.8343 83.1296 29.0513V0H124Z"
-                  fill="currentColor" />
-              </svg>
-              <p>{{ testimonial.quote }}</p>
-              <div class="testimonial__person">
-                <img
-                  v-if="testimonial.image"
-                  :src="testimonial.image"
-                  :alt="testimonial.name"
-                  width="45"
-                  height="45"
-                  loading="lazy" />
-                <span v-else>{{ testimonial.initials }}</span>
-                <div>
-                  <strong>{{ testimonial.name }}</strong>
-                  <small>{{ testimonial.role }}</small>
+          <div
+            class="testimonials"
+            role="region"
+            :aria-label="t('results.title')"
+            @dragstart.prevent
+            @pointercancel="cancelTestimonialSwipe"
+            @pointerdown="startTestimonialSwipe"
+            @pointerup="finishTestimonialSwipe">
+            <div
+              class="testimonials__track"
+              :class="{
+                'testimonials__track--next': testimonialDirection === 'next',
+                'testimonials__track--previous': testimonialDirection === 'previous',
+              }"
+              @transitionend="finishTestimonialShift">
+              <article
+                v-for="testimonial in carouselTestimonials"
+                :key="testimonial.carouselKey"
+                class="testimonial">
+                <svg
+                  class="testimonial__quote"
+                  width="124"
+                  height="103"
+                  viewBox="0 0 124 103"
+                  fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M59.1232 0V28.645C59.1232 37.1775 57.6021 46.0487 54.56 55.2584C51.6501 64.3327 47.5499 73.0684 42.2592 81.4655C36.9685 89.7271 30.8843 96.9053 24.0064 103L0 87.5602C5.42293 79.163 9.78773 70.2919 13.0944 60.9467C16.5333 51.4661 18.2528 40.8343 18.2528 29.0513V0H59.1232ZM124 0V28.645C124 37.1775 122.479 46.0487 119.437 55.2584C116.527 64.3327 112.427 73.0684 107.136 81.4655C101.845 89.7271 95.7611 96.9053 88.8832 103L64.8768 87.5602C70.2997 79.163 74.6645 70.2919 77.9712 60.9467C81.4101 51.4661 83.1296 40.8343 83.1296 29.0513V0H124Z"
+                    fill="currentColor" />
+                </svg>
+                <p>{{ testimonial.quote }}</p>
+                <div class="testimonial__person">
+                  <img
+                    v-if="testimonial.image"
+                    :src="testimonial.image"
+                    :alt="testimonial.name"
+                    width="45"
+                    height="45"
+                    loading="lazy" />
+                  <span v-else>{{ testimonial.initials }}</span>
+                  <div>
+                    <strong>{{ testimonial.name }}</strong>
+                    <small>{{ testimonial.role }}</small>
+                  </div>
                 </div>
-              </div>
-            </article>
-          </TransitionGroup>
+              </article>
+            </div>
+          </div>
 
           <MediaRail
             :title="t('results.videoTitle')"
