@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { ArrowLeft, ArrowRight, Play } from "@lucide/vue";
   import { useI18n } from "vue-i18n";
 
   interface MediaItem {
@@ -24,9 +23,30 @@
   const { t } = useI18n();
   const track = ref<HTMLElement>();
 
-  const scroll = (direction: number) => {
-    track.value?.scrollBy({
-      left: direction * Math.min(track.value.clientWidth * 0.82, 720),
+  const scroll = (direction: -1 | 1) => {
+    const rail = track.value;
+    const card = rail?.querySelector<HTMLElement>(".media-card");
+
+    if (!rail || !card) {
+      return;
+    }
+
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap) || 0;
+    const step = card.getBoundingClientRect().width + gap;
+    const maxScroll = Math.max(0, rail.scrollWidth - rail.clientWidth);
+    const atStart = rail.scrollLeft <= 1;
+    const atEnd = maxScroll - rail.scrollLeft <= 1;
+
+    let nextPosition = rail.scrollLeft + direction * step;
+
+    if (direction === 1 && atEnd) {
+      nextPosition = 0;
+    } else if (direction === -1 && atStart) {
+      nextPosition = maxScroll;
+    }
+
+    rail.scrollTo({
+      left: Math.max(0, Math.min(nextPosition, maxScroll)),
       behavior: "smooth",
     });
   };
@@ -43,13 +63,31 @@
           type="button"
           :aria-label="t('media.scrollBack', { title })"
           @click="scroll(-1)">
-          <ArrowLeft :size="18" />
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            aria-hidden="true">
+            <path
+              d="M11.4697 23.4697C11.1768 23.7626 11.1768 24.2374 11.4697 24.5303L16.2426 29.3033C16.5355 29.5962 17.0104 29.5962 17.3033 29.3033C17.5962 29.0104 17.5962 28.5355 17.3033 28.2426L13.0607 24L17.3033 19.7574C17.5962 19.4645 17.5962 18.9896 17.3033 18.6967C17.0104 18.4038 16.5355 18.4038 16.2426 18.6967L11.4697 23.4697ZM36 24V23.25H12V24V24.75H36V24Z"
+              fill="currentColor" />
+          </svg>
         </button>
         <button
           type="button"
           :aria-label="t('media.scrollForward', { title })"
           @click="scroll(1)">
-          <ArrowRight :size="18" />
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            aria-hidden="true">
+            <path
+              d="M36.5303 24.5303C36.8232 24.2374 36.8232 23.7626 36.5303 23.4697L31.7574 18.6967C31.4645 18.4038 30.9896 18.4038 30.6967 18.6967C30.4038 18.9896 30.4038 19.4645 30.6967 19.7574L34.9393 24L30.6967 28.2426C30.4038 28.5355 30.4038 29.0104 30.6967 29.3033C30.9896 29.5962 31.4645 29.5962 31.7574 29.3033L36.5303 24.5303ZM12 24V24.75H36V24V23.25H12V24Z"
+              fill="currentColor" />
+          </svg>
         </button>
       </div>
     </div>
@@ -64,18 +102,8 @@
         <img
           :src="item.image"
           :alt="item.title"
-          loading="lazy" />
-        <span
-          class="media-card__play"
-          aria-hidden="true">
-          <Play
-            :size="18"
-            fill="currentColor" />
-        </span>
-        <div class="media-card__caption">
-          <strong>{{ item.title }}</strong>
-          <small v-if="item.meta">{{ item.meta }}</small>
-        </div>
+          loading="lazy"
+          draggable="false" />
       </article>
     </div>
   </section>
@@ -83,7 +111,7 @@
 
 <style lang="scss" scoped>
   .media-rail {
-    padding: var(--section-space) 0 0;
+    padding: 80px 0 0;
   }
 
   .media-rail__header {
@@ -91,47 +119,48 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 26px;
+    margin-bottom: 32px;
   }
 
   .media-rail__header h2 {
     margin: 0;
-    color: var(--ink);
-    font: 500 clamp(36px, 4.6vw, 62px) / 1 var(--font-display);
-    letter-spacing: -0.035em;
+    color: #364e74;
+    font: 400 clamp(32px, 3.333vw, 48px) / 1 var(--font-display);
+    letter-spacing: 0;
   }
 
   .media-rail__controls {
     display: flex;
-    gap: 8px;
+    flex: 0 0 auto;
+    gap: 16px;
   }
 
   .media-rail__controls button {
     display: grid;
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     padding: 0;
     place-items: center;
-    border: 1px solid var(--navy);
-    background: var(--navy);
+    border: 0;
+    background: #364e74;
     color: #ffffff;
     cursor: pointer;
-    transition:
-      background 160ms ease,
-      color 160ms ease;
+    transition: opacity 160ms ease;
   }
 
   .media-rail__controls button:hover {
-    background: transparent;
-    color: var(--navy);
+    opacity: 0.82;
+  }
+
+  .media-rail__controls svg {
+    display: block;
   }
 
   .media-rail__track {
     display: grid;
-    grid-auto-columns: calc((100% - 48px) / 4);
+    grid-auto-columns: calc((100% - 40px) / 3);
     grid-auto-flow: column;
-    gap: 16px;
-    padding-bottom: 8px;
+    gap: 20px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
@@ -144,72 +173,26 @@
 
   .media-card {
     position: relative;
-    min-height: clamp(150px, 17.5vw, 252px);
+    aspect-ratio: 440 / 249;
     overflow: hidden;
+    border-radius: 6px;
     background: var(--navy);
     scroll-snap-align: start;
   }
 
-  .media-card::after {
-    position: absolute;
-    inset: 40% 0 0;
-    background: linear-gradient(transparent, rgb(4 12 26 / 88%));
-    content: "";
-  }
-
   .media-card img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 500ms cubic-bezier(0.2, 0.7, 0, 1);
-  }
-
-  .media-card:hover img {
-    transform: scale(1.035);
-  }
-
-  .media-card__play {
-    position: absolute;
-    z-index: 2;
-    top: 16px;
-    left: 16px;
-    display: grid;
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    border: 1px solid rgb(255 255 255 / 45%);
-    border-radius: 50%;
-    background: rgb(10 19 33 / 45%);
-    color: #ffffff;
-    backdrop-filter: blur(8px);
-  }
-
-  .media-card__caption {
-    position: absolute;
-    z-index: 2;
-    right: 18px;
-    bottom: 18px;
-    left: 18px;
-    display: grid;
-    gap: 5px;
-    color: #ffffff;
-  }
-
-  .media-card__caption strong {
-    font-size: 14px;
-  }
-
-  .media-card__caption small {
-    color: rgb(255 255 255 / 68%);
-    font-size: 10px;
   }
 
   .media-rail--portrait .media-rail__track {
-    grid-auto-columns: calc((100% - 48px) / 4);
+    grid-auto-columns: calc((100% - 60px) / 4);
   }
 
   .media-rail--portrait .media-card {
-    min-height: clamp(320px, 40vw, 576px);
+    aspect-ratio: 325 / 580;
   }
 
   .media-rail--dark .media-rail__header h2 {
@@ -217,23 +200,38 @@
   }
 
   .media-rail--dark .media-rail__controls button {
-    border-color: #ffffff;
     background: #ffffff;
     color: var(--navy);
   }
 
-  @media (max-width: 760px) {
-    .media-rail__track,
-    .media-rail--portrait .media-rail__track {
-      grid-auto-columns: minmax(265px, 84%);
+  @media (max-width: 900px) {
+    .media-rail__track {
+      grid-auto-columns: min(440px, 92%);
     }
 
-    .media-rail--portrait .media-card {
-      min-height: 400px;
+    .media-rail--portrait .media-rail__track {
+      grid-auto-columns: min(325px, 84%);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .media-rail {
+      padding-top: 64px;
+    }
+
+    .media-rail__header {
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .media-rail__controls {
-      display: none;
+      gap: 8px;
+    }
+
+    .media-rail__controls button,
+    .media-rail__controls svg {
+      width: 42px;
+      height: 42px;
     }
   }
 </style>
