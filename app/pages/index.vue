@@ -515,25 +515,25 @@
       </section>
 
       <section class="development">
-        <div class="container development__grid">
+        <div class="development__grid">
           <div class="development__visual">
-            <div class="development__formula">{{ t("development.formula") }}</div>
             <img
-              src="/images/serhii-whiteboard.webp"
+              src="/images/development-serhii.png"
               :alt="t('development.imageAlt')"
               loading="lazy" />
           </div>
           <div class="development__copy">
-            <p class="eyebrow">{{ t("development.eyebrow") }}</p>
-            <h2>{{ t("development.title") }}</h2>
-            <p>{{ t("development.intro") }}</p>
-            <ul>
-              <li
-                v-for="item in developmentItems"
-                :key="item">
-                {{ item }}
-              </li>
-            </ul>
+            <div class="development__content">
+              <h2>{{ t("development.title") }}</h2>
+              <p>{{ t("development.intro") }}</p>
+              <ul>
+                <li
+                  v-for="item in developmentItems"
+                  :key="item">
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
             <div
               class="brand-watermark"
               aria-hidden="true" />
