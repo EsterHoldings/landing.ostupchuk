@@ -644,7 +644,7 @@ a:focus-visible {
   position: absolute;
   z-index: 2;
   bottom: 40px;
-  left: 0;
+  left: var(--page-gutter);
   display: flex;
   width: 360px;
   height: 115px;
