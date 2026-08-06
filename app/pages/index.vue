@@ -587,7 +587,10 @@
             :alt="t('common.personName')"
             loading="lazy" />
           <div class="final-cta__copy">
-            <p class="eyebrow">{{ t("common.personName") }}</p>
+            <div class="final-cta__person">
+              <p class="final-cta__person-name">{{ t("common.personName") }}</p>
+              <span class="final-cta__person-role">{{ t("journey.captionRole") }}</span>
+            </div>
             <h2>{{ t("finalCta.title") }}</h2>
             <button
               class="button button--primary"

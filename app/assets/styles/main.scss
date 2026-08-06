@@ -1142,15 +1142,15 @@ a:focus-visible {
 
 .final-cta {
   padding: 0;
-  background: #ffffff;
+  background: var(--sky);
 }
 
 .final-cta__inner {
   position: relative;
   display: grid;
-  min-height: 560px;
+  height: 540px;
   overflow: hidden;
-  grid-template-columns: 0.48fr 0.92fr 1.4fr;
+  grid-template-columns: 226px minmax(340px, 475px) minmax(0, 1fr);
   align-items: stretch;
   background: var(--sky);
 }
@@ -1158,22 +1158,22 @@ a:focus-visible {
 .final-cta__note {
   position: relative;
   z-index: 2;
-  padding: clamp(28px, 3.5vw, 50px) clamp(24px, 3vw, 44px);
+  width: 226px;
+  padding: 40px 0 0;
 }
 
 .final-cta__note p {
-  max-width: 290px;
+  width: 226px;
   margin: 0;
-  color: #3f4f65;
-  font-size: 9px;
-  line-height: 1.65;
+  color: #000000;
+  font: 400 14px/1 var(--font-body);
 }
 
 .final-cta__note span {
   display: block;
-  width: 70px;
+  width: 130px;
   height: 1px;
-  margin-top: 34px;
+  margin-top: 30px;
   background: var(--navy);
 }
 
@@ -1191,19 +1191,38 @@ a:focus-visible {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(36px, 5vw, 72px);
+  align-items: flex-start;
+  padding: 40px 0 40px;
+}
+
+.final-cta__person {
+  display: grid;
+  gap: 0;
+}
+
+.final-cta__person-name {
+  margin: 0;
+  color: #364e74;
+  font: 400 28px/1 var(--font-display);
+}
+
+.final-cta__person-role {
+  color: #000000;
+  font: 400 14px/1 var(--font-body);
 }
 
 .final-cta__copy h2 {
-  max-width: 600px;
-  margin: 18px 0 32px;
-  font: 500 clamp(40px, 4.15vw, 60px) / 0.94 var(--font-display);
-  letter-spacing: -0.04em;
+  max-width: 569px;
+  margin: 179px 0 24px;
+  color: #364e74;
+  font: 400 48px/1 var(--font-display);
+  letter-spacing: 0;
 }
 
 .final-cta__copy .button {
   align-self: flex-start;
+  min-height: 48px;
+  font: 400 14px/16px var(--font-body);
 }
 
 .final-cta .watermark {
@@ -1852,6 +1871,7 @@ a:focus-visible {
 
   .final-cta__inner {
     min-height: 0;
+    height: auto;
     grid-template-columns: 1fr;
   }
 
@@ -1870,8 +1890,18 @@ a:focus-visible {
     padding: 44px 24px 52px;
   }
 
+  .final-cta__person-name {
+    font-size: 24px;
+  }
+
+  .final-cta__person-role {
+    font-size: 13px;
+  }
+
   .final-cta__copy h2 {
     margin: 14px 0 28px;
+    font-size: 40px;
+    line-height: 1;
   }
 
   .final-cta .brand-watermark {
