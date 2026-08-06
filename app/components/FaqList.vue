@@ -63,20 +63,22 @@
   .faq-item button {
     display: flex;
     width: 100%;
-    min-height: 64px;
+    min-height: 68px;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 18px 20px;
+    padding: 16px 24px;
     border: 0;
     background: transparent;
-    color: var(--ink);
+    color: #7a7a7a;
     cursor: pointer;
-    font: 500 clamp(16px, 1.25vw, 18px) / 1.25 var(--font-display);
+    font: 400 28px/1 var(--font-display);
     text-align: left;
   }
 
   .faq-item button svg {
+    width: 14px;
+    height: 14px;
     flex: 0 0 auto;
     transition: transform 180ms ease;
   }
@@ -90,12 +92,11 @@
   }
 
   .faq-item__answer p {
-    max-width: 880px;
-    padding: 0 20px 20px;
+    max-width: 1280px;
+    padding: 0 24px 20px;
     margin: 0;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.55;
+    color: #000000;
+    font: 400 14px/18px var(--font-body);
   }
 
   .answer-enter-active,
@@ -109,5 +110,19 @@
   .answer-leave-to {
     opacity: 0;
     transform: translateY(-5px);
+  }
+
+  @media (max-width: 767px) {
+    .faq-item button {
+      min-height: 60px;
+      padding: 14px 16px;
+      font-size: 24px;
+    }
+
+    .faq-item__answer p {
+      padding: 0 16px 16px;
+      font-size: 13px;
+      line-height: 18px;
+    }
   }
 </style>

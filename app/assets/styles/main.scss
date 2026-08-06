@@ -1134,7 +1134,10 @@ a:focus-visible {
 }
 
 .faq__heading .section-title {
-  margin-bottom: 44px;
+  margin: 0 0 44px;
+  color: #364e74;
+  font: 400 48px/1 var(--font-display);
+  letter-spacing: 0;
 }
 
 .final-cta {
@@ -1840,6 +1843,7 @@ a:focus-visible {
 
   .faq__heading .section-title {
     margin-bottom: 32px;
+    font-size: 40px;
   }
 
   .final-cta {

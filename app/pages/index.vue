@@ -570,7 +570,6 @@
         class="faq section section--soft">
         <div class="container">
           <div class="faq__heading">
-            <p class="eyebrow">{{ t("faq.eyebrow") }}</p>
             <h2 class="section-title">{{ t("faq.title") }}</h2>
           </div>
           <FaqList :items="faqItems" />
