@@ -543,19 +543,21 @@
 
       <section class="materials">
         <div class="container materials__grid">
-          <div>
-            <p class="eyebrow eyebrow--light">{{ t("materials.eyebrow") }}</p>
+          <div class="materials__intro">
             <h2>{{ t("materials.title") }}</h2>
             <p>{{ t("materials.intro") }}</p>
           </div>
-          <div class="materials__items">
-            <article
-              v-for="material in materials"
-              :key="material.title">
-              <MaterialIcon :name="material.iconName" />
-              <strong>{{ material.title }}</strong>
-              <span>{{ material.text }}</span>
-            </article>
+          <div class="materials__content">
+            <p class="materials__label">{{ t("materials.eyebrow") }}</p>
+            <div class="materials__items">
+              <article
+                v-for="material in materials"
+                :key="material.title">
+                <MaterialIcon :name="material.iconName" />
+                <strong>{{ material.title }}</strong>
+                <span>{{ material.text }}</span>
+              </article>
+            </div>
           </div>
           <div
             class="materials__watermark"
