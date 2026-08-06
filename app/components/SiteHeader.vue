@@ -244,8 +244,8 @@
   }
 
   .header--fixed .header__inner {
-    width: min(calc(100% - clamp(48px, 5.6vw, 80px)), 1440px);
-    min-height: 68px;
+    width: min(calc(100% - 2 * var(--page-gutter)), var(--content-max));
+    min-height: 81px;
     margin-inline: auto;
   }
 
@@ -441,7 +441,13 @@
     transform: translateY(-8px);
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 767px) {
+    .header-shell,
+    .header__inner,
+    .header--fixed .header__inner {
+      min-height: 64px;
+    }
+
     .header__nav,
     .header__consultation {
       display: none;

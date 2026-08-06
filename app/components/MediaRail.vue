@@ -206,11 +206,11 @@
 
   @media (max-width: 900px) {
     .media-rail__track {
-      grid-auto-columns: min(440px, 92%);
+      grid-auto-columns: min(440px, 95%);
     }
 
     .media-rail--portrait .media-rail__track {
-      grid-auto-columns: min(325px, 84%);
+      grid-auto-columns: min(325px, 92%);
     }
   }
 
