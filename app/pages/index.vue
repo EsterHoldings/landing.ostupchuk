@@ -610,7 +610,11 @@
       <div class="container footer__grid">
         <div class="footer__brand">
           <AppLogo light />
-          <p>{{ t("footer.tagline") }}</p>
+          <a href="mailto:support@ostupchuk.com">support@ostupchuk.com</a>
+          <p class="footer__copyright">
+            {{ t("footer.copyright", { year: new Date().getFullYear() }) }}<br />
+            Усі права захищені
+          </p>
         </div>
 
         <div class="footer__column">
@@ -618,20 +622,31 @@
           <a href="#about">{{ t("footer.about") }}</a>
           <a href="#programs">{{ t("footer.directions") }}</a>
           <a href="#results">{{ t("footer.results") }}</a>
-          <a href="#faq">FAQ</a>
+          <a href="#faq">Відгуки клієнтів</a>
         </div>
 
         <div class="footer__column">
           <strong>{{ t("footer.programs") }}</strong>
           <a href="#programs">Trading Education</a>
           <a href="#programs">Investment Education</a>
-          <a href="#programs">Private Mentorship</a>
+          <a href="#programs">Приватний Менторинг</a>
           <a href="#programs">Market Intelligence</a>
         </div>
 
         <div class="footer__column">
           <strong>{{ t("footer.contacts") }}</strong>
-          <a href="mailto:support@ostupchuk.com">support@ostupchuk.com</a>
+          <button
+            class="footer__link"
+            type="button"
+            @click="isConsultationOpen = true">
+            {{ t("common.consultation") }}
+          </button>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noreferrer">
+            Instagram
+          </a>
           <a
             href="https://www.youtube.com/"
             target="_blank"
@@ -645,10 +660,6 @@
             Telegram
           </a>
         </div>
-      </div>
-      <div class="container footer__bottom">
-        <span>{{ t("footer.copyright", { year: new Date().getFullYear() }) }}</span>
-        <a href="#">{{ t("footer.privacy") }}</a>
       </div>
     </footer>
 

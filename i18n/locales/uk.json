@@ -368,12 +368,12 @@
   "footer": {
     "tagline": "Системна освіта для прийняття фінансових рішень.",
     "academy": "Академія",
-    "about": "Про нас",
-    "directions": "Напрями",
-    "results": "Результати",
+    "about": "Філософія",
+    "directions": "Програми",
+    "results": "Трек-рекорд",
     "programs": "Програми",
-    "contacts": "Контакти",
-    "copyright": "© {year} OST UP CHUK. Усі права захищені.",
+    "contacts": "Зв’язок",
+    "copyright": "© {year} OSTUPCHUK Capital Intelligence Academy.",
     "privacy": "Політика конфіденційності"
   },
   "modal": {
