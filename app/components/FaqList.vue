@@ -47,7 +47,7 @@
 <style lang="scss" scoped>
   .faq-list {
     display: grid;
-    gap: 12px;
+    gap: 8px;
   }
 
   .faq-item {
@@ -63,16 +63,16 @@
   .faq-item button {
     display: flex;
     width: 100%;
-    min-height: clamp(72px, 7.5vw, 108px);
+    min-height: 64px;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: clamp(18px, 1.95vw, 28px) clamp(20px, 2.1vw, 30px);
+    padding: 18px 20px;
     border: 0;
     background: transparent;
     color: var(--ink);
     cursor: pointer;
-    font: 500 clamp(19px, 1.65vw, 24px) / 1.2 var(--font-display);
+    font: 500 clamp(16px, 1.25vw, 18px) / 1.25 var(--font-display);
     text-align: left;
   }
 
@@ -91,11 +91,11 @@
 
   .faq-item__answer p {
     max-width: 880px;
-    padding: 0 30px 30px;
+    padding: 0 20px 20px;
     margin: 0;
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.55;
   }
 
   .answer-enter-active,

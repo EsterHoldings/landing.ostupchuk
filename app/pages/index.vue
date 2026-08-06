@@ -1,17 +1,7 @@
 <script setup lang="ts">
   import type { Component } from "vue";
   import { useI18n } from "vue-i18n";
-  import {
-    ArrowUpRight,
-    BarChart3,
-    CircleDollarSign,
-    GraduationCap,
-    LineChart,
-    Play,
-    Send,
-    Trophy,
-    UserRound,
-  } from "@lucide/vue";
+  import { BarChart3, CircleDollarSign, GraduationCap, UserRound } from "@lucide/vue";
 
   interface Program {
     title: string;
@@ -51,6 +41,8 @@
     title: string;
     text: string;
   }
+
+  type MaterialIconName = "marathons" | "youtube" | "telegram" | "publications";
 
   interface FaqItem {
     question: string;
@@ -97,20 +89,19 @@
   const testimonials = localizedArray<Testimonial>("results.testimonials");
   const videoReviews = localizedArray<MediaItem>("results.videoItems");
   const practicalResults = localizedArray<MediaItem>("results.practicalItems");
-  const interviews = localizedArray<MediaItem>("results.interviewItems");
   const developmentItems = localizedArray<string>("development.items");
   const materialCopies = localizedArray<MaterialCopy>("materials.items");
   const faqItems = localizedArray<FaqItem>("faq.items");
 
   const audienceIcons: Component[] = [BarChart3, UserRound, GraduationCap, CircleDollarSign];
-  const materialIcons: Component[] = [Trophy, Play, Send, LineChart];
+  const materialIconNames: MaterialIconName[] = ["marathons", "youtube", "telegram", "publications"];
 
   const audiences = computed<IconCard[]>(() =>
     audienceTexts.value.map((text, index) => ({ icon: audienceIcons[index]!, text }))
   );
 
   const materials = computed(() =>
-    materialCopies.value.map((item, index) => ({ icon: materialIcons[index]!, ...item }))
+    materialCopies.value.map((item, index) => ({ iconName: materialIconNames[index]!, ...item }))
   );
 
   const carouselTestimonials = computed<CarouselTestimonial[]>(() => {
@@ -264,6 +255,8 @@
         id="about"
         class="expertise section">
         <div class="container expertise__grid">
+          <h2 class="expertise__title">{{ t("expertise.title") }}</h2>
+
           <div class="expertise__facts">
             <div
               v-for="fact in expertiseFacts"
@@ -273,16 +266,12 @@
             </div>
           </div>
 
-          <div class="expertise__copy">
-            <p class="eyebrow">Capital Intelligence Academy</p>
-            <h2>{{ t("expertise.title") }}</h2>
-            <div class="expertise__text">
-              <p
-                v-for="paragraph in expertiseParagraphs"
-                :key="paragraph">
-                {{ paragraph }}
-              </p>
-            </div>
+          <div class="expertise__text">
+            <p
+              v-for="paragraph in expertiseParagraphs"
+              :key="paragraph">
+              {{ paragraph }}
+            </p>
           </div>
         </div>
       </section>
@@ -510,17 +499,18 @@
               </article>
             </div>
           </div>
+        </div>
+      </section>
 
+      <section class="media-showcase">
+        <div class="container">
           <MediaRail
             :title="t('results.videoTitle')"
             :items="videoReviews"
             portrait />
           <MediaRail
-            :title="t('results.practicalTitle')"
+            :title="t('results.combinedMediaTitle')"
             :items="practicalResults" />
-          <MediaRail
-            :title="t('results.interviewsTitle')"
-            :items="interviews" />
         </div>
       </section>
 
@@ -545,10 +535,8 @@
               </li>
             </ul>
             <div
-              class="watermark"
-              aria-hidden="true">
-              CI
-            </div>
+              class="brand-watermark"
+              aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -561,22 +549,17 @@
             <p>{{ t("materials.intro") }}</p>
           </div>
           <div class="materials__items">
-            <a
+            <article
               v-for="material in materials"
-              :key="material.title"
-              href="#"
-              @click.prevent>
-              <component
-                :is="material.icon"
-                :size="30"
-                :stroke-width="1.4" />
+              :key="material.title">
+              <MaterialIcon :name="material.iconName" />
               <strong>{{ material.title }}</strong>
               <span>{{ material.text }}</span>
-              <ArrowUpRight
-                class="materials__arrow"
-                :size="17" />
-            </a>
+            </article>
           </div>
+          <div
+            class="materials__watermark"
+            aria-hidden="true" />
         </div>
       </section>
 
@@ -613,10 +596,8 @@
             </button>
           </div>
           <div
-            class="watermark"
-            aria-hidden="true">
-            CI
-          </div>
+            class="brand-watermark"
+            aria-hidden="true" />
         </div>
       </section>
     </main>
