@@ -617,9 +617,10 @@ a:focus-visible {
 
 .journey {
   display: grid;
-  width: 100%;
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--content-max));
   height: 894px;
   grid-template-columns: minmax(0, 595fr) minmax(0, 845fr);
+  margin-inline: auto;
 }
 
 .journey__image {
@@ -640,7 +641,7 @@ a:focus-visible {
   position: absolute;
   z-index: 2;
   bottom: 40px;
-  left: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  left: 0;
   display: flex;
   width: 360px;
   height: 115px;
@@ -1287,15 +1288,6 @@ a:focus-visible {
     height: 100%;
     object-fit: contain;
     transform: translateX(-50%);
-  }
-
-  .journey__image > img {
-    width: auto;
-    height: 100%;
-    max-width: none;
-    aspect-ratio: 595 / 894;
-    margin-inline: auto;
-    object-fit: contain;
   }
 }
 
