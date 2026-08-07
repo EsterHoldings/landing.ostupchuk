@@ -1163,16 +1163,17 @@ a:focus-visible {
   display: grid;
   height: 540px;
   overflow: hidden;
-  grid-template-columns: 266px minmax(340px, 475px) minmax(0, 1fr);
+  grid-template-columns: 226px minmax(340px, 422px) minmax(0, 1fr);
   align-items: stretch;
   background: var(--sky);
 }
 
 .final-cta__note {
   position: relative;
-  z-index: 2;
-  width: 266px;
-  padding: 40px 0 0 40px;
+  z-index: 3;
+  width: 226px;
+  margin-left: 40px;
+  padding: 40px 0 0;
 }
 
 .final-cta__note p {
@@ -1211,7 +1212,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 40px 40px;
+  padding: 40px 0;
 }
 
 .final-cta__person {
@@ -1240,8 +1241,10 @@ a:focus-visible {
 
 .final-cta__copy .button {
   align-self: flex-start;
+  width: 164px;
   min-height: 48px;
-  font: 400 14px/16px var(--font-body);
+  padding-inline: 10px;
+  font: 400 10px/16px var(--font-body);
 }
 
 .final-cta .watermark {
