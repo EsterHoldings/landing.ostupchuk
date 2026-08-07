@@ -2,7 +2,7 @@
   import type { Component } from "vue";
   import { useI18n } from "vue-i18n";
   import { BarChart3, CircleDollarSign, GraduationCap, UserRound } from "@lucide/vue";
-  import { mediaLinks } from "../../config/media";
+  import { mediaLinks, type MediaLink } from "../../config/media";
 
   interface Program {
     title: string;
@@ -37,6 +37,7 @@
     title: string;
     meta?: string;
     href?: string;
+    embedUrl?: string;
   }
 
   interface MaterialCopy {
@@ -53,6 +54,7 @@
 
   const { locale, rt, t, tm } = useI18n();
   const isConsultationOpen = ref(false);
+  const selectedVideo = ref<MediaItem | null>(null);
   const testimonialIndex = ref(0);
   const testimonialDirection = ref<"next" | "previous" | null>(null);
   const testimonialSwipeStart = ref<number | null>(null);
@@ -79,6 +81,16 @@
 
   const localizedArray = <T,>(key: string) => computed(() => resolveMessages(tm(key)) as T[]);
 
+  const applyMediaLink = (item: MediaItem, link?: MediaLink) =>
+    link
+      ? {
+          ...item,
+          href: link.href,
+          image: link.thumbnail || item.image,
+          embedUrl: link.embedUrl,
+        }
+      : item;
+
   const heroMetrics = localizedArray<Metric>("hero.metrics");
   const expertiseFacts = localizedArray<Metric>("expertise.facts");
   const expertiseParagraphs = localizedArray<string>("expertise.paragraphs");
@@ -96,10 +108,27 @@
       href: mediaLinks.videoReviews[index],
     }))
   );
-  const practicalResults = localizedArray<MediaItem>("results.practicalItems");
+  const localizedPracticalResults = localizedArray<MediaItem>("results.practicalItems");
+  const practicalResults = computed(() =>
+    localizedPracticalResults.value.map((item, index) => applyMediaLink(item, mediaLinks.practicalResults[index]))
+  );
+  const localizedInterviews = localizedArray<MediaItem>("results.interviewItems");
+  const interviewResults = computed(() =>
+    localizedInterviews.value.map((item, index) => applyMediaLink(item, mediaLinks.interviews[index]))
+  );
   const developmentItems = localizedArray<string>("development.items");
   const materialCopies = localizedArray<MaterialCopy>("materials.items");
   const faqItems = localizedArray<FaqItem>("faq.items");
+
+  const openVideo = (item: MediaItem) => {
+    if (item.embedUrl) {
+      selectedVideo.value = item;
+    }
+  };
+
+  const closeVideo = () => {
+    selectedVideo.value = null;
+  };
 
   const audienceIcons: Component[] = [BarChart3, UserRound, GraduationCap, CircleDollarSign];
   const materialIconNames: MaterialIconName[] = ["marathons", "youtube", "telegram", "publications"];
@@ -515,10 +544,16 @@
           <MediaRail
             :title="t('results.videoTitle')"
             :items="videoReviews"
-            portrait />
+            portrait
+            @open="openVideo" />
           <MediaRail
-            :title="t('results.combinedMediaTitle')"
-            :items="practicalResults" />
+            :title="t('results.practicalTitle')"
+            :items="practicalResults"
+            @open="openVideo" />
+          <MediaRail
+            :title="t('results.interviewsTitle')"
+            :items="interviewResults"
+            @open="openVideo" />
         </div>
       </section>
 
@@ -672,5 +707,10 @@
     </footer>
 
     <ConsultationModal v-model="isConsultationOpen" />
+    <VideoModal
+      :embed-url="selectedVideo?.embedUrl ?? null"
+      :open="selectedVideo !== null"
+      :title="selectedVideo?.title ?? ''"
+      @close="closeVideo" />
   </div>
 </template>

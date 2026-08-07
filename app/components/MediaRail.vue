@@ -6,6 +6,7 @@
     title: string;
     meta?: string;
     href?: string;
+    embedUrl?: string;
   }
 
   withDefaults(
@@ -20,6 +21,10 @@
       dark: false,
     }
   );
+
+  const emit = defineEmits<{
+    open: [item: MediaItem];
+  }>();
 
   const { t } = useI18n();
   const track = ref<HTMLElement>();
@@ -99,19 +104,18 @@
       <template
         v-for="item in items"
         :key="`${title}-${item.title}`">
-        <a
+        <button
           v-if="item.href"
           class="media-card"
           :aria-label="item.title"
-          :href="item.href"
-          rel="noreferrer noopener"
-          target="_blank">
+          type="button"
+          @click="emit('open', item)">
           <img
             :src="item.image"
             :alt="item.title"
             loading="lazy"
             draggable="false" />
-        </a>
+        </button>
         <article
           v-else
           class="media-card">
@@ -195,8 +199,17 @@
     border-radius: 6px;
     background: var(--navy);
     color: inherit;
+    font: inherit;
     scroll-snap-align: start;
     text-decoration: none;
+    text-align: initial;
+  }
+
+  button.media-card {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
   }
 
   .media-card img {
