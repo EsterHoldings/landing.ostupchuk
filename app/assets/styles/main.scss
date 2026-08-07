@@ -1155,7 +1155,7 @@ a:focus-visible {
 
 .final-cta {
   padding: 0;
-  background: var(--sky);
+  background: #ffffff;
 }
 
 .final-cta__inner {
@@ -1163,7 +1163,7 @@ a:focus-visible {
   display: grid;
   height: 540px;
   overflow: hidden;
-  grid-template-columns: 226px minmax(340px, 475px) minmax(0, 1fr);
+  grid-template-columns: 266px minmax(340px, 475px) minmax(0, 1fr);
   align-items: stretch;
   background: var(--sky);
 }
@@ -1171,8 +1171,8 @@ a:focus-visible {
 .final-cta__note {
   position: relative;
   z-index: 2;
-  width: 226px;
-  padding: 40px 0 0;
+  width: 266px;
+  padding: 40px 0 0 40px;
 }
 
 .final-cta__note p {
@@ -1197,6 +1197,12 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: 48% center;
+  -webkit-mask-image: linear-gradient(to right, #000000 0%, #000000 66%, transparent 100%);
+  mask-image: linear-gradient(to right, #000000 0%, #000000 66%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .final-cta__copy {
@@ -1205,7 +1211,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 0 40px;
+  padding: 40px 40px 40px;
 }
 
 .final-cta__person {
@@ -1902,6 +1908,8 @@ a:focus-visible {
     min-height: 0;
     height: 300px;
     object-position: 48% 30%;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .final-cta__copy {
