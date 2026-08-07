@@ -5,6 +5,7 @@
     image: string;
     title: string;
     meta?: string;
+    href?: string;
   }
 
   withDefaults(
@@ -95,16 +96,32 @@
     <div
       ref="track"
       class="media-rail__track">
-      <article
+      <template
         v-for="item in items"
-        :key="`${title}-${item.title}`"
-        class="media-card">
-        <img
-          :src="item.image"
-          :alt="item.title"
-          loading="lazy"
-          draggable="false" />
-      </article>
+        :key="`${title}-${item.title}`">
+        <a
+          v-if="item.href"
+          class="media-card"
+          :aria-label="item.title"
+          :href="item.href"
+          rel="noreferrer noopener"
+          target="_blank">
+          <img
+            :src="item.image"
+            :alt="item.title"
+            loading="lazy"
+            draggable="false" />
+        </a>
+        <article
+          v-else
+          class="media-card">
+          <img
+            :src="item.image"
+            :alt="item.title"
+            loading="lazy"
+            draggable="false" />
+        </article>
+      </template>
     </div>
   </section>
 </template>
@@ -177,7 +194,9 @@
     overflow: hidden;
     border-radius: 6px;
     background: var(--navy);
+    color: inherit;
     scroll-snap-align: start;
+    text-decoration: none;
   }
 
   .media-card img {

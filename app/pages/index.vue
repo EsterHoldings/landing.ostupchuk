@@ -2,6 +2,7 @@
   import type { Component } from "vue";
   import { useI18n } from "vue-i18n";
   import { BarChart3, CircleDollarSign, GraduationCap, UserRound } from "@lucide/vue";
+  import { mediaLinks } from "../../config/media";
 
   interface Program {
     title: string;
@@ -35,6 +36,7 @@
     image: string;
     title: string;
     meta?: string;
+    href?: string;
   }
 
   interface MaterialCopy {
@@ -87,7 +89,13 @@
   const journeyTitleLines = localizedArray<string>("journey.titleLines");
   const resultsIntro = localizedArray<string>("results.intro");
   const testimonials = localizedArray<Testimonial>("results.testimonials");
-  const videoReviews = localizedArray<MediaItem>("results.videoItems");
+  const localizedVideoReviews = localizedArray<MediaItem>("results.videoItems");
+  const videoReviews = computed(() =>
+    localizedVideoReviews.value.map((item, index) => ({
+      ...item,
+      href: mediaLinks.videoReviews[index],
+    }))
+  );
   const practicalResults = localizedArray<MediaItem>("results.practicalItems");
   const developmentItems = localizedArray<string>("development.items");
   const materialCopies = localizedArray<MaterialCopy>("materials.items");
