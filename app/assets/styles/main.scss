@@ -201,11 +201,12 @@ a:focus-visible {
   position: relative;
   min-height: 800px;
   overflow: hidden;
-  background: var(--sky);
+  background: #ffffff;
 }
 
 .hero > .container {
   position: relative;
+  background: var(--sky);
 }
 
 .hero__content {
@@ -946,13 +947,14 @@ a:focus-visible {
 
 .development {
   overflow: hidden;
-  background: #eeefe9;
+  background: #ffffff;
 }
 
 .development__grid {
   display: grid;
   height: clamp(540px, 52vw, 749px);
   grid-template-columns: 1fr 1fr;
+  background: #eeefe9;
 }
 
 .development__visual {
@@ -966,6 +968,12 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: left center;
+  -webkit-mask-image: linear-gradient(to right, #000000 0%, #000000 66%, transparent 100%);
+  mask-image: linear-gradient(to right, #000000 0%, #000000 66%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .development__copy {
@@ -1798,6 +1806,8 @@ a:focus-visible {
     height: 100%;
     object-fit: cover;
     object-position: left center;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .development__copy {
