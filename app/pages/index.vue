@@ -583,7 +583,7 @@
             <span></span>
           </div>
           <img
-            src="/images/serhii-hero.webp"
+            src="/images/final-cta-serhii.png"
             :alt="t('common.personName')"
             loading="lazy" />
           <div class="final-cta__copy">
