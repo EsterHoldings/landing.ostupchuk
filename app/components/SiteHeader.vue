@@ -209,12 +209,14 @@
 
 <style lang="scss" scoped>
   .header-shell {
+    position: relative;
     min-height: 81px;
+    z-index: 1000;
   }
 
   .header {
     position: relative;
-    z-index: 20;
+    z-index: 1000;
     width: 100%;
     transition:
       background 180ms ease,
@@ -234,7 +236,7 @@
 
   .header--fixed {
     position: fixed;
-    z-index: 90;
+    z-index: 1001;
     top: 0;
     left: 0;
     width: 100%;
