@@ -39,10 +39,23 @@
     aspect-ratio: 1052 / 296;
     background: currentColor;
     mask: url("/images/logo-white.png") center / contain no-repeat;
+    animation: logo-float 6s ease-in-out infinite;
+    transform-origin: center;
   }
 
   .brand--light {
     color: #ffffff;
+  }
+
+  @keyframes logo-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+      transform: translate3d(0, -3px, 0) rotate(0.2deg);
+    }
   }
 
   @media (max-width: 520px) {
