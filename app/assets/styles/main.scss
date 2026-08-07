@@ -198,10 +198,15 @@ a:focus-visible {
 }
 
 .hero {
+  --hero-inset: clamp(16px, 1.3889vw, 20px);
   position: relative;
   min-height: 800px;
   overflow: hidden;
   background: #ffffff;
+}
+
+.hero .header__inner {
+  padding-inline: var(--hero-inset);
 }
 
 .hero > .container {
@@ -218,7 +223,7 @@ a:focus-visible {
   position: absolute;
   z-index: 3;
   top: 39px;
-  left: 0;
+  left: var(--hero-inset);
   width: min(286px, 31%);
   min-height: 80px;
   margin: 0;
@@ -301,7 +306,7 @@ a:focus-visible {
   z-index: 3;
   right: 44%;
   bottom: 44px;
-  left: 0;
+  left: var(--hero-inset);
 }
 
 .hero__claim h1 {
@@ -1421,7 +1426,7 @@ a:focus-visible {
     width: auto;
     min-height: 0;
     max-width: 150px;
-    padding: 0 10px 0 0;
+    padding: 0 10px 0 var(--hero-inset);
     font-size: 11px;
     line-height: 1.25;
   }
@@ -1496,7 +1501,7 @@ a:focus-visible {
     bottom: auto;
     left: auto;
     grid-area: claim;
-    padding: 28px 0 0;
+    padding: 28px 0 0 var(--hero-inset);
   }
 
   .hero__claim h1 {
