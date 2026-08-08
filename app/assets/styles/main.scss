@@ -1547,6 +1547,31 @@ a:focus-visible {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1920px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero > .container {
+    min-height: 100svh;
+  }
+
+  .hero__content {
+    height: calc(100svh - 81px);
+    min-height: 0;
+  }
+
+  .hero__portrait {
+    width: 68.625svh;
+    height: 100svh;
+  }
+
+  .hero__portrait img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media (max-width: 1100px) {
   .programs__grid,
   .audience__grid {
