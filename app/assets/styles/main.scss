@@ -1513,6 +1513,40 @@ a:focus-visible {
   text-decoration: none;
 }
 
+/*
+ * Keep media-led sections full-bleed on FullHD and smaller displays while
+ * leaving their copy aligned to the shared content container.
+ */
+@media (max-width: 1920px) {
+  :root {
+    --media-gutter: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
+  .hero {
+    background: var(--sky);
+  }
+
+  .hero__portrait {
+    right: calc(-1 * var(--media-gutter));
+  }
+
+  .founder,
+  .journey,
+  .development__grid,
+  .final-cta__inner {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .final-cta__inner {
+    grid-template-columns: calc(var(--media-gutter) + 226px) minmax(340px, 422px) minmax(0, 1fr);
+  }
+
+  .journey__caption {
+    left: var(--media-gutter);
+  }
+}
+
 @media (max-width: 1100px) {
   .programs__grid,
   .audience__grid {
