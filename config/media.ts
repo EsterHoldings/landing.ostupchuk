@@ -1,7 +1,10 @@
+export type MediaPlatform = "youtube" | "instagram";
+
 export interface MediaLink {
   href: string;
   thumbnail: string;
   embedUrl: string;
+  platform: MediaPlatform;
 }
 
 const youtube = (href: string): MediaLink => {
@@ -12,16 +15,40 @@ const youtube = (href: string): MediaLink => {
     href,
     thumbnail: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "",
     embedUrl: videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0` : href,
+    platform: "youtube",
+  };
+};
+
+const instagram = (href: string): MediaLink => {
+  const reelId = href.match(/instagram\.com\/(?:reel|p)\/([^?&#/]+)/)?.[1];
+  const shareToken = href.match(/instagram\.com\/s\/([^?&#/]+)/)?.[1];
+
+  return {
+    href,
+    thumbnail: "",
+    embedUrl: reelId
+      ? `https://www.instagram.com/reel/${reelId}/embed/`
+      : shareToken
+        ? `https://www.instagram.com/s/${shareToken}/embed/`
+        : href,
+    platform: "instagram",
   };
 };
 
 /**
- * Edit video URLs here. Thumbnails and embed URLs are generated from each
- * YouTube link automatically, so the localized copy and components stay unchanged.
+ * Edit media URLs here. YouTube thumbnails and embed URLs are generated from
+ * each link automatically; Instagram reels open through Instagram's embed
+ * endpoint without leaving the landing page.
  */
 export const mediaLinks = {
-  // These testimonials stay without links until their final video sources are selected.
-  videoReviews: [],
+  videoReviews: [
+    instagram("https://www.instagram.com/reel/DbyhdcciHDp/?igsh=MXdpYWh2bG1ubGJqdw=="),
+    instagram("https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTgxMDg1Mzc4MDY5Mjg3?igsh=MXRxMGN1aWk1bXFkZw=="),
+    instagram("https://www.instagram.com/reel/Db2ppNLiaTM/?igsh=MXc0OHk0ODFwd3Z1dA=="),
+    instagram("https://www.instagram.com/reel/Db2qMNqio-2/?igsh=YTR2YmR5Mnk0anRw"),
+    instagram("https://www.instagram.com/reel/Db2qNyvCzT2/?igsh=MnZyN2FqMnhucHB4"),
+    instagram("https://www.instagram.com/reel/Db2rZ8fipyV/?igsh=dHpjNWYzYmY3djg="),
+  ],
   practicalResults: [
     youtube("https://youtu.be/srOD-QuqNNU?si=i9M3rKbyQZ36SHiE"),
     youtube("https://youtu.be/eSd8nSPPHXw?si=cLqmB8dRVsRMWPBY"),

@@ -2,7 +2,7 @@
   import type { Component } from "vue";
   import { useI18n } from "vue-i18n";
   import { BarChart3, CircleDollarSign, GraduationCap, UserRound } from "@lucide/vue";
-  import { mediaLinks, type MediaLink } from "../../config/media";
+  import { mediaLinks, type MediaLink, type MediaPlatform } from "../../config/media";
 
   interface Program {
     title: string;
@@ -38,6 +38,7 @@
     meta?: string;
     href?: string;
     embedUrl?: string;
+    platform?: MediaPlatform;
   }
 
   interface MaterialCopy {
@@ -88,6 +89,7 @@
           href: link.href,
           image: link.thumbnail || item.image,
           embedUrl: link.embedUrl,
+          platform: link.platform,
         }
       : item;
 
@@ -103,10 +105,7 @@
   const testimonials = localizedArray<Testimonial>("results.testimonials");
   const localizedVideoReviews = localizedArray<MediaItem>("results.videoItems");
   const videoReviews = computed(() =>
-    localizedVideoReviews.value.map((item, index) => ({
-      ...item,
-      href: mediaLinks.videoReviews[index],
-    }))
+    localizedVideoReviews.value.map((item, index) => applyMediaLink(item, mediaLinks.videoReviews[index]))
   );
   const localizedPracticalResults = localizedArray<MediaItem>("results.practicalItems");
   const practicalResults = computed(() =>
@@ -710,6 +709,7 @@
     <VideoModal
       :embed-url="selectedVideo?.embedUrl ?? null"
       :open="selectedVideo !== null"
+      :platform="selectedVideo?.platform ?? 'youtube'"
       :title="selectedVideo?.title ?? ''"
       @close="closeVideo" />
   </div>

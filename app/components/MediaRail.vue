@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { useI18n } from "vue-i18n";
+  import type { MediaPlatform } from "../../config/media";
 
   interface MediaItem {
     image: string;
@@ -7,6 +8,7 @@
     meta?: string;
     href?: string;
     embedUrl?: string;
+    platform?: MediaPlatform;
   }
 
   withDefaults(
@@ -103,7 +105,7 @@
       class="media-rail__track">
       <template
         v-for="item in items"
-        :key="`${title}-${item.title}`">
+        :key="`${title}-${item.href ?? item.title}`">
         <button
           v-if="item.href"
           class="media-card"

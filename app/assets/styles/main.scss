@@ -1514,10 +1514,10 @@ a:focus-visible {
 }
 
 /*
- * Keep media-led sections full-bleed on FullHD and smaller displays while
+ * Keep media-led sections full-bleed through 2K displays while
  * leaving their copy aligned to the shared content container.
  */
-@media (max-width: 1920px) {
+@media (max-width: 3199px) {
   :root {
     --media-gutter: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
   }
@@ -1544,6 +1544,36 @@ a:focus-visible {
 
   .journey__caption {
     left: var(--media-gutter);
+  }
+}
+
+@media (min-width: 3200px) {
+  :root {
+    --media-gutter: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
+  .hero,
+  .founder {
+    background: var(--sky);
+  }
+
+  .founder,
+  .journey {
+    clip-path: inset(0 -100vmax);
+    box-shadow: 0 0 0 100vmax var(--sky);
+  }
+
+  .journey {
+    background: #ffffff;
+    box-shadow: 0 0 0 100vmax #ffffff;
+  }
+
+  .development {
+    background: #eeefe9;
+  }
+
+  .final-cta {
+    background: var(--sky);
   }
 }
 

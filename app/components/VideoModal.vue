@@ -1,12 +1,19 @@
 <script setup lang="ts">
   import { X } from "@lucide/vue";
   import { useI18n } from "vue-i18n";
+  import type { MediaPlatform } from "../../config/media";
 
-  const props = defineProps<{
-    open: boolean;
-    title: string;
-    embedUrl: string | null;
-  }>();
+  const props = withDefaults(
+    defineProps<{
+      open: boolean;
+      title: string;
+      embedUrl: string | null;
+      platform?: MediaPlatform;
+    }>(),
+    {
+      platform: "youtube",
+    }
+  );
 
   const emit = defineEmits<{
     close: [];
@@ -49,6 +56,7 @@
       <div
         v-if="open"
         class="video-modal"
+        :class="`video-modal--${platform}`"
         role="dialog"
         aria-modal="true"
         aria-labelledby="video-modal-title"
@@ -67,7 +75,7 @@
               v-if="embedUrl"
               :src="embedUrl"
               :title="title"
-              allow="autoplay; encrypted-media; picture-in-picture"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
               allowfullscreen />
           </div>
         </section>
@@ -128,6 +136,15 @@
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  .video-modal--instagram .video-modal__panel {
+    width: min(560px, 100%);
+  }
+
+  .video-modal--instagram .video-modal__frame {
+    max-height: calc(100svh - 140px);
+    aspect-ratio: 9 / 16;
   }
 
   .video-modal-enter-active,
