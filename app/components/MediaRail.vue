@@ -9,6 +9,7 @@
     href?: string;
     embedUrl?: string;
     previewUrl?: string;
+    hoverEmbedUrl?: string;
     platform?: MediaPlatform;
   }
 
@@ -32,11 +33,87 @@
   const { t } = useI18n();
   const track = ref<HTMLElement>();
   const failedPreviews = ref<Record<string, boolean>>({});
+  const activePreviewKey = ref<string | null>(null);
+  const soundEnabled = ref<Record<string, boolean>>({});
 
   const previewKey = (item: MediaItem) => item.href ?? item.title;
 
   const handlePreviewError = (item: MediaItem) => {
     failedPreviews.value[previewKey(item)] = true;
+  };
+
+  const hoverEmbedUrl = (item: MediaItem) => {
+    return item.hoverEmbedUrl ?? "";
+  };
+
+  const startPreview = (item: MediaItem, event: MouseEvent) => {
+    const key = previewKey(item);
+    activePreviewKey.value = key;
+
+    const video = (event.currentTarget as HTMLElement | null)?.querySelector<HTMLVideoElement>("video");
+    if (video) {
+      void video.play().catch(() => undefined);
+    }
+  };
+
+  const stopPreview = (item: MediaItem, event: MouseEvent) => {
+    const video = (event.currentTarget as HTMLElement | null)?.querySelector<HTMLVideoElement>("video");
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+      video.muted = true;
+    }
+
+    if (activePreviewKey.value === previewKey(item)) {
+      activePreviewKey.value = null;
+    }
+
+    soundEnabled.value = { ...soundEnabled.value, [previewKey(item)]: false };
+  };
+
+  const toggleSound = (item: MediaItem, event: MouseEvent | KeyboardEvent) => {
+    event.stopPropagation();
+    const key = previewKey(item);
+    const nextValue = !soundEnabled.value[key];
+    soundEnabled.value = { ...soundEnabled.value, [key]: nextValue };
+
+    const card = (event.currentTarget as HTMLElement | null)?.closest<HTMLElement>(".media-card");
+    const video = card?.querySelector<HTMLVideoElement>("video");
+    if (video) {
+      video.muted = !nextValue;
+      if (nextValue) {
+        void video.play().catch(() => undefined);
+      }
+    }
+
+    const frame = card?.querySelector<HTMLIFrameElement>("iframe");
+    if (frame?.contentWindow && item.platform === "youtube") {
+      frame.contentWindow.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: nextValue ? "unMute" : "mute",
+          args: [],
+        }),
+        "*"
+      );
+    }
+  };
+
+  const syncYouTubeSound = (event: Event) => {
+    const frame = event.currentTarget as HTMLIFrameElement | null;
+    const item = frame?.closest<HTMLElement>(".media-card")?.dataset.mediaKey;
+    if (!frame?.contentWindow || !item) {
+      return;
+    }
+
+    frame.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: soundEnabled.value[item] ? "unMute" : "mute",
+        args: [],
+      }),
+      "*"
+    );
   };
 
   const scroll = (direction: -1 | 1) => {
@@ -117,16 +194,28 @@
         <button
           v-if="item.href"
           class="media-card"
+          :data-media-key="previewKey(item)"
           :aria-label="item.title"
           type="button"
+          @mouseenter="startPreview(item, $event)"
+          @mouseleave="stopPreview(item, $event)"
           @click="emit('open', item)">
+          <iframe
+            v-if="item.platform === 'youtube' && activePreviewKey === previewKey(item) && item.hoverEmbedUrl"
+            class="media-card__embed"
+            :src="hoverEmbedUrl(item)"
+            :title="item.title"
+            tabindex="-1"
+            aria-hidden="true"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            @load="syncYouTubeSound" />
           <video
-            v-if="item.platform === 'instagram' && item.previewUrl && !failedPreviews[previewKey(item)]"
+            v-else-if="item.platform === 'instagram' && item.previewUrl && !failedPreviews[previewKey(item)]"
             class="media-card__preview"
             :src="item.previewUrl"
             :title="item.title"
             muted
-            autoplay
             loop
             playsinline
             preload="metadata"
@@ -149,6 +238,52 @@
             :alt="item.title"
             loading="lazy"
             draggable="false" />
+          <span
+            v-if="
+              activePreviewKey === previewKey(item) && (item.platform === 'youtube' || item.platform === 'instagram')
+            "
+            class="media-card__sound"
+            :class="{ 'media-card__sound--active': soundEnabled[previewKey(item)] }"
+            role="button"
+            tabindex="0"
+            :aria-label="soundEnabled[previewKey(item)] ? 'Вимкнути звук' : 'Увімкнути звук'"
+            :aria-pressed="soundEnabled[previewKey(item)]"
+            @click.stop="toggleSound(item, $event)"
+            @keydown.enter.stop.prevent="toggleSound(item, $event)"
+            @keydown.space.stop.prevent="toggleSound(item, $event)">
+            <svg
+              v-if="soundEnabled[previewKey(item)]"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true">
+              <path
+                d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4Z"
+                fill="currentColor" />
+              <path
+                d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.5 7.5 0 0 1 0 10"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8" />
+            </svg>
+            <svg
+              v-else
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true">
+              <path
+                d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4Z"
+                fill="currentColor" />
+              <path
+                d="m16 9-5 6m0-6 5 6"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8" />
+            </svg>
+          </span>
         </button>
         <article
           v-else
@@ -270,6 +405,33 @@
     background: #000000;
     object-fit: cover;
     pointer-events: none;
+  }
+
+  .media-card__sound {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 55%);
+    border-radius: 50%;
+    background: rgb(20 30 48 / 70%);
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 0.94;
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .media-card__sound:hover,
+  .media-card__sound:focus-visible {
+    background: #364e74;
+    outline: none;
+    transform: scale(1.06);
   }
 
   .media-rail--portrait .media-rail__track {

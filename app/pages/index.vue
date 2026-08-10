@@ -39,6 +39,7 @@
     href?: string;
     embedUrl?: string;
     previewUrl?: string;
+    hoverEmbedUrl?: string;
     platform?: MediaPlatform;
   }
 
@@ -91,6 +92,7 @@
           image: link.thumbnail || item.image,
           embedUrl: link.embedUrl,
           previewUrl: link.previewUrl,
+          hoverEmbedUrl: link.hoverEmbedUrl,
           platform: link.platform,
         }
       : item;
@@ -107,7 +109,10 @@
   const testimonials = localizedArray<Testimonial>("results.testimonials");
   const localizedVideoReviews = localizedArray<MediaItem>("results.videoItems");
   const videoReviews = computed(() =>
-    localizedVideoReviews.value.map((item, index) => applyMediaLink(item, mediaLinks.videoReviews[index]))
+    localizedVideoReviews.value
+      .map((item, index) => ({ item, link: mediaLinks.videoReviews[index] }))
+      .filter(({ link }) => link !== null)
+      .map(({ item, link }) => applyMediaLink(item, link ?? undefined))
   );
   const localizedPracticalResults = localizedArray<MediaItem>("results.practicalItems");
   const practicalResults = computed(() =>

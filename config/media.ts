@@ -5,6 +5,7 @@ export interface MediaLink {
   thumbnail: string;
   embedUrl: string;
   previewUrl?: string;
+  hoverEmbedUrl?: string;
   platform: MediaPlatform;
 }
 
@@ -16,6 +17,9 @@ const youtube = (href: string): MediaLink => {
     href,
     thumbnail: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "",
     embedUrl: videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0` : href,
+    hoverEmbedUrl: videoId
+      ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`
+      : "",
     platform: "youtube",
   };
 };
@@ -32,26 +36,15 @@ const instagram = (href: string): MediaLink => {
   };
 };
 
-const instagramHighlight = (href: string, highlightId: string): MediaLink => ({
-  href,
-  thumbnail: "",
-  embedUrl: `https://www.instagram.com/stories/highlights/${highlightId}/`,
-  previewUrl: `/api/instagram-preview?url=${encodeURIComponent(href)}`,
-  platform: "instagram",
-});
-
 /**
- * Edit media URLs here. YouTube thumbnails and embed URLs are generated from
- * each link automatically; Instagram reels open through Instagram's embed
- * endpoint without leaving the landing page.
+ * Edit media URLs here. YouTube thumbnails and hover embeds are generated from
+ * each link automatically; Instagram reels use the local preview endpoint so
+ * they can play inside the landing page without Instagram UI overlays.
  */
 export const mediaLinks = {
   videoReviews: [
     instagram("https://www.instagram.com/reel/DbyhdcciHDp/?igsh=MXdpYWh2bG1ubGJqdw=="),
-    instagramHighlight(
-      "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTgxMDg1Mzc4MDY5Mjg3?igsh=MXRxMGN1aWk1bXFkZw==",
-      "17981085378069287"
-    ),
+    null, // Disabled: the Instagram Highlight source is not a stable video stream.
     instagram("https://www.instagram.com/reel/Db2ppNLiaTM/?igsh=MXc0OHk0ODFwd3Z1dA=="),
     instagram("https://www.instagram.com/reel/Db2qMNqio-2/?igsh=YTR2YmR5Mnk0anRw"),
     instagram("https://www.instagram.com/reel/Db2qNyvCzT2/?igsh=MnZyN2FqMnhucHB4"),
