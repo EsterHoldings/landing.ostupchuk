@@ -1686,81 +1686,77 @@ a:focus-visible {
   }
 
   .hero {
-    min-height: 780px;
+    --hero-inset: clamp(12px, 2.22vw, 16px);
+    min-height: 0;
   }
 
   .hero__content {
     position: relative;
-    display: grid;
-    min-height: 716px;
+    display: block;
+    min-height: clamp(860px, 179vw, 966px);
     height: auto;
-    grid-template-columns: minmax(0, 0.9fr) minmax(158px, 1.1fr);
-    grid-template-areas:
-      "intro portrait"
-      "metrics portrait"
-      "claim claim";
-    grid-template-rows: auto 1fr auto;
-    align-items: start;
-    padding: 24px 0 32px;
+    padding: 0;
   }
 
   .hero__intro {
-    position: relative;
-    top: auto;
-    left: auto;
-    grid-area: intro;
+    position: absolute;
+    top: clamp(28px, 5.9vw, 32px);
+    left: var(--hero-inset);
     width: auto;
     min-height: 0;
-    max-width: 150px;
-    padding: 0 10px 0 var(--hero-inset);
-    font-size: 11px;
+    max-width: none;
+    padding: 0;
+    font-size: clamp(12px, 2.96vw, 16px);
     line-height: 1.25;
+    width: min(240px, 44vw);
   }
 
   .hero__metrics {
-    position: relative;
-    top: auto;
-    left: auto;
-    grid-area: metrics;
+    position: absolute;
+    top: clamp(230px, 44vw, 238px);
+    left: var(--hero-inset);
     display: grid;
-    width: 100%;
-    grid-template-columns: 1fr;
-    align-self: center;
-    gap: 18px;
-    padding: 18px 12px 0 0;
+    width: min(180px, 40vw);
+    gap: clamp(20px, 5.6vw, 30px);
+    padding: 0;
   }
 
   .hero__metric {
     display: grid;
-    min-height: 54px;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
     align-content: start;
     align-items: initial;
     justify-content: initial;
     gap: 2px;
-    padding: 0 0 0 12px;
-    border: 0;
+    min-width: 0;
+    padding: 0 0 0 16px;
     border-left: 1px solid rgb(47 64 90 / 18%);
   }
 
   .hero__metric strong {
-    font-size: 34px;
+    font-size: clamp(38px, 8.9vw, 48px);
   }
 
   .hero__metric span {
-    font-size: 10px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: clamp(12px, 2.6vw, 14px);
     line-height: 1.15;
   }
 
+  .hero__metric:nth-child(2) span {
+    max-width: 110px;
+  }
+
   .hero__portrait {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    grid-area: portrait;
-    width: calc(100% + var(--page-gutter));
-    height: 445px;
-    align-self: start;
-    margin: -24px calc(-1 * var(--page-gutter)) 0 0;
+    position: absolute;
+    top: clamp(0px, 3.7vw, 20px);
+    right: -29vw;
+    width: clamp(340px, 89vw, 480px);
+    height: clamp(495px, 130vw, 700px);
+    margin: 0;
     overflow: visible;
   }
 
@@ -1768,45 +1764,49 @@ a:focus-visible {
     position: static;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: 45% top;
+    object-fit: fill;
   }
 
   .hero__watermark {
-    top: 118px;
+    display: none;
     right: -172px;
     bottom: auto;
     left: auto;
-    width: 390px;
-    height: 320px;
+    width: 430px;
+    height: 420px;
   }
 
   .hero__claim {
-    position: relative;
+    position: absolute;
+    top: clamp(560px, 127.8vw, 690px);
     right: auto;
     bottom: auto;
     left: auto;
-    grid-area: claim;
-    padding: 28px 0 0 var(--hero-inset);
+    width: 100%;
+    padding: 0 0 0 var(--hero-inset);
   }
 
   .hero__claim h1 {
-    max-width: 350px;
-    font-size: 40px;
-    line-height: 0.98;
+    max-width: none;
+    padding-right: var(--hero-inset);
+    font-size: clamp(40px, 8.15vw, 44px);
+    line-height: 1.1;
   }
 
   .hero__buttons {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px;
-    margin-top: 24px;
+    gap: clamp(10px, 5.4vw, 29px);
+    margin-top: clamp(24px, 6.9vw, 37px);
+    padding-right: var(--hero-inset);
   }
 
   .hero__buttons .button,
   .hero__buttons .button + .button {
     min-width: 0;
-    padding-inline: 14px;
+    min-height: clamp(56px, 13vw, 70px);
+    padding-inline: clamp(14px, 3.7vw, 20px);
+    font-size: clamp(14px, 3.7vw, 20px);
   }
 
   .expertise.section {

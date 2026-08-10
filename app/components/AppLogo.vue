@@ -63,4 +63,10 @@
       width: 132px;
     }
   }
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    .brand__art {
+      width: 160px;
+    }
+  }
 </style>
