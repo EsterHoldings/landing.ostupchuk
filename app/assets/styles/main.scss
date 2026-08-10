@@ -2331,6 +2331,54 @@ a:focus-visible {
   }
 }
 
+@media (max-width: 767px) {
+  .founder,
+  .founder__inner {
+    height: clamp(780px, 165.6vw, 828px);
+    min-height: 0;
+  }
+
+  .founder__background {
+    object-position: 70% center;
+    transform: scale(1.26);
+    transform-origin: center top;
+  }
+
+  .founder__copy {
+    width: min(300px, 100%);
+    max-width: none;
+    padding: 84px 0 28px 11px;
+  }
+
+  .founder__copy h2 {
+    margin-bottom: 36px;
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .founder__copy > p:not(.eyebrow) {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+
+  .founder__copy .button {
+    bottom: 28px;
+    left: 11px;
+    min-width: 271px;
+    min-height: 64px;
+    padding-inline: 18px;
+    font-size: 16px;
+  }
+
+  .founder__watermark {
+    right: -220px;
+    width: 474px;
+    height: 387px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
