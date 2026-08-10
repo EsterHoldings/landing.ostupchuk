@@ -264,9 +264,14 @@
           <div
             class="hero__portrait"
             aria-hidden="true">
-            <img
-              src="/images/hero-portrait.png"
-              alt="" />
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/images/hero-portrait-mobile.png" />
+              <img
+                src="/images/hero-portrait.png"
+                alt="" />
+            </picture>
           </div>
 
           <div

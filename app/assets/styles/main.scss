@@ -1752,19 +1752,23 @@ a:focus-visible {
 
   .hero__portrait {
     position: absolute;
-    top: clamp(0px, 3.7vw, 20px);
-    right: -29vw;
-    width: clamp(340px, 89vw, 480px);
-    height: clamp(495px, 130vw, 700px);
+    top: clamp(-18px, -3vw, -10px);
+    right: -6vw;
+    width: min(63vw, 300px);
+    height: auto;
     margin: 0;
     overflow: visible;
+  }
+
+  .hero__portrait picture {
+    display: block;
   }
 
   .hero__portrait img {
     position: static;
     width: 100%;
-    height: 100%;
-    object-fit: fill;
+    height: auto;
+    object-fit: contain;
   }
 
   .hero__watermark {
@@ -2236,6 +2240,58 @@ a:focus-visible {
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero__content {
+    min-height: clamp(860px, calc(100svh - 100px), 966px);
+  }
+
+  .hero__intro {
+    top: 22px;
+    width: min(245px, 48vw);
+    font-size: clamp(15px, 3.2vw, 16px);
+    line-height: 1.18;
+  }
+
+  .hero__metrics {
+    top: clamp(200px, 40.5vw, 210px);
+    width: min(190px, 40vw);
+    gap: clamp(24px, 5.6vw, 29px);
+  }
+
+  .hero__metric {
+    padding-left: 14px;
+  }
+
+  .hero__metric strong {
+    font-size: clamp(40px, 8.9vw, 44px);
+  }
+
+  .hero__metric span {
+    font-size: clamp(13px, 2.9vw, 16px);
+  }
+
+  .hero__portrait {
+    top: clamp(-16px, -3.2vw, -12px);
+    right: clamp(-38px, -7.2vw, -28px);
+    width: min(63.2vw, 315px);
+  }
+
+  .hero__claim {
+    top: clamp(610px, 126.3vw, 640px);
+  }
+
+  .hero__buttons {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: clamp(22px, 5.4vw, 29px);
+    margin-top: clamp(30px, 6.9vw, 37px);
+  }
+
+  .hero__buttons .button,
+  .hero__buttons .button + .button {
+    font-size: clamp(16px, 4vw, 20px);
   }
 }
 
