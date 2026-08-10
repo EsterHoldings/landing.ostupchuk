@@ -1693,7 +1693,7 @@ a:focus-visible {
   .hero__content {
     position: relative;
     display: block;
-    min-height: clamp(860px, 179vw, 966px);
+    min-height: max(780px, calc(100svh - 64px));
     height: auto;
     padding: 0;
   }
@@ -1801,14 +1801,14 @@ a:focus-visible {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: clamp(10px, 5.4vw, 29px);
-    margin-top: clamp(24px, 6.9vw, 37px);
+    margin-top: clamp(16px, 4vw, 22px);
     padding-right: var(--hero-inset);
   }
 
   .hero__buttons .button,
   .hero__buttons .button + .button {
     min-width: 0;
-    min-height: clamp(56px, 13vw, 70px);
+    min-height: clamp(52px, 13vw, 56px);
     padding-inline: clamp(14px, 3.7vw, 20px);
     font-size: clamp(14px, 3.7vw, 20px);
   }
@@ -2240,6 +2240,42 @@ a:focus-visible {
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+  }
+}
+
+@media (max-width: 479px) and (max-height: 900px) {
+  .hero__content {
+    min-height: calc(100svh - 64px);
+  }
+
+  .hero__metrics {
+    top: 220px;
+    gap: 18px;
+  }
+
+  .hero__metric strong {
+    font-size: 38px;
+  }
+
+  .hero__claim {
+    top: 470px;
+  }
+
+  .hero__claim h1 {
+    font-size: 36px;
+    line-height: 1.04;
+  }
+
+  .hero__buttons {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .hero__buttons .button,
+  .hero__buttons .button + .button {
+    min-height: 50px;
+    padding-inline: 12px;
+    font-size: 14px;
   }
 }
 
