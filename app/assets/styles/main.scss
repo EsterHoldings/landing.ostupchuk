@@ -1532,14 +1532,13 @@ a:focus-visible {
 
   .founder,
   .journey,
-  .development__grid,
-  .final-cta__inner {
+  .development__grid {
     width: 100vw;
     margin-left: calc(50% - 50vw);
   }
 
-  .final-cta__inner {
-    grid-template-columns: calc(var(--media-gutter) + 226px) minmax(340px, 422px) minmax(0, 1fr);
+  .final-cta {
+    background: var(--sky);
   }
 
   .journey__caption {
