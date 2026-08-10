@@ -38,6 +38,7 @@
     meta?: string;
     href?: string;
     embedUrl?: string;
+    previewUrl?: string;
     platform?: MediaPlatform;
   }
 
@@ -89,6 +90,7 @@
           href: link.href,
           image: link.thumbnail || item.image,
           embedUrl: link.embedUrl,
+          previewUrl: link.previewUrl,
           platform: link.platform,
         }
       : item;

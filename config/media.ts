@@ -4,6 +4,7 @@ export interface MediaLink {
   href: string;
   thumbnail: string;
   embedUrl: string;
+  previewUrl?: string;
   platform: MediaPlatform;
 }
 
@@ -26,6 +27,7 @@ const instagram = (href: string): MediaLink => {
     href,
     thumbnail: "",
     embedUrl: reelId ? `https://www.instagram.com/reel/${reelId}/embed/` : href,
+    previewUrl: `/api/instagram-preview?url=${encodeURIComponent(href)}`,
     platform: "instagram",
   };
 };
@@ -34,6 +36,7 @@ const instagramHighlight = (href: string, highlightId: string): MediaLink => ({
   href,
   thumbnail: "",
   embedUrl: `https://www.instagram.com/stories/highlights/${highlightId}/`,
+  previewUrl: `/api/instagram-preview?url=${encodeURIComponent(href)}`,
   platform: "instagram",
 });
 

@@ -8,6 +8,7 @@
     meta?: string;
     href?: string;
     embedUrl?: string;
+    previewUrl?: string;
     platform?: MediaPlatform;
   }
 
@@ -30,6 +31,13 @@
 
   const { t } = useI18n();
   const track = ref<HTMLElement>();
+  const failedPreviews = ref<Record<string, boolean>>({});
+
+  const previewKey = (item: MediaItem) => item.href ?? item.title;
+
+  const handlePreviewError = (item: MediaItem) => {
+    failedPreviews.value[previewKey(item)] = true;
+  };
 
   const scroll = (direction: -1 | 1) => {
     const rail = track.value;
@@ -112,7 +120,31 @@
           :aria-label="item.title"
           type="button"
           @click="emit('open', item)">
+          <video
+            v-if="item.platform === 'instagram' && item.previewUrl && !failedPreviews[previewKey(item)]"
+            class="media-card__preview"
+            :src="item.previewUrl"
+            :title="item.title"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="metadata"
+            tabindex="-1"
+            aria-hidden="true"
+            @error="handlePreviewError(item)" />
+          <iframe
+            v-else-if="item.platform === 'instagram' && item.embedUrl"
+            class="media-card__embed"
+            :src="item.embedUrl"
+            :title="item.title"
+            loading="lazy"
+            tabindex="-1"
+            aria-hidden="true"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin" />
           <img
+            v-else
             :src="item.image"
             :alt="item.title"
             loading="lazy"
@@ -219,6 +251,25 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .media-card__embed {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000000;
+    pointer-events: none;
+  }
+
+  .media-card__preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000000;
+    object-fit: cover;
+    pointer-events: none;
   }
 
   .media-rail--portrait .media-rail__track {
