@@ -712,6 +712,7 @@
       :embed-url="selectedVideo?.embedUrl ?? null"
       :open="selectedVideo !== null"
       :platform="selectedVideo?.platform ?? 'youtube'"
+      :preview-url="selectedVideo?.previewUrl ?? null"
       :title="selectedVideo?.title ?? ''"
       @close="closeVideo" />
   </div>

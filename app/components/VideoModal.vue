@@ -8,10 +8,12 @@
       open: boolean;
       title: string;
       embedUrl: string | null;
+      previewUrl: string | null;
       platform?: MediaPlatform;
     }>(),
     {
       platform: "youtube",
+      previewUrl: null,
     }
   );
 
@@ -71,8 +73,19 @@
           </button>
           <h2 id="video-modal-title">{{ title }}</h2>
           <div class="video-modal__frame">
+            <video
+              v-if="platform === 'instagram' && previewUrl"
+              class="video-modal__video"
+              :src="previewUrl"
+              :title="title"
+              autoplay
+              controls
+              loop
+              muted
+              playsinline
+              preload="metadata" />
             <iframe
-              v-if="embedUrl"
+              v-else-if="embedUrl"
               :src="embedUrl"
               :title="title"
               allow="autoplay; encrypted-media; picture-in-picture; web-share"
@@ -98,7 +111,7 @@
 
   .video-modal__panel {
     position: relative;
-    width: min(900px, 100%);
+    width: min(1080px, 100%);
     padding: clamp(24px, 4vw, 48px);
     background: var(--paper);
   }
@@ -131,19 +144,24 @@
     background: #000000;
   }
 
-  .video-modal__frame iframe {
+  .video-modal__frame iframe,
+  .video-modal__frame video {
     display: block;
     width: 100%;
     height: 100%;
     border: 0;
   }
 
+  .video-modal__video {
+    object-fit: contain;
+  }
+
   .video-modal--instagram .video-modal__panel {
-    width: min(560px, 100%);
+    width: min(680px, 100%);
   }
 
   .video-modal--instagram .video-modal__frame {
-    max-height: calc(100svh - 140px);
+    max-height: calc(100svh - 120px);
     aspect-ratio: 9 / 16;
   }
 
