@@ -325,12 +325,17 @@
       </section>
 
       <section class="founder">
-        <img
-          class="founder__background"
-          src="/images/founder-serhii.png"
-          alt=""
-          aria-hidden="true"
-          loading="lazy" />
+        <picture class="founder__media">
+          <source
+            media="(max-width: 767px)"
+            srcset="/images/founder-serhii-mobile.png" />
+          <img
+            class="founder__background"
+            src="/images/founder-serhii.png"
+            alt=""
+            aria-hidden="true"
+            loading="lazy" />
+        </picture>
         <div class="container founder__inner">
           <div class="founder__copy">
             <h2>
