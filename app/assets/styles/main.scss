@@ -2399,6 +2399,20 @@ a:focus-visible {
   }
 }
 
+@media (min-width: 380px) and (max-width: 767px) {
+  .founder,
+  .founder__inner {
+    height: max(560px, 100svh);
+  }
+
+  .founder__background {
+    top: 36%;
+    left: -59%;
+    width: 210%;
+    height: calc(100% - 258px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
