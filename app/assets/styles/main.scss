@@ -2338,7 +2338,7 @@ a:focus-visible {
 @media (max-width: 767px) {
   .founder,
   .founder__inner {
-    height: clamp(560px, 146vw, 620px);
+    height: clamp(560px, 164vw, 640px);
     min-height: 0;
   }
 
@@ -2362,12 +2362,14 @@ a:focus-visible {
     object-fit: contain;
     object-position: right bottom;
     transform: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000000 6%, #000000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000000 6%, #000000 100%);
   }
 
   .founder__copy {
     width: 100%;
     max-width: none;
-    padding: 16px 16px 0 4px;
+    padding: 60px 16px 0 4px;
   }
 
   .founder__copy h2 {
@@ -2388,7 +2390,7 @@ a:focus-visible {
   }
 
   .founder__copy .button {
-    bottom: 10px;
+    bottom: 20px;
     left: 4px;
     min-width: 185px;
     min-height: 44px;
@@ -2400,22 +2402,6 @@ a:focus-visible {
     right: -155px;
     width: 300px;
     height: 245px;
-  }
-}
-
-@media (min-width: 380px) and (max-width: 767px) {
-  .founder,
-  .founder__inner {
-    height: max(560px, calc(100svh - 64px));
-  }
-
-  .founder__background {
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    width: 100%;
-    height: auto;
   }
 }
 
