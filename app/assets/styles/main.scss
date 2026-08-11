@@ -2334,7 +2334,7 @@ a:focus-visible {
 @media (max-width: 767px) {
   .founder,
   .founder__inner {
-    height: clamp(570px, 146vw, 620px);
+    height: clamp(560px, 146vw, 620px);
     min-height: 0;
   }
 
@@ -2349,7 +2349,7 @@ a:focus-visible {
   }
 
   .founder__background {
-    top: 38.3%;
+    top: 39%;
     right: auto;
     bottom: auto;
     left: -50%;
@@ -2363,13 +2363,13 @@ a:focus-visible {
   .founder__copy {
     width: 100%;
     max-width: none;
-    padding: 56px 16px 0 0;
+    padding: 60px 16px 0 4px;
   }
 
   .founder__copy h2 {
-    margin-bottom: 22px;
-    font-size: 42px;
-    line-height: 0.8;
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1;
   }
 
   .founder__copy > p:not(.eyebrow) {
@@ -2379,9 +2379,13 @@ a:focus-visible {
     line-height: 1.18;
   }
 
+  .founder__copy > p:first-of-type {
+    max-width: 210px;
+  }
+
   .founder__copy .button {
     bottom: 20px;
-    left: 0;
+    left: 4px;
     min-width: 185px;
     min-height: 44px;
     padding-inline: 10px;
@@ -2389,7 +2393,7 @@ a:focus-visible {
   }
 
   .founder__watermark {
-    right: -220px;
+    right: -155px;
     width: 300px;
     height: 245px;
   }
