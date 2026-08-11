@@ -642,8 +642,15 @@
             <span></span>
           </div>
           <img
+            class="final-cta__portrait final-cta__portrait--desktop"
             src="/images/final-cta-serhii.png"
             :alt="t('common.personName')"
+            loading="lazy" />
+          <img
+            class="final-cta__portrait final-cta__portrait--mobile"
+            src="/images/hero-portrait-mobile.png"
+            alt=""
+            aria-hidden="true"
             loading="lazy" />
           <div class="final-cta__copy">
             <div class="final-cta__person">
