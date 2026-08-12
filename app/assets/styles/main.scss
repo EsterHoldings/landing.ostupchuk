@@ -2335,7 +2335,13 @@ a:focus-visible {
 
 @media (max-width: 479px) and (max-height: 900px) {
   .hero__content {
-    min-height: calc(100svh - 64px);
+    /*
+     * The claim and its buttons are absolutely positioned.  They therefore
+     * do not add their own height to the hero.  Keep enough room for the
+     * longest localized title on compact viewports; if the screen is shorter,
+     * the section scrolls instead of clipping or overlapping its content.
+     */
+    min-height: max(780px, calc(100svh - 64px));
   }
 
   .hero__metrics {
