@@ -13,6 +13,11 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: "uk",
     strategy: "no_prefix",
+    experimental: {
+      // Browser locale must never override Ukrainian on a first visit.
+      // The detector below restores only a locale explicitly saved by the user.
+      localeDetector: "localeDetector.ts",
+    },
     langDir: "locales",
     locales: [
       { code: "en", language: "en-US", name: "English", file: "en.json" },
