@@ -10,15 +10,58 @@
     "update:modelValue": [value: boolean];
   }>();
 
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
+  const runtimeConfig = useRuntimeConfig();
   const isSubmitted = ref(false);
+  const isSubmitting = ref(false);
+  const submitError = ref("");
+  const form = reactive({
+    name: "",
+    phone: "",
+    email: "",
+    website: "",
+  });
 
   const close = () => {
     emit("update:modelValue", false);
   };
 
-  const submit = () => {
-    isSubmitted.value = true;
+  const submit = async () => {
+    if (isSubmitting.value) {
+      return;
+    }
+
+    isSubmitting.value = true;
+    submitError.value = "";
+
+    try {
+      await $fetch(`${String(runtimeConfig.public.esterApiBase).replace(/\/$/, "")}/public/ostupchuk/leads`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: {
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          locale: locale.value,
+          page_url: import.meta.client ? window.location.href : undefined,
+          website: form.website,
+        },
+      });
+
+      isSubmitted.value = true;
+      Object.assign(form, {
+        name: "",
+        phone: "",
+        email: "",
+        website: "",
+      });
+    } catch {
+      submitError.value = t("modal.submitError");
+    } finally {
+      isSubmitting.value = false;
+    }
   };
 
   watch(
@@ -28,9 +71,10 @@
         document.body.style.overflow = value ? "hidden" : "";
       }
 
-      if (!value) {
+      if (!value && import.meta.client) {
         window.setTimeout(() => {
           isSubmitted.value = false;
+          submitError.value = "";
         }, 250);
       }
     }
@@ -71,6 +115,7 @@
               <label>
                 <span>{{ t("modal.name") }}</span>
                 <input
+                  v-model.trim="form.name"
                   name="name"
                   type="text"
                   autocomplete="name"
@@ -79,6 +124,7 @@
               <label>
                 <span>{{ t("modal.phone") }}</span>
                 <input
+                  v-model.trim="form.phone"
                   name="phone"
                   type="tel"
                   autocomplete="tel"
@@ -88,15 +134,34 @@
               <label>
                 <span>Email</span>
                 <input
+                  v-model.trim="form.email"
                   name="email"
                   type="email"
                   autocomplete="email"
                   required />
               </label>
+              <label
+                class="modal__honeypot"
+                aria-hidden="true">
+                <span>Website</span>
+                <input
+                  v-model="form.website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off" />
+              </label>
+              <p
+                v-if="submitError"
+                class="modal__error"
+                role="alert">
+                {{ submitError }}
+              </p>
               <button
                 class="button button--primary button--wide"
-                type="submit">
-                {{ t("modal.submit") }}
+                type="submit"
+                :disabled="isSubmitting">
+                {{ isSubmitting ? t("modal.sending") : t("modal.submit") }}
               </button>
               <small>{{ t("modal.consent") }}</small>
             </form>
@@ -203,6 +268,27 @@
   input:focus {
     border-color: var(--navy);
     box-shadow: 0 0 0 3px rgb(57 78 109 / 10%);
+  }
+
+  .modal__honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .modal__error {
+    margin: 0;
+    color: #b42318;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .button:disabled {
+    cursor: wait;
+    opacity: 0.72;
   }
 
   form small {

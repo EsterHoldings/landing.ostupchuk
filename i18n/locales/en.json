@@ -387,6 +387,8 @@
     "name": "your name",
     "phone": "Telephone",
     "submit": "Send an application",
+    "sending": "Sending…",
+    "submitError": "We couldn't send your request. Please try again.",
     "consent": "By submitting the form, you agree to the privacy policy.",
     "thanks": "Thank you",
     "accepted": "The application has been accepted",

@@ -387,6 +387,8 @@
     "name": "ton nom",
     "phone": "Téléphone",
     "submit": "Envoyer une candidature",
+    "sending": "Envoi en cours…",
+    "submitError": "Impossible d’envoyer votre demande. Veuillez réessayer.",
     "consent": "En soumettant le formulaire, vous acceptez la politique de confidentialité.",
     "thanks": "Merci",
     "accepted": "La candidature a été acceptée",

@@ -387,6 +387,8 @@
     "name": "adınız",
     "phone": "Telefon",
     "submit": "Başvuru gönder",
+    "sending": "Gönderiliyor…",
+    "submitError": "Talep gönderilemedi. Lütfen tekrar deneyin.",
     "consent": "Formu göndererek gizlilik politikasını kabul etmiş olursunuz.",
     "thanks": "teşekkür ederim",
     "accepted": "Başvuru kabul edildi",

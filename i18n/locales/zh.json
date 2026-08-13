@@ -354,6 +354,8 @@
     "name": "你的名字",
     "phone": "电话",
     "submit": "发送申请",
+    "sending": "正在提交…",
+    "submitError": "无法提交申请，请重试。",
     "consent": "提交表格即表示您同意隐私政策。",
     "thanks": "谢谢你",
     "accepted": "申请已被接受",

@@ -387,6 +387,8 @@
     "name": "tu nombre",
     "phone": "Teléfono",
     "submit": "Enviar una solicitud",
+    "sending": "Enviando…",
+    "submitError": "No se pudo enviar la solicitud. Inténtelo de nuevo.",
     "consent": "Al enviar el formulario, acepta la política de privacidad.",
     "thanks": "gracias",
     "accepted": "La solicitud ha sido aceptada.",

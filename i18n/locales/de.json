@@ -387,6 +387,8 @@
     "name": "Dein Name",
     "phone": "Telefon",
     "submit": "Senden Sie eine Bewerbung",
+    "sending": "Wird gesendet…",
+    "submitError": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
     "consent": "Mit dem Absenden des Formulars stimmen Sie der Datenschutzerklärung zu.",
     "thanks": "Vielen Dank",
     "accepted": "Der Antrag wurde angenommen",

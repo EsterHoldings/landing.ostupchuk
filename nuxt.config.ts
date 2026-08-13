@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
   css: ["~/assets/styles/main.scss"],
+  runtimeConfig: {
+    public: {
+      esterApiBase: "https://server.esterholdings.com/api",
+    },
+  },
   modules: ["@nuxtjs/i18n"],
   i18n: {
     defaultLocale: "uk",
