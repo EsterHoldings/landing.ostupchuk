@@ -26,6 +26,24 @@
     emit("update:modelValue", false);
   };
 
+  const trackingData = () => {
+    if (!import.meta.client) {
+      return {};
+    }
+
+    const query = new URLSearchParams(window.location.search);
+    const readUtm = (key: string) => query.get(key) || undefined;
+
+    return {
+      referrer: document.referrer || undefined,
+      utm_source: readUtm("utm_source"),
+      utm_medium: readUtm("utm_medium"),
+      utm_campaign: readUtm("utm_campaign"),
+      utm_content: readUtm("utm_content"),
+      utm_term: readUtm("utm_term"),
+    };
+  };
+
   const submit = async () => {
     if (isSubmitting.value) {
       return;
@@ -47,6 +65,7 @@
           locale: locale.value,
           page_url: import.meta.client ? window.location.href : undefined,
           website: form.website,
+          ...trackingData(),
         },
       });
 
