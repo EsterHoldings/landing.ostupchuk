@@ -777,8 +777,7 @@ a:focus-visible {
 .results__heading {
   display: grid;
   grid-template-columns: 370px minmax(0, 730px) auto;
-  min-height: 165px;
-  align-items: start;
+  align-items: end;
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 35px;
@@ -786,7 +785,6 @@ a:focus-visible {
 
 .results__heading h2 {
   max-width: 370px;
-  min-height: 165px;
   margin: 0;
   color: #364e74;
   font: 400 48px / 1 var(--font-display);
@@ -801,13 +799,13 @@ a:focus-visible {
 }
 
 .results__heading > div:nth-child(2) {
-  margin-top: 57px;
+  margin: 0;
 }
 
 .results__controls {
   display: flex;
   gap: 16px;
-  margin-top: 112px;
+  margin: 0;
 }
 
 .results__controls button {
