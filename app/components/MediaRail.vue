@@ -9,6 +9,7 @@
     href?: string;
     embedUrl?: string;
     previewUrl?: string;
+    previewTime?: number;
     hoverEmbedUrl?: string;
     platform?: MediaPlatform;
   }
@@ -46,6 +47,26 @@
     return item.hoverEmbedUrl ?? "";
   };
 
+  const seekToPreviewFrame = (item: MediaItem, video: HTMLVideoElement) => {
+    if (!Number.isFinite(video.duration) || video.duration <= 0) {
+      return;
+    }
+
+    const previewTime = Math.min(item.previewTime ?? 2.5, Math.max(0, video.duration - 0.1));
+
+    if (Math.abs(video.currentTime - previewTime) > 0.05) {
+      video.currentTime = previewTime;
+    }
+  };
+
+  const prepareInstagramPreview = (item: MediaItem, event: Event) => {
+    const video = event.currentTarget as HTMLVideoElement | null;
+
+    if (video) {
+      seekToPreviewFrame(item, video);
+    }
+  };
+
   const startPreview = (item: MediaItem, event: MouseEvent) => {
     const key = previewKey(item);
     activePreviewKey.value = key;
@@ -60,7 +81,7 @@
     const video = (event.currentTarget as HTMLElement | null)?.querySelector<HTMLVideoElement>("video");
     if (video) {
       video.pause();
-      video.currentTime = 0;
+      seekToPreviewFrame(item, video);
       video.muted = true;
     }
 
@@ -221,6 +242,7 @@
             preload="metadata"
             tabindex="-1"
             aria-hidden="true"
+            @loadedmetadata="prepareInstagramPreview(item, $event)"
             @error="handlePreviewError(item)" />
           <iframe
             v-else-if="item.platform === 'instagram' && item.embedUrl"

@@ -39,6 +39,7 @@
     href?: string;
     embedUrl?: string;
     previewUrl?: string;
+    previewTime?: number;
     hoverEmbedUrl?: string;
     platform?: MediaPlatform;
   }
