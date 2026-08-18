@@ -21,27 +21,40 @@
     zh: "zh",
   };
 
+  // The old multi-page landing is now a one-page site. Preserve the indexed
+  // URLs by taking visitors directly to the matching section on the homepage.
+  const legacySectionAnchors: Record<string, string> = {
+    about: "#about",
+    programs: "#programs",
+    results: "#results",
+    faq: "#faq",
+  };
+
   const route = useRoute();
   const { setLocale } = useI18n();
   const localeSegment = Array.isArray(route.params.locale) ? route.params.locale[0] : route.params.locale;
-  const locale = localeSegment ? localeAliases[localeSegment.toLowerCase()] : undefined;
+  const normalizedSegment = localeSegment?.toLowerCase();
+  const locale = normalizedSegment ? localeAliases[normalizedSegment] : undefined;
+  const legacyAnchor = normalizedSegment ? legacySectionAnchors[normalizedSegment] : undefined;
 
-  if (!locale) {
+  if (!locale && !legacyAnchor) {
     throw createError({
       statusCode: 404,
       statusMessage: "Page not found",
     });
   }
 
-  // setLocale persists i18n_redirected, so following visits retain a language
-  // selected from either the language switcher or a prefixed legacy URL.
-  await setLocale(locale);
+  if (locale) {
+    // setLocale persists i18n_redirected, so following visits retain a language
+    // selected from either the language switcher or a prefixed legacy URL.
+    await setLocale(locale);
+  }
 
   await navigateTo(
     {
       path: "/",
       query: route.query,
-      hash: route.hash,
+      hash: legacyAnchor ?? route.hash,
     },
     {
       redirectCode: 301,
