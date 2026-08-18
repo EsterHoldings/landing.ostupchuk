@@ -918,12 +918,12 @@ a:focus-visible {
 @keyframes landing-heading-sheen {
   0%,
   10% {
-    background-position: 220% 50%;
+    background-position: 120% 50%;
   }
 
   38%,
   100% {
-    background-position: -40% 50%;
+    background-position: -20% 50%;
   }
 }
 
@@ -1043,17 +1043,22 @@ a:focus-visible {
 .landing--heading-sheen h1,
 .landing--heading-sheen h2,
 .landing--heading-sheen h3 {
-  background-color: currentColor;
+  /*
+   * The non-highlighted parts use the normal text color rather than
+   * transparency. This makes the first animation frame visually identical to
+   * the static heading; only the moving bright strip becomes visible.
+   */
+  background-color: transparent;
   background-image: linear-gradient(
     110deg,
-    transparent 0%,
-    transparent 42%,
+    currentColor 0%,
+    currentColor 42%,
     rgb(255 255 255 / 72%) 50%,
-    transparent 58%,
-    transparent 100%
+    currentColor 58%,
+    currentColor 100%
   );
-  background-position: 220% 50%;
-  background-size: 240% 100%;
+  background-position: 120% 50%;
+  background-size: 320% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
