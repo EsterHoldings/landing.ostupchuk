@@ -65,6 +65,28 @@
   const testimonialSwipeStart = ref<number | null>(null);
   let headingSheenTimer: ReturnType<typeof setTimeout> | undefined;
 
+  const siteUrl = "https://ostupchuk.com";
+  const socialImageUrl = `${siteUrl}/images/founder-serhii.png`;
+  const localeLanguageTags: Record<string, string> = {
+    en: "en-US",
+    uk: "uk-UA",
+    de: "de-DE",
+    es: "es-ES",
+    fr: "fr-FR",
+    it: "it-IT",
+    pt: "pt-PT",
+    ru: "ru-RU",
+    tr: "tr-TR",
+    he: "he-IL",
+    hi: "hi-IN",
+    ja: "ja-JP",
+    ko: "ko-KR",
+    zh: "zh-CN",
+  };
+
+  const languageTag = computed(() => localeLanguageTags[locale.value] ?? "uk-UA");
+  const canonicalUrl = computed(() => `${siteUrl}/${locale.value}`);
+
   const resolveMessages = (value: unknown): unknown => {
     if (Array.isArray(value)) {
       return value.map(resolveMessages);
@@ -241,19 +263,72 @@
     return [parts.slice(0, -1).join(" "), parts.at(-1)!];
   });
 
+  const structuredData = computed(() =>
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${siteUrl}/#organization`,
+          name: "Capital Intelligence Academy",
+          url: siteUrl,
+          email: "support@ostupchuk.com",
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${siteUrl}/#website`,
+          url: siteUrl,
+          name: "Capital Intelligence Academy",
+          inLanguage: languageTag.value,
+          publisher: { "@id": `${siteUrl}/#organization` },
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonicalUrl.value,
+          url: canonicalUrl.value,
+          name: t("seo.title"),
+          description: t("seo.description"),
+          inLanguage: languageTag.value,
+          isPartOf: { "@id": `${siteUrl}/#website` },
+        },
+      ],
+    })
+  );
+
   useSeoMeta({
     title: () => t("seo.title"),
     description: () => t("seo.description"),
-    ogTitle: "Capital Intelligence Academy",
+    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    ogTitle: () => t("seo.title"),
     ogDescription: () => t("seo.ogDescription"),
+    ogType: "website",
+    ogUrl: () => canonicalUrl.value,
+    ogSiteName: "Capital Intelligence Academy",
+    ogImage: socialImageUrl,
+    ogImageAlt: "Capital Intelligence Academy — Сергій Остапчук",
+    twitterCard: "summary_large_image",
+    twitterTitle: () => t("seo.title"),
+    twitterDescription: () => t("seo.ogDescription"),
+    twitterImage: socialImageUrl,
   });
 
   useHead(() => ({
     htmlAttrs: {
-      lang: locale.value,
+      lang: languageTag.value,
       dir: locale.value === "he" ? "rtl" : "ltr",
     },
-    link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+    meta: [{ name: "theme-color", content: "#364e74" }],
+    link: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "manifest", href: "/site.webmanifest" },
+    ],
+    script: [
+      {
+        key: "structured-data",
+        type: "application/ld+json",
+        innerHTML: structuredData.value,
+      },
+    ],
   }));
 </script>
 

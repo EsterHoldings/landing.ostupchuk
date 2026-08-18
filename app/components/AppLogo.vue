@@ -11,13 +11,14 @@
   );
 
   const { t } = useI18n();
+  const localePath = useLocalePath();
 </script>
 
 <template>
   <NuxtLink
     class="brand"
     :class="{ 'brand--light': light }"
-    to="/"
+    :to="localePath('/')"
     :aria-label="t('appLogo.homeAria')">
     <span
       class="brand__art"

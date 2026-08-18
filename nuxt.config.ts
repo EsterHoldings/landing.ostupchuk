@@ -11,9 +11,16 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/i18n"],
   i18n: {
+    // Each translation has a separate, crawlable URL. Keeping the default
+    // locale prefixed prevents the root page from competing with /uk in search.
     defaultLocale: "uk",
-    strategy: "no_prefix",
+    strategy: "prefix",
+    trailingSlash: false,
+    baseUrl: "https://ostupchuk.com",
     experimental: {
+      // Nuxt i18n generates canonical and alternate (hreflang) tags from the
+      // configured base URL and locale routes.
+      strictSeo: true,
       // Browser locale must never override Ukrainian on a first visit.
       // The detector below restores only a locale explicitly saved by the user.
       localeDetector: "localeDetector.ts",
@@ -39,6 +46,9 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: "i18n_redirected",
       alwaysRedirect: false,
+      // A selected language is restored only when entering the root URL. URLs
+      // that already contain a language prefix are always respected.
+      redirectOn: "root",
       fallbackLocale: "uk",
     },
   },

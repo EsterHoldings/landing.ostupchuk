@@ -1,0 +1,17 @@
+{
+  "name": "Capital Intelligence Academy — Сергій Остапчук",
+  "short_name": "OST UP CHUK",
+  "lang": "uk",
+  "start_url": "/uk",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#364e74",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
