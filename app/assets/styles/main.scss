@@ -917,7 +917,7 @@ a:focus-visible {
 
 @keyframes landing-heading-sheen {
   0%,
-  68% {
+  72% {
     background-position: 220% 50%;
   }
 
@@ -1051,7 +1051,8 @@ a:focus-visible {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: landing-heading-sheen 8.5s ease-in-out infinite;
+  /* Keep headings in their normal color on first paint; the sweep starts later. */
+  animation: landing-heading-sheen 8.5s ease-in-out 4s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
