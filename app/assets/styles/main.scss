@@ -525,9 +525,10 @@ a:focus-visible {
 }
 
 .program-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  min-height: 390px;
+  min-height: 470px;
   padding: 0;
   border-top: 1px solid var(--line-strong);
 }
@@ -585,6 +586,11 @@ a:focus-visible {
   color: #000000;
   content: "✓";
   font-weight: 700;
+}
+
+.program-card__action {
+  align-self: flex-start;
+  margin-top: 32px;
 }
 
 .audience.section {
@@ -1944,6 +1950,11 @@ a:focus-visible {
   .program-card > p {
     min-height: 0;
     margin-bottom: 20px;
+  }
+
+  .program-card__action {
+    width: 100%;
+    margin-top: 28px;
   }
 
   .audience.section {

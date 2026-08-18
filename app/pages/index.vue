@@ -391,6 +391,12 @@
                   {{ benefit }}
                 </li>
               </ul>
+              <button
+                class="program-card__action button button--primary"
+                type="button"
+                @click="isConsultationOpen = true">
+                {{ t("common.consultation") }}
+              </button>
             </article>
           </div>
         </div>
