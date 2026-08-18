@@ -105,7 +105,6 @@
   const programs = localizedArray<Program>("programs.items");
   const audienceTexts = localizedArray<string>("audience.items");
   const journey = localizedArray<string>("journey.steps");
-  const journeyTitleLines = localizedArray<string>("journey.titleLines");
   const resultsIntro = localizedArray<string>("results.intro");
   const testimonials = localizedArray<Testimonial>("results.testimonials");
   const localizedVideoReviews = localizedArray<MediaItem>("results.videoItems");
@@ -436,13 +435,7 @@
           </div>
         </div>
         <div class="journey__content">
-          <h2>
-            <template
-              v-for="(line, index) in journeyTitleLines"
-              :key="line">
-              <br v-if="index" />{{ line }}
-            </template>
-          </h2>
+          <h2>{{ t("journey.title") }}</h2>
           <ol>
             <li
               v-for="(step, index) in journey"

@@ -30,8 +30,8 @@
     "intro": "Più di due decenni di esperienza pratica sono diventati la base di un ecosistema educativo che combina conoscenza, tutoraggio e sviluppo professionale nel campo dei mercati finanziari.",
     "metrics": [
       {
-        "value": "Internazionale",
-        "label": "comunità di studenti e investitori"
+        "value": "Comunità",
+        "label": "internazionale di studenti e investitori"
       },
       {
         "value": "$100M+",
@@ -132,7 +132,7 @@
     "imageAlt": "Serhiy Ostapchuk",
     "captionRole": "Fondatore e professionista leader",
     "captionMeta": "Commerciante attivo dal 2001",
-    "titleLines": ["Un percorso coerente verso", "accettazione indipendente", "decisioni finanziarie"],
+    "title": "Un percorso coerente verso decisioni finanziarie autonome",
     "steps": [
       "Consulenza personale e definizione degli obiettivi",
       "Scelta di un percorso didattico",
