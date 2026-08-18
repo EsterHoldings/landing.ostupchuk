@@ -59,9 +59,11 @@
   const { locale, rt, t, tm } = useI18n();
   const isConsultationOpen = ref(false);
   const selectedVideo = ref<MediaItem | null>(null);
+  const isHeadingSheenEnabled = ref(false);
   const testimonialIndex = ref(0);
   const testimonialDirection = ref<"next" | "previous" | null>(null);
   const testimonialSwipeStart = ref<number | null>(null);
+  let headingSheenTimer: ReturnType<typeof setTimeout> | undefined;
 
   const resolveMessages = (value: unknown): unknown => {
     if (Array.isArray(value)) {
@@ -216,6 +218,18 @@
     testimonialSwipeStart.value = null;
   });
 
+  onMounted(() => {
+    headingSheenTimer = window.setTimeout(() => {
+      isHeadingSheenEnabled.value = true;
+    }, 4000);
+  });
+
+  onBeforeUnmount(() => {
+    if (headingSheenTimer) {
+      window.clearTimeout(headingSheenTimer);
+    }
+  });
+
   const personNameParts = computed(() => {
     const name = t("common.personName");
     const parts = name.split(/\s+/);
@@ -244,7 +258,9 @@
 </script>
 
 <template>
-  <div class="landing">
+  <div
+    class="landing"
+    :class="{ 'landing--heading-sheen': isHeadingSheenEnabled }">
     <section class="hero">
       <div class="container">
         <SiteHeader @consultation="isConsultationOpen = true" />
