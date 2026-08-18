@@ -32,14 +32,14 @@
         <span>{{ item.question }}</span>
         <ChevronDown :size="19" />
       </button>
-      <Transition name="answer">
-        <div
-          v-if="openedIndex === index"
-          :id="`faq-answer-${index}`"
-          class="faq-item__answer">
+      <div
+        :id="`faq-answer-${index}`"
+        class="faq-item__answer"
+        :aria-hidden="openedIndex !== index">
+        <div class="faq-item__answer-inner">
           <p>{{ item.answer }}</p>
         </div>
-      </Transition>
+      </div>
     </article>
   </div>
 </template>
@@ -53,7 +53,7 @@
   .faq-item {
     border: 1px solid transparent;
     background: #ffffff;
-    transition: border-color 180ms ease;
+    transition: border-color 280ms ease;
   }
 
   .faq-item--open {
@@ -80,7 +80,7 @@
     width: 14px;
     height: 14px;
     flex: 0 0 auto;
-    transition: transform 180ms ease;
+    transition: transform 280ms ease;
   }
 
   .faq-item--open button svg {
@@ -88,6 +88,20 @@
   }
 
   .faq-item__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 320ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 220ms ease;
+  }
+
+  .faq-item--open .faq-item__answer {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .faq-item__answer-inner {
     overflow: hidden;
   }
 
@@ -97,19 +111,6 @@
     margin: 0;
     color: #000000;
     font: 400 14px/18px var(--font-body);
-  }
-
-  .answer-enter-active,
-  .answer-leave-active {
-    transition:
-      opacity 180ms ease,
-      transform 180ms ease;
-  }
-
-  .answer-enter-from,
-  .answer-leave-to {
-    opacity: 0;
-    transform: translateY(-5px);
   }
 
   @media (max-width: 767px) {
@@ -123,6 +124,14 @@
       padding: 0 16px 16px;
       font-size: 13px;
       line-height: 18px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-item button svg,
+    .faq-item__answer {
+      transition-duration: 1ms;
     }
   }
 </style>

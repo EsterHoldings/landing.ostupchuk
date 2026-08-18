@@ -239,6 +239,7 @@
       lang: locale.value,
       dir: locale.value === "he" ? "rtl" : "ltr",
     },
+    link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
   }));
 </script>
 
