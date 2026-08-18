@@ -44,7 +44,7 @@ const instagram = (href: string): MediaLink => {
 export const mediaLinks = {
   videoReviews: [
     instagram("https://www.instagram.com/reel/DbyhdcciHDp/?igsh=MXdpYWh2bG1ubGJqdw=="),
-    null, // Disabled: the Instagram Highlight source is not a stable video stream.
+    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
     instagram("https://www.instagram.com/reel/Db2ppNLiaTM/?igsh=MXc0OHk0ODFwd3Z1dA=="),
     instagram("https://www.instagram.com/reel/Db2qMNqio-2/?igsh=YTR2YmR5Mnk0anRw"),
     instagram("https://www.instagram.com/reel/Db2qNyvCzT2/?igsh=MnZyN2FqMnhucHB4"),
