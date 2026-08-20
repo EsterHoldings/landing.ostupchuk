@@ -130,7 +130,18 @@
   const audienceTexts = localizedArray<string>("audience.items");
   const journey = localizedArray<string>("journey.steps");
   const resultsIntro = localizedArray<string>("results.intro");
-  const testimonials = localizedArray<Testimonial>("results.testimonials");
+  const localizedTestimonials = localizedArray<Testimonial>("results.testimonials");
+  const testimonialAvatars = [
+    "/images/testimonial-mykhailo.png",
+    undefined,
+    "/images/testimonial-olha.png",
+  ] as const;
+  const testimonials = computed(() =>
+    localizedTestimonials.value.map((testimonial, index) => ({
+      ...testimonial,
+      image: testimonialAvatars[index] ?? testimonial.image,
+    }))
+  );
   const localizedVideoReviews = localizedArray<MediaItem>("results.videoItems");
   const videoReviews = computed(() =>
     localizedVideoReviews.value
