@@ -232,7 +232,12 @@
             referrerpolicy="strict-origin-when-cross-origin"
             @load="syncYouTubeSound" />
           <video
-            v-else-if="item.platform === 'instagram' && item.previewUrl && !failedPreviews[previewKey(item)]"
+            v-else-if="
+              item.platform === 'instagram' &&
+              activePreviewKey === previewKey(item) &&
+              item.previewUrl &&
+              !failedPreviews[previewKey(item)]
+            "
             class="media-card__preview"
             :src="item.previewUrl"
             :title="item.title"
@@ -245,7 +250,7 @@
             @loadedmetadata="prepareInstagramPreview(item, $event)"
             @error="handlePreviewError(item)" />
           <iframe
-            v-else-if="item.platform === 'instagram' && item.embedUrl"
+            v-else-if="item.platform === 'instagram' && item.embedUrl && !item.image"
             class="media-card__embed"
             :src="item.embedUrl"
             :title="item.title"
