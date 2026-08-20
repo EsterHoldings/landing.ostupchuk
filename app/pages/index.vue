@@ -162,13 +162,23 @@
 
   const audienceIcons: Component[] = [BarChart3, UserRound, GraduationCap, CircleDollarSign];
   const materialIconNames: MaterialIconName[] = ["marathons", "youtube", "telegram", "publications"];
+  const materialLinks = [
+    "https://event.ostupchuk.com/",
+    "https://youtube.com/@ostupchuklife1034?si=JvyXsNQcu1T-7O7B",
+    "https://t.me/trading_signals_tcs",
+    "https://www.instagram.com/ostapchuk2460?igsh=azU2OHV0dXVyNm41",
+  ] as const;
 
   const audiences = computed<IconCard[]>(() =>
     audienceTexts.value.map((text, index) => ({ icon: audienceIcons[index]!, text }))
   );
 
   const materials = computed(() =>
-    materialCopies.value.map((item, index) => ({ iconName: materialIconNames[index]!, ...item }))
+    materialCopies.value.map((item, index) => ({
+      iconName: materialIconNames[index]!,
+      href: materialLinks[index]!,
+      ...item,
+    }))
   );
 
   const carouselTestimonials = computed<CarouselTestimonial[]>(() => {
@@ -701,13 +711,17 @@
           <div class="materials__content">
             <p class="materials__label">{{ t("materials.eyebrow") }}</p>
             <div class="materials__items">
-              <article
+              <a
                 v-for="material in materials"
-                :key="material.title">
+                :key="material.title"
+                :href="material.href"
+                class="materials__item"
+                target="_blank"
+                rel="noopener noreferrer">
                 <MaterialIcon :name="material.iconName" />
                 <strong>{{ material.title }}</strong>
                 <span>{{ material.text }}</span>
-              </article>
+              </a>
             </div>
           </div>
           <div

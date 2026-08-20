@@ -1305,7 +1305,7 @@ a:focus-visible {
   gap: 24px;
 }
 
-.materials__items article {
+.materials__item {
   display: grid;
   min-width: 0;
   align-content: start;
@@ -1313,10 +1313,17 @@ a:focus-visible {
   gap: 10px;
   padding: 0;
   color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
   text-align: center;
 }
 
-.materials__items article > svg:first-child {
+.materials__item:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 6px;
+}
+
+.materials__item > svg:first-child {
   width: 80px;
   height: 80px;
   color: #ffffff;
@@ -2188,12 +2195,12 @@ a:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .materials__items article {
+  .materials__item {
     min-height: 0;
     padding: 0;
   }
 
-  .materials__items article:nth-child(odd) {
+  .materials__item:nth-child(odd) {
     border-left: 0;
   }
 
