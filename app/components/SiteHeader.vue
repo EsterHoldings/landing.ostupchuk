@@ -447,7 +447,11 @@
     .header-shell,
     .header__inner,
     .header--fixed .header__inner {
-      min-height: 64px;
+      min-height: calc(64px + env(safe-area-inset-top));
+    }
+
+    .header__inner {
+      padding-top: env(safe-area-inset-top);
     }
 
     .header__nav,
@@ -472,7 +476,7 @@
     .header-shell,
     .header__inner,
     .header--fixed .header__inner {
-      min-height: 100px;
+      min-height: calc(100px + env(safe-area-inset-top));
     }
 
     .header__inner {
