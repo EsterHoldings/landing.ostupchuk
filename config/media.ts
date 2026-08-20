@@ -52,7 +52,6 @@ export const mediaLinks = {
       "/images/instagram-transformation.jpg",
       2.5
     ),
-    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
     instagram(
       "https://www.instagram.com/reel/Db2ppNLiaTM/?igsh=MXc0OHk0ODFwd3Z1dA==",
       "/images/instagram-mentorship.jpg",
@@ -73,6 +72,7 @@ export const mediaLinks = {
       "/images/instagram-personal-approach.jpg",
       2.5
     ),
+    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
   ],
   practicalResults: [
     youtube("https://youtu.be/srOD-QuqNNU?si=i9M3rKbyQZ36SHiE"),
