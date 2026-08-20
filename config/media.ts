@@ -82,8 +82,8 @@ export const mediaLinks = {
   ],
   interviews: [
     youtube("https://youtu.be/zvJ-3xEss14?si=5TteUXKSvQOT57n5"),
-    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
     youtube("https://youtu.be/75Xi7dKzCu8?si=bYWfiUF0SdRfMhgn"),
     youtube("https://youtu.be/p9crj6aBKNs?si=AYWoMqaJ7JbcuUqG"),
+    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
   ],
 } as const;
