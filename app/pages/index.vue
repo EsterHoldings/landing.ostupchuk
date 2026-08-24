@@ -339,10 +339,6 @@
       dir: locale.value === "he" ? "rtl" : "ltr",
     },
     meta: [{ name: "theme-color", content: "#364e74" }],
-    link: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "manifest", href: "/site.webmanifest" },
-    ],
     script: [
       {
         key: "structured-data",
