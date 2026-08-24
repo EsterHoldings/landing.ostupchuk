@@ -79,7 +79,6 @@ export const mediaLinks = {
       "https://youtu.be/srOD-QuqNNU?si=i9M3rKbyQZ36SHiE",
       "/images/case-marina-57-percent.jpg"
     ),
-    youtube("https://youtu.be/LSVmCBV7CSI?si=5k_LIukSX3vnxK_S"),
     youtube(
       "https://youtu.be/oA61Twdur9Y?si=Nvc78IUVqA4jIvFQ",
       "/images/case-bogdan-15-percent.jpg"
@@ -88,17 +87,18 @@ export const mediaLinks = {
       "https://youtu.be/O7IArPf-CWQ?si=NDwYkC6RuraMLH0j",
       "/images/case-3780-week.jpg"
     ),
+    youtube("https://youtu.be/LSVmCBV7CSI?si=5k_LIukSX3vnxK_S"),
   ],
   interviews: [
     youtube(
       "https://youtu.be/zvJ-3xEss14?si=5TteUXKSvQOT57n5",
       "/images/interview-alina-content.jpg"
     ),
-    youtube("https://youtu.be/75Xi7dKzCu8?si=bYWfiUF0SdRfMhgn"),
     youtube(
       "https://youtu.be/p9crj6aBKNs?si=AYWoMqaJ7JbcuUqG",
       "/images/interview-mykhailo-training.jpg"
     ),
+    youtube("https://youtu.be/75Xi7dKzCu8?si=bYWfiUF0SdRfMhgn"),
     youtube("https://youtu.be/MnG1pPx-6uc?si=Tc-KgFE7VEiZTi3-"),
     youtube("https://youtu.be/-GQTs9HeNnA?si=Rge-xqGRRwiMVQge"),
   ],
