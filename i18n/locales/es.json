@@ -38,8 +38,8 @@
         "label": "volumen comercial confirmado"
       },
       {
-        "value": "21+",
-        "label": "año en los mercados financieros"
+        "value": "20+",
+        "label": "años de experiencia operando en los mercados financieros"
       }
     ],
     "title": "Un enfoque sistemático para el comercio, la inversión y la gestión de capital.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "un año de practica"
+        "value": "20+",
+        "label": "años de experiencia operando"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Experiencia moldeada por el mercado",
     "paragraphs": [
       "El verdadero valor del conocimiento está determinado por su capacidad de seguir siendo relevante en un mundo en constante cambio.",
-      "Serhii Ostapchuk lleva más de 21 años trabajando en los mercados financieros, atravesando diversos ciclos económicos, crisis y períodos de crecimiento.",
+      "Durante más de 20 años, Serhii Ostapchuk ha operado y trabajado en los mercados financieros, atravesando diversos ciclos económicos, crisis y períodos de crecimiento.",
       "Esta experiencia se convirtió en la base de la Academia y permitió crear un sistema de formación basado en la comprensión de los procesos del mercado, la gestión de riesgos y la toma de decisiones informadas."
     ]
   },
   "founder": {
-    "role": "Trader, inversionista y emprendedor con más de 21 años de experiencia en los mercados financieros.",
+    "role": "Trader, inversionista y emprendedor con más de 20 años de experiencia operando y trabajando en los mercados financieros.",
     "paragraphs": [
       "A lo largo de los años de práctica, se formó un enfoque propio para el análisis de mercado y la gestión de capital, basado en una combinación de análisis fundamental, análisis técnico y psicología de la toma de decisiones.",
       "El resultado de este trabajo fue la Capital Intelligence Academy, un ecosistema educativo que combina muchos años de experiencia práctica, programas de desarrollo modernos y una comunidad internacional de personas interesadas en el crecimiento y la independencia financiera."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Experiencia de tutoría privada.",
-        "meta": "Historial de participantes"
+        "title": "Entrevista con un participante",
+        "meta": "Entrevista en vídeo"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Historia de un participante",
+        "meta": "Entrevista en vídeo"
       }
     ]
   },

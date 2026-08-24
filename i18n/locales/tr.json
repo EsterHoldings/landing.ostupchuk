@@ -38,8 +38,8 @@
         "label": "teyit edilen ticaret hacmi"
       },
       {
-        "value": "21+",
-        "label": "Finansal piyasalarda yıl"
+        "value": "20+",
+        "label": "finansal piyasalarda işlem deneyimi yılı"
       }
     ],
     "title": "Ticaret, yatırım ve sermaye yönetimine sistematik bir yaklaşım.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "bir yıllık pratik"
+        "value": "20+",
+        "label": "yıllık işlem deneyimi"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Piyasanın şekillendirdiği uzmanlık",
     "paragraphs": [
       "Bilginin gerçek değeri, sürekli değişen dünyada güncel kalabilme yeteneğiyle belirlenir.",
-      "Serhii Ostapchuk, 21 yıldan fazla bir süredir finansal piyasalarda çalışıyor ve çeşitli ekonomik döngülerden, krizlerden ve büyüme dönemlerinden geçiyor.",
+      "Serhii Ostapchuk, 20 yıldan uzun süredir finansal piyasalarda işlem yapıyor ve çalışıyor; çeşitli ekonomik döngülerden, krizlerden ve büyüme dönemlerinden geçiyor.",
       "Bu deneyim Akademi'nin temelini oluşturdu ve piyasa süreçlerini anlamaya, risk yönetimine ve bilinçli kararlar almaya dayalı bir eğitim sisteminin oluşturulmasını mümkün kıldı."
     ]
   },
   "founder": {
-    "role": "Finansal piyasalarda 21 yılı aşkın deneyime sahip tüccar, yatırımcı ve girişimci.",
+    "role": "Finansal piyasalarda işlem yapma ve çalışma konusunda 20 yılı aşkın deneyime sahip tüccar, yatırımcı ve girişimci.",
     "paragraphs": [
       "Yıllar süren uygulama sonucunda, temel analiz, teknik analiz ve karar verme psikolojisinin birleşimine dayanan piyasa analizi ve sermaye yönetimine yönelik kendi yaklaşımı oluşturuldu.",
       "Bu çalışmanın sonucu, uzun yıllara dayanan pratik deneyimi, modern geliştirme programlarını ve finansal büyüme ve bağımsızlığa ilgi duyan insanlardan oluşan uluslararası bir topluluğu birleştiren bir eğitim ekosistemi olan Sermaye İstihbarat Akademisi oldu."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Özel ders deneyimi",
-        "meta": "Katılımcı geçmişi"
+        "title": "Katılımcıyla röportaj",
+        "meta": "Video röportajı"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Katılımcı hikâyesi",
+        "meta": "Video röportajı"
       }
     ]
   },

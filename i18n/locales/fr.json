@@ -38,8 +38,8 @@
         "label": "volume des échanges confirmé"
       },
       {
-        "value": "21+",
-        "label": "année sur les marchés financiers"
+        "value": "20+",
+        "label": "ans d’expérience de trading sur les marchés financiers"
       }
     ],
     "title": "Une approche systématique du trading, de l'investissement et de la gestion du capital.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "une année de pratique"
+        "value": "20+",
+        "label": "ans d’expérience de trading"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Une expertise façonnée par le marché",
     "paragraphs": [
       "La véritable valeur du savoir est déterminée par sa capacité à rester pertinente dans un monde en constante évolution.",
-      "Depuis plus de 21 ans, Serhii Ostapchuk travaille sur les marchés financiers, traversant divers cycles économiques, crises et périodes de croissance.",
+      "Depuis plus de 20 ans, Serhii Ostapchuk négocie et travaille sur les marchés financiers, traversant divers cycles économiques, crises et périodes de croissance.",
       "Cette expérience est devenue le fondement de l'Académie et a permis de créer un système de formation basé sur la compréhension des processus de marché, la gestion des risques et la prise de décisions éclairées."
     ]
   },
   "founder": {
-    "role": "Trader, investisseur et entrepreneur avec plus de 21 ans d'expérience sur les marchés financiers.",
+    "role": "Trader, investisseur et entrepreneur avec plus de 20 ans d’expérience du trading et du travail sur les marchés financiers.",
     "paragraphs": [
       "Au fil des années de pratique, une propre approche de l'analyse de marché et de la gestion du capital s'est formée, basée sur une combinaison d'analyse fondamentale, d'analyse technique et de psychologie de la prise de décision.",
       "Le résultat de ce travail a été la Capital Intelligence Academy, un écosystème éducatif combinant de nombreuses années d'expérience pratique, des programmes de développement modernes et une communauté internationale de personnes intéressées par la croissance financière et l'indépendance."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Expérience de cours particuliers",
-        "meta": "Historique des participants"
+        "title": "Entretien avec un participant",
+        "meta": "Entretien vidéo"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Histoire d’un participant",
+        "meta": "Entretien vidéo"
       }
     ]
   },

@@ -38,8 +38,8 @@
         "label": "confirmed trade volume"
       },
       {
-        "value": "21+",
-        "label": "year in the financial markets"
+        "value": "20+",
+        "label": "years of trading experience in financial markets"
       }
     ],
     "title": "A systematic approach to trading, investing and capital management.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "a year of practice"
+        "value": "20+",
+        "label": "years of trading experience"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Expertise shaped by the market",
     "paragraphs": [
       "The true value of knowledge is determined by its ability to remain relevant in a constantly changing world.",
-      "For more than 21 years, Serhii Ostapchuk has been working in the financial markets, going through various economic cycles, crises and periods of growth.",
+      "For more than 20 years, Serhii Ostapchuk has traded and worked in financial markets, going through various economic cycles, crises and periods of growth.",
       "This experience became the foundation of the Academy and made it possible to create a training system based on understanding market processes, risk management and making informed decisions."
     ]
   },
   "founder": {
-    "role": "Trader, investor and entrepreneur with over 21 years of experience in financial markets.",
+    "role": "Trader, investor and entrepreneur with more than 20 years of trading and financial-market experience.",
     "paragraphs": [
       "Over the years of practice, an own approach to market analysis and capital management was formed, based on a combination of fundamental analysis, technical analysis and the psychology of decision-making.",
       "The result of this work was the Capital Intelligence Academy — an educational ecosystem that combined many years of practical experience, modern development programs and an international community of people interested in financial growth and independence."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Private tutoring experience",
-        "meta": "Participant history"
+        "title": "Interview with a participant",
+        "meta": "Video interview"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Participant story",
+        "meta": "Video interview"
       }
     ]
   },

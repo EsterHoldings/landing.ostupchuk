@@ -38,8 +38,8 @@
         "label": "volume de comércio confirmado"
       },
       {
-        "value": "21+",
-        "label": "ano nos mercados financeiros"
+        "value": "20+",
+        "label": "anos de experiência em negociação nos mercados financeiros"
       }
     ],
     "title": "Uma abordagem sistemática para negociação, investimento e gestão de capital.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "um ano de prática"
+        "value": "20+",
+        "label": "anos de experiência em negociação"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Experiência moldada pelo mercado",
     "paragraphs": [
       "O verdadeiro valor do conhecimento é determinado pela sua capacidade de permanecer relevante num mundo em constante mudança.",
-      "Há mais de 21 anos, Serhii Ostapchuk atua no mercado financeiro, passando por diversos ciclos econômicos, crises e períodos de crescimento.",
+      "Há mais de 20 anos, Serhii Ostapchuk negocia e trabalha nos mercados financeiros, passando por diversos ciclos econômicos, crises e períodos de crescimento.",
       "Esta experiência tornou-se a base da Academia e permitiu criar um sistema de formação baseado na compreensão dos processos de mercado, na gestão de riscos e na tomada de decisões informadas."
     ]
   },
   "founder": {
-    "role": "Trader, investidor e empreendedor com mais de 21 anos de experiência no mercado financeiro.",
+    "role": "Trader, investidor e empreendedor com mais de 20 anos de experiência em negociação e trabalho nos mercados financeiros.",
     "paragraphs": [
       "Ao longo dos anos de prática, formou-se uma abordagem própria à análise de mercado e gestão de capital, baseada numa combinação de análise fundamental, análise técnica e psicologia da tomada de decisão.",
       "O resultado deste trabalho foi a Capital Intelligence Academy — um ecossistema educacional que combinou muitos anos de experiência prática, programas de desenvolvimento modernos e uma comunidade internacional de pessoas interessadas no crescimento financeiro e na independência."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Experiência de aulas particulares",
-        "meta": "História do participante"
+        "title": "Entrevista com um participante",
+        "meta": "Entrevista em vídeo"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "História de um participante",
+        "meta": "Entrevista em vídeo"
       }
     ]
   },

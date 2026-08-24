@@ -38,8 +38,8 @@
         "label": "bestätigtes Handelsvolumen"
       },
       {
-        "value": "21+",
-        "label": "Jahr an den Finanzmärkten"
+        "value": "20+",
+        "label": "Jahre Handelserfahrung an den Finanzmärkten"
       }
     ],
     "title": "Ein systematischer Ansatz für Handel, Investitionen und Kapitalmanagement.",
@@ -48,8 +48,8 @@
   "expertise": {
     "facts": [
       {
-        "value": "21+",
-        "label": "ein Jahr Praxis"
+        "value": "20+",
+        "label": "Jahre Handelserfahrung"
       },
       {
         "value": "20+",
@@ -63,12 +63,12 @@
     "title": "Vom Markt geprägte Expertise",
     "paragraphs": [
       "Der wahre Wert von Wissen wird durch seine Fähigkeit bestimmt, in einer sich ständig verändernden Welt relevant zu bleiben.",
-      "Seit mehr als 21 Jahren ist Serhii Ostapchuk auf den Finanzmärkten tätig und hat dabei verschiedene Konjunkturzyklen, Krisen und Wachstumsphasen durchlaufen.",
+      "Seit mehr als 20 Jahren handelt und arbeitet Serhii Ostapchuk an den Finanzmärkten und hat dabei verschiedene Konjunkturzyklen, Krisen und Wachstumsphasen durchlaufen.",
       "Diese Erfahrung wurde zur Grundlage der Akademie und ermöglichte die Schaffung eines Schulungssystems, das auf dem Verständnis von Marktprozessen, dem Risikomanagement und dem Treffen fundierter Entscheidungen basiert."
     ]
   },
   "founder": {
-    "role": "Händler, Investor und Unternehmer mit über 21 Jahren Erfahrung auf den Finanzmärkten.",
+    "role": "Händler, Investor und Unternehmer mit mehr als 20 Jahren Handels- und Berufserfahrung an den Finanzmärkten.",
     "paragraphs": [
       "Im Laufe der jahrelangen Praxis entwickelte sich ein eigener Ansatz zur Marktanalyse und zum Kapitalmanagement, der auf einer Kombination aus Fundamentalanalyse, technischer Analyse und der Psychologie der Entscheidungsfindung basiert.",
       "Das Ergebnis dieser Arbeit war die Capital Intelligence Academy – ein Bildungsökosystem, das langjährige praktische Erfahrung, moderne Entwicklungsprogramme und eine internationale Gemeinschaft von Menschen vereint, die an finanziellem Wachstum und Unabhängigkeit interessiert sind."
@@ -255,8 +255,13 @@
       },
       {
         "image": "/images/result-1.png",
-        "title": "Private Nachhilfeerfahrung",
-        "meta": "Teilnehmerhistorie"
+        "title": "Interview mit einem Teilnehmer",
+        "meta": "Videointerview"
+      },
+      {
+        "image": "/images/result-2.png",
+        "title": "Geschichte eines Teilnehmers",
+        "meta": "Videointerview"
       }
     ]
   },
