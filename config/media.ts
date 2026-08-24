@@ -10,13 +10,13 @@ export interface MediaLink {
   platform: MediaPlatform;
 }
 
-const youtube = (href: string): MediaLink => {
+const youtube = (href: string, thumbnail?: string): MediaLink => {
   const match = href.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([^?&#/]+)/);
   const videoId = match?.[1] ?? "";
 
   return {
     href,
-    thumbnail: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "",
+    thumbnail: thumbnail ?? (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : ""),
     embedUrl: videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0` : href,
     hoverEmbedUrl: videoId
       ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`
@@ -75,15 +75,31 @@ export const mediaLinks = {
     youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
   ],
   practicalResults: [
-    youtube("https://youtu.be/srOD-QuqNNU?si=i9M3rKbyQZ36SHiE"),
-    youtube("https://youtu.be/eSd8nSPPHXw?si=cLqmB8dRVsRMWPBY"),
-    youtube("https://youtu.be/oA61Twdur9Y?si=Nvc78IUVqA4jIvFQ"),
-    youtube("https://youtu.be/O7IArPf-CWQ?si=NDwYkC6RuraMLH0j"),
+    youtube(
+      "https://youtu.be/srOD-QuqNNU?si=i9M3rKbyQZ36SHiE",
+      "/images/case-marina-57-percent.jpg"
+    ),
+    youtube("https://youtu.be/LSVmCBV7CSI?si=5k_LIukSX3vnxK_S"),
+    youtube(
+      "https://youtu.be/oA61Twdur9Y?si=Nvc78IUVqA4jIvFQ",
+      "/images/case-bogdan-15-percent.jpg"
+    ),
+    youtube(
+      "https://youtu.be/O7IArPf-CWQ?si=NDwYkC6RuraMLH0j",
+      "/images/case-3780-week.jpg"
+    ),
   ],
   interviews: [
-    youtube("https://youtu.be/zvJ-3xEss14?si=5TteUXKSvQOT57n5"),
+    youtube(
+      "https://youtu.be/zvJ-3xEss14?si=5TteUXKSvQOT57n5",
+      "/images/interview-alina-content.jpg"
+    ),
     youtube("https://youtu.be/75Xi7dKzCu8?si=bYWfiUF0SdRfMhgn"),
-    youtube("https://youtu.be/p9crj6aBKNs?si=AYWoMqaJ7JbcuUqG"),
-    youtube("https://youtu.be/BlZ5BLj45Xc?si=ayetoGe_wA1RrIlN"),
+    youtube(
+      "https://youtu.be/p9crj6aBKNs?si=AYWoMqaJ7JbcuUqG",
+      "/images/interview-mykhailo-training.jpg"
+    ),
+    youtube("https://youtu.be/MnG1pPx-6uc?si=Tc-KgFE7VEiZTi3-"),
+    youtube("https://youtu.be/-GQTs9HeNnA?si=Rge-xqGRRwiMVQge"),
   ],
 } as const;
