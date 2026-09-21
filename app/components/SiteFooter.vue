@@ -4,6 +4,7 @@
   withDefaults(defineProps<{ homePath?: string }>(), { homePath: "" });
   const emit = defineEmits<{ consultation: [] }>();
   const { t } = useI18n();
+  const localePath = useLocalePath();
 </script>
 
 <template>
@@ -24,7 +25,7 @@
         <a :href="`${homePath}#programs`">{{ t("footer.directions") }}</a>
         <a :href="`${homePath}#results`">{{ t("footer.results") }}</a>
         <a :href="`${homePath}#faq`">Відгуки клієнтів</a>
-        <NuxtLink to="/public-offer">{{ t("footer.offer") }}</NuxtLink>
+        <NuxtLink :to="localePath('/public-offer')">{{ t("footer.offer") }}</NuxtLink>
       </div>
 
       <div class="footer__column">
