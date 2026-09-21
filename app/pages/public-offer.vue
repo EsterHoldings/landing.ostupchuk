@@ -4,8 +4,8 @@
 
   const localePath = useLocalePath();
   const isConsultationOpen = ref(false);
-  const title = "Публичная оферта — Агентство OST UP CHUK";
-  const description = "Условия пользования сайтом и оказания услуг Агентства OST UP CHUK.";
+  const title = "Публичная оферта — Академия OST UP CHUK";
+  const description = "Условия пользования сайтом и оказания услуг Академии OST UP CHUK.";
 
   useSeoMeta({ title, description, ogTitle: title, ogDescription: description });
   useHead({
@@ -26,7 +26,7 @@
       lang="ru"
       dir="ltr">
       <article aria-labelledby="offer-title">
-        <p class="eyebrow">Агентство OST UP CHUK</p>
+        <p class="eyebrow">Академия OST UP CHUK</p>
         <h1 id="offer-title">Публичная оферта</h1>
         <PublicOfferContent />
       </article>
