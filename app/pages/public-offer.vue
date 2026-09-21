@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  // Keep one URL for the original Russian document across all site languages.
+  // Keep one URL for the Ukrainian document across all site languages.
   defineI18nRoute(false);
 
   const localePath = useLocalePath();
   const isConsultationOpen = ref(false);
-  const title = "Публичная оферта — Академия OST UP CHUK";
-  const description = "Условия пользования сайтом и оказания услуг Академии OST UP CHUK.";
+  const title = "Публічна оферта — Академія OST UP CHUK";
+  const description = "Умови користування сайтом і надання послуг Академії OST UP CHUK.";
 
   useSeoMeta({ title, description, ogTitle: title, ogDescription: description });
   useHead({
@@ -23,11 +23,11 @@
 
     <main
       class="container offer-page__main"
-      lang="ru"
+      lang="uk"
       dir="ltr">
       <article aria-labelledby="offer-title">
-        <p class="eyebrow">Академия OST UP CHUK</p>
-        <h1 id="offer-title">Публичная оферта</h1>
+        <p class="eyebrow">Академія OST UP CHUK</p>
+        <h1 id="offer-title">Публічна оферта</h1>
         <PublicOfferContent />
       </article>
     </main>
