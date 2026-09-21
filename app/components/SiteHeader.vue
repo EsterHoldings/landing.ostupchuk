@@ -11,6 +11,8 @@
     short?: string;
   }
 
+  const props = withDefaults(defineProps<{ homePath?: string }>(), { homePath: "" });
+
   const emit = defineEmits<{
     consultation: [];
   }>();
@@ -39,10 +41,10 @@
   ];
 
   const navItems = computed(() => [
-    { label: t("header.nav.about"), href: "#about" },
-    { label: t("header.nav.programs"), href: "#programs" },
-    { label: t("header.nav.results"), href: "#results" },
-    { label: t("header.nav.faq"), href: "#faq" },
+    { label: t("header.nav.about"), href: `${props.homePath}#about` },
+    { label: t("header.nav.programs"), href: `${props.homePath}#programs` },
+    { label: t("header.nav.results"), href: `${props.homePath}#results` },
+    { label: t("header.nav.faq"), href: `${props.homePath}#faq` },
   ]);
 
   const selectedLanguage = computed(() => languages.find(language => language.code === locale.value) ?? languages[1]!);

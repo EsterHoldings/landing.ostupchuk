@@ -785,63 +785,7 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer__grid">
-        <div class="footer__brand">
-          <AppLogo light />
-          <a href="mailto:support@ostupchuk.com">support@ostupchuk.com</a>
-          <NuxtLink to="/public-offer">{{ t("footer.offer") }}</NuxtLink>
-          <p class="footer__copyright">
-            {{ t("footer.copyright", { year: new Date().getFullYear() }) }}<br />
-            Усі права захищені
-          </p>
-        </div>
-
-        <div class="footer__column">
-          <strong>{{ t("footer.academy") }}</strong>
-          <a href="#about">{{ t("footer.about") }}</a>
-          <a href="#programs">{{ t("footer.directions") }}</a>
-          <a href="#results">{{ t("footer.results") }}</a>
-          <a href="#faq">Відгуки клієнтів</a>
-        </div>
-
-        <div class="footer__column">
-          <strong>{{ t("footer.programs") }}</strong>
-          <a href="#programs">Trading Education</a>
-          <a href="#programs">Investment Education</a>
-          <a href="#programs">Приватний Менторинг</a>
-          <a href="#programs">Market Intelligence</a>
-        </div>
-
-        <div class="footer__column">
-          <strong>{{ t("footer.contacts") }}</strong>
-          <button
-            class="footer__link"
-            type="button"
-            @click="isConsultationOpen = true">
-            {{ t("common.consultation") }}
-          </button>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noreferrer">
-            Instagram
-          </a>
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noreferrer">
-            YouTube
-          </a>
-          <a
-            href="https://t.me/"
-            target="_blank"
-            rel="noreferrer">
-            Telegram
-          </a>
-        </div>
-      </div>
-    </footer>
+    <SiteFooter @consultation="isConsultationOpen = true" />
 
     <ConsultationModal v-model="isConsultationOpen" />
     <VideoModal

@@ -3,29 +3,28 @@
   defineI18nRoute(false);
 
   const localePath = useLocalePath();
+  const isConsultationOpen = ref(false);
   const title = "Публичная оферта — Агентство OST UP CHUK";
   const description = "Условия пользования сайтом и оказания услуг Агентства OST UP CHUK.";
 
   useSeoMeta({ title, description, ogTitle: title, ogDescription: description });
   useHead({
-    htmlAttrs: { lang: "ru", dir: "ltr" },
     link: [{ rel: "canonical", href: "https://ostupchuk.com/public-offer" }],
   });
 </script>
 
 <template>
-  <div
-    class="offer-page"
-    lang="ru"
-    dir="ltr">
-    <header class="offer-page__header">
-      <div class="container offer-page__navigation">
-        <AppLogo />
-        <NuxtLink :to="localePath('/')">← На главную</NuxtLink>
-      </div>
-    </header>
+  <div class="offer-page">
+    <div class="container offer-page__header">
+      <SiteHeader
+        :home-path="localePath('/')"
+        @consultation="isConsultationOpen = true" />
+    </div>
 
-    <main class="container offer-page__main">
+    <main
+      class="container offer-page__main"
+      lang="ru"
+      dir="ltr">
       <article aria-labelledby="offer-title">
         <p class="eyebrow">Агентство OST UP CHUK</p>
         <h1 id="offer-title">Публичная оферта</h1>
@@ -33,41 +32,24 @@
       </article>
     </main>
 
-    <footer class="offer-page__footer">
-      <div class="container offer-page__navigation">
-        <NuxtLink :to="localePath('/')">← На главную</NuxtLink>
-        <a href="mailto:support@ostupchuk.com">support@ostupchuk.com</a>
-      </div>
-    </footer>
+    <SiteFooter
+      :home-path="localePath('/')"
+      @consultation="isConsultationOpen = true" />
+    <ConsultationModal v-model="isConsultationOpen" />
   </div>
 </template>
 
 <style lang="scss" scoped>
   .offer-page {
     background: var(--paper);
-
-    a {
-      color: var(--ink);
-      text-underline-offset: 4px;
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--navy);
-      outline-offset: 5px;
-    }
   }
 
   .offer-page__header {
-    border-bottom: 1px solid var(--line);
-  }
+    background: var(--sky);
 
-  .offer-page__navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding-block: 28px;
+    :deep(.header__inner) {
+      padding-inline: clamp(16px, 1.3889vw, 20px);
+    }
   }
 
   .offer-page__main {
@@ -102,10 +84,5 @@
       font-size: 16px;
       line-height: 1.75;
     }
-  }
-
-  .offer-page__footer {
-    background: var(--soft);
-    border-top: 1px solid var(--line);
   }
 </style>
