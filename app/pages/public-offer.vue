@@ -9,7 +9,7 @@
   useSeoMeta({ title, description, ogTitle: title, ogDescription: description });
   useHead({
     htmlAttrs: { lang: "ru", dir: "ltr" },
-    link: [{ rel: "canonical", href: "https://ostupchuk.com/publichnaya-oferta" }],
+    link: [{ rel: "canonical", href: "https://ostupchuk.com/public-offer" }],
   });
 </script>
 

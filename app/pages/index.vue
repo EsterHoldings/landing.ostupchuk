@@ -790,7 +790,7 @@
         <div class="footer__brand">
           <AppLogo light />
           <a href="mailto:support@ostupchuk.com">support@ostupchuk.com</a>
-          <NuxtLink to="/publichnaya-oferta">{{ t("footer.offer") }}</NuxtLink>
+          <NuxtLink to="/public-offer">{{ t("footer.offer") }}</NuxtLink>
           <p class="footer__copyright">
             {{ t("footer.copyright", { year: new Date().getFullYear() }) }}<br />
             Усі права захищені
