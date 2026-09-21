@@ -26,6 +26,10 @@ export default defineNuxtConfig({
       esterApiBase: "https://server.esterholdings.com/api",
     },
   },
+  routeRules: {
+    // Keep existing shared links working while exposing the default locale in the URL.
+    "/public-offer": { redirect: { to: "/uk/public-offer", statusCode: 301 } },
+  },
   modules: ["@nuxtjs/i18n"],
   i18n: {
     // Each translation has a separate, crawlable URL. Keeping the default

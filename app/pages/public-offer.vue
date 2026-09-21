@@ -1,16 +1,52 @@
 <script setup lang="ts">
-  // Keep one URL for the Ukrainian document across all site languages.
-  defineI18nRoute(false);
+  type OfferPayload = {
+    academyName: string;
+    title: string;
+    description: string;
+    content: Array<{ type: string; text: string }>;
+  };
+
+  const offerLoaders = {
+    en: () => import("~/data/public-offers/en.json"),
+    uk: () => import("~/data/public-offers/uk.json"),
+    de: () => import("~/data/public-offers/de.json"),
+    es: () => import("~/data/public-offers/es.json"),
+    fr: () => import("~/data/public-offers/fr.json"),
+    it: () => import("~/data/public-offers/it.json"),
+    pt: () => import("~/data/public-offers/pt.json"),
+    ru: () => import("~/data/public-offers/ru.json"),
+    tr: () => import("~/data/public-offers/tr.json"),
+    he: () => import("~/data/public-offers/he.json"),
+    hi: () => import("~/data/public-offers/hi.json"),
+    ja: () => import("~/data/public-offers/ja.json"),
+    ko: () => import("~/data/public-offers/ko.json"),
+    zh: () => import("~/data/public-offers/zh.json"),
+  };
 
   const localePath = useLocalePath();
+  const { locale } = useI18n();
   const isConsultationOpen = ref(false);
-  const title = "Публічна оферта — Академія OST UP CHUK";
-  const description = "Умови користування сайтом і надання послуг Академії OST UP CHUK.";
-
-  useSeoMeta({ title, description, ogTitle: title, ogDescription: description });
-  useHead({
-    link: [{ rel: "canonical", href: "https://ostupchuk.com/public-offer" }],
+  const loadOffer = async (code: string) => {
+    const loader = offerLoaders[code as keyof typeof offerLoaders] ?? offerLoaders.uk;
+    return (await loader()).default as OfferPayload;
+  };
+  const offer = shallowRef(await loadOffer(locale.value));
+  watch(locale, async code => {
+    offer.value = await loadOffer(code);
   });
+  const pageTitle = computed(() => `${offer.value.title} — ${offer.value.academyName}`);
+  const pageDescription = computed(() => offer.value.description);
+  const canonicalUrl = computed(() => `https://ostupchuk.com${localePath("/public-offer", locale.value)}`);
+
+  useSeoMeta({
+    title: pageTitle,
+    description: pageDescription,
+    ogTitle: pageTitle,
+    ogDescription: pageDescription,
+  });
+  useHead(() => ({
+    link: [{ rel: "canonical", href: canonicalUrl.value }],
+  }));
 </script>
 
 <template>
@@ -23,12 +59,12 @@
 
     <main
       class="container offer-page__main"
-      lang="uk"
-      dir="ltr">
+      :lang="locale"
+      :dir="locale === 'he' ? 'rtl' : 'ltr'">
       <article aria-labelledby="offer-title">
-        <p class="eyebrow">Академія OST UP CHUK</p>
-        <h1 id="offer-title">Публічна оферта</h1>
-        <PublicOfferContent />
+        <p class="eyebrow">{{ offer.academyName }}</p>
+        <h1 id="offer-title">{{ offer.title }}</h1>
+        <PublicOfferContent :blocks="offer.content" />
       </article>
     </main>
 
